@@ -17,7 +17,7 @@
     "@types/react-dom": "18.2.7",
     "@types/react-redux": "^7.1.25",
     "autoprefixer": "10.4.14",
-        "clsx": "^2.0.0",
+    "clsx": "^2.0.0",
     "next": "13.4.12",
     "next-redux-wrapper": "^8.1.0",
     "postcss": "8.4.27",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
+    "antd": "^5.9.1",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "eslint-config-prettier": "^9.0.0",
