@@ -67,7 +67,7 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form }) => {
             () => ({
               validator(_, value) {
                 const num = Number(value);
-                if (!isNaN(num) && num >= 0 && num <= 3)
+                if (!isNaN(num) && num >= 0 && num <= 120)
                   return Promise.resolve();
                 else
                   return Promise.reject(
