@@ -6,13 +6,14 @@ export interface IImageMetadata {
 }
 
 export interface ITrafficData {
-  condition: TrafficConditionEnum;
-  density: number;
-  velocity: number;
+  condition: TrafficConditionEnum | null;
+  density: number | null;
+  velocity: number | null;
 }
 
 export interface IImageData {
   metadata: IImageMetadata;
   isModified: boolean;
+  url: string;
   traffic: ITrafficData;
 }
