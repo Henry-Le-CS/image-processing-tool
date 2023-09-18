@@ -51,7 +51,7 @@ const ImageGrid: FC = () => {
         </Row>
       </div>
       <Modal
-        title={`Rename ${mockData.data[openModal ?? 0]}`}
+        title={`Rename ${mockData.data[openModal ?? 0].filename}`}
         open={!!openModal}
         onOk={handleApplyChanges}
         onCancel={handleCancelChanges}
