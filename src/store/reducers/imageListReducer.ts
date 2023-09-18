@@ -7,7 +7,7 @@ interface IImageListState {
 
 // Define the initial state using that type
 const initialState: IImageListState = {
-  data: [],
+  data: [] as IImageData[],
 };
 
 export const imageListSlice = createSlice({
@@ -19,7 +19,7 @@ export const imageListSlice = createSlice({
       action: PayloadAction<{ id: number; data: ITrafficData }>
     ) => {
       state.data[action.payload.id] = {
-        metadata: state.data[action.payload.id].metadata,
+        ...state.data[action.payload.id],
         isModified: true,
         traffic: action.payload.data,
       };
@@ -27,10 +27,13 @@ export const imageListSlice = createSlice({
     resetOne: (state, action: PayloadAction<number>) => {
       state.data[action.payload].isModified = false;
     },
+    setAll: (state, action: PayloadAction<IImageListState>) => {
+      state.data = action.payload.data;
+    },
   },
 });
 
-export const { updateOne, resetOne } = imageListSlice.actions;
+export const { updateOne, resetOne, setAll } = imageListSlice.actions;
 
 // Other code such as selectors can use the imported `rootState` type
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
