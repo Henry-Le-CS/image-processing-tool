@@ -100,6 +100,14 @@ const ImageGrid: FC = () => {
             ))}
           </Row>
         )}
+        {images.filter((i) => i.isModified).length > 0 && (
+          <Button
+            type="primary"
+            className="bg-current w-full fixed bottom-0 md:w-auto md:block md:relative"
+          >
+            Submit
+          </Button>
+        )}
       </div>
       <Modal
         title={`Rename image`}
