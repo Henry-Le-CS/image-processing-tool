@@ -1,8 +1,9 @@
 import { Form, FormInstance, Input, Select } from 'antd';
-import { FC, Fragment } from 'react';
+import { FC, Fragment, useEffect } from 'react';
 import { STRINGS } from '@/lib/strings';
 import {
   TrafficConditionDetailEnum,
+  TrafficConditionEnum,
   TrafficConditionKeyAsString,
 } from '@/enums';
 
@@ -10,9 +11,19 @@ const conditionList = STRINGS.traffic.condition;
 
 interface ILabelingFormProps {
   form: FormInstance;
+  formData: {
+    condition?: TrafficConditionEnum;
+    density?: number;
+    velocity?: number;
+  };
 }
 
-const LabelingForm: FC<ILabelingFormProps> = ({ form }) => {
+const LabelingForm: FC<ILabelingFormProps> = ({ form, formData }) => {
+  useEffect(() => {
+    // Set initial form values when formData changes
+    form.setFieldsValue(formData);
+  }, [formData, form]);
+
   return (
     <Fragment>
       <Form form={form} layout="vertical">

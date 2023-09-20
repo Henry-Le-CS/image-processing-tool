@@ -1,13 +1,15 @@
 import { IImageData, ITrafficData } from '@/data/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface IImageListState {
-  data: IImageData[];
+export interface IImageListState {
+  data: {
+    [key:string]: IImageData;
+  };
 }
 
 // Define the initial state using that type
 const initialState: IImageListState = {
-  data: [] as IImageData[],
+  data: {},
 };
 
 export const imageListSlice = createSlice({
@@ -16,15 +18,15 @@ export const imageListSlice = createSlice({
   reducers: {
     updateOne: (
       state,
-      action: PayloadAction<{ id: number; data: ITrafficData }>
+      action: PayloadAction<{ id: string; data: ITrafficData }>
     ) => {
       state.data[action.payload.id] = {
         ...state.data[action.payload.id],
         isModified: true,
-        traffic: action.payload.data,
+        trafficCondition: action.payload.data,
       };
     },
-    resetOne: (state, action: PayloadAction<number>) => {
+    resetOne: (state, action: PayloadAction<string>) => {
       state.data[action.payload].isModified = false;
     },
     setAll: (state, action: PayloadAction<IImageListState>) => {
