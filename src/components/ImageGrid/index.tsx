@@ -12,10 +12,12 @@ import {
 import { STRINGS } from '@/lib/strings';
 import { IImageData } from '@/data/types';
 import axiosClient from '@/utils/axiosClient';
+import { Spinner } from '../Spinner/spinner';
 
 const ImageGrid: FC = () => {
   const [openModal, setOpenModal] = useState<string>("");
   const [nextPageTokenPagination, setNextPageTokenPagination] = useState("") // Use for pagination supported by google drive api
+  const [isLoadingData, setIsLoadingData] = useState(false)
   const [form] = Form.useForm();
 
   // TODO: Implement async api call here + dispatching the initial state
@@ -90,6 +92,8 @@ const ImageGrid: FC = () => {
   }
 
   const handleGenerateImages = async (isLoadingMore = false) => {
+    setIsLoadingData(true)
+
     try {
       const response = await axiosClient.get('/api/files', {
         params: {
@@ -98,14 +102,12 @@ const ImageGrid: FC = () => {
           nextPageToken: isLoadingMore ? nextPageTokenPagination : ""
         },
       });
-
       if (!(response.data && response.data?.data)) {
         throw new Error('Cannot find any images, please reload the page or try again later');
       }
 
       const { data, nextPageToken }: { data: Partial<Pick<IImageData, "fileId" | "fileName" | "url">>[], nextPageToken: string } = response.data
       setNextPageTokenPagination(nextPageToken);
-      console.log(nextPageToken)
       const newlyGeneratedImages = transformResponseDataToImageData(data)
 
       if (isLoadingMore) {
@@ -124,14 +126,17 @@ const ImageGrid: FC = () => {
     catch (err) {
       window.alert(err);
     }
+    finally {
+      setIsLoadingData(false)
+    }
   };
 
   const handleSubmitImages = async () => {
-    const modifiedImages = 
+    const modifiedImages =
       Object.keys(images)
-      .filter(fileId => images[fileId].isModified)
-      // Get the images
-      .map(fileId=> images[fileId])
+        .filter(fileId => images[fileId].isModified)
+        // Get the images
+        .map(fileId => images[fileId])
 
     if (!modifiedImages.length) {
       window.alert('No image is currently modified');
@@ -143,7 +148,7 @@ const ImageGrid: FC = () => {
     if (!userAgreeToSubmit) {
       return;
     }
-
+    setIsLoadingData(true)
     try {
       const response = await axiosClient.patch('/api/files/rename', {
         data: modifiedImages,
@@ -151,7 +156,7 @@ const ImageGrid: FC = () => {
         "destinationFolder": process.env.NEXT_PUBLIC_DESTINATION_FOLDER
       })
 
-      if(response.status != 200) {
+      if (response.status != 200) {
         throw new Error(response.data || "Unrecognized error occured")
       }
     }
@@ -159,11 +164,14 @@ const ImageGrid: FC = () => {
       window.alert(err)
       return;
     }
+    finally {
+      setIsLoadingData(false)
+    }
 
     window.alert('Save label to new images sucessfully');
 
     // If changes are made, we need to reload the page
-    handleGenerateImages() 
+    handleGenerateImages()
   }
 
 
@@ -176,12 +184,23 @@ const ImageGrid: FC = () => {
             zIndex: 201,
             backgroundColor: "rgb(219 234 254 / var(--tw-bg-opacity))", //bg-blue-100
           }}>
-          <Button name='GenerateNewButton' className='w-full md:w-[40%]' type="primary" onClick={() => handleGenerateImages()}>
+          <Button
+            name='GenerateNewButton'
+            className='w-full md:w-[40%]'
+            type="primary"
+            onClick={() => handleGenerateImages()}
+            disabled={isLoadingData}
+          >
             Generate Images
           </Button>
           {
             Object.keys(images).filter(fileId => images[fileId].isModified) &&
-            <Button className='w-full md:w-[40%]' type="primary" onClick={handleSubmitImages}>
+            <Button
+              className='w-full md:w-[40%]'
+              type="primary"
+              onClick={handleSubmitImages}
+              disabled={isLoadingData}
+            >
               Submit Images
             </Button>
           }
@@ -210,13 +229,17 @@ const ImageGrid: FC = () => {
             }
           </Row>
         )}
-
+        {
+          isLoadingData && (
+            <Spinner></Spinner>
+          )
+        }
         <Button
           type="primary"
           className="bg-current w-full fixed bottom-0 md:w-auto md:block md:relative"
           name='LoadMoreButton'
           onClick={() => handleGenerateImages(true)}
-          disabled={!nextPageTokenPagination}
+          disabled={!nextPageTokenPagination || isLoadingData}
         >
           Load more image
         </Button>
