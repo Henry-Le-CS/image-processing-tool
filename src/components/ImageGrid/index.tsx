@@ -93,7 +93,7 @@ const ImageGrid: FC = () => {
                   isModified={img.isModified}
                   // isModified={true}
                   onClick={() => {
-                    setOpenModal(id);
+                                        setOpenModal(id);
                   }}
                 />
               </Col>
@@ -111,7 +111,7 @@ const ImageGrid: FC = () => {
       </div>
       <Modal
         title={`Rename image`}
-        open={!!openModal}
+        open={typeof openModal === 'number'}
         onOk={handleApplyChanges}
         onCancel={handleCancelChanges}
       >
