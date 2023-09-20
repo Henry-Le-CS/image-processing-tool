@@ -32,7 +32,6 @@ const ImageGrid: FC = () => {
       .validateFields()
       .then((values) => {
         form.resetFields();
-        console.log('Submitted', openModal, values);
         dispatchImgAction(
           updateOne({
             id: openModal ?? "",
@@ -49,7 +48,6 @@ const ImageGrid: FC = () => {
       .catch((err) => {
         console.log('Validation failed', err);
       });
-    console.log(form);
   };
 
   const handleCancelChanges = () => {
