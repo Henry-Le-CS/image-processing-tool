@@ -1,5 +1,6 @@
-import { Card, Image } from 'antd';
+import { Card } from 'antd';
 import { FC } from 'react';
+import ImageContainer from '../ImageContainer';
 
 interface IImageCardProps {
   filename: string;
@@ -26,13 +27,9 @@ const ImageCard: FC<IImageCardProps> = ({
         title={filename + id}
         size="small"
         hoverable
+        className="min-w-200"
       >
-        <Image
-          className="w-full"
-          src={url}
-          preview={false}
-          alt="Traffic image"
-        />
+        <ImageContainer url={url} />
       </Card>
     </div>
   );
