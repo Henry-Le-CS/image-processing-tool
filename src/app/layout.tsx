@@ -14,6 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/HCMUT_official_logo.ico"></link>
+      </head>
       <body>
         <ReduxProvider>
           <ConfigProvider
