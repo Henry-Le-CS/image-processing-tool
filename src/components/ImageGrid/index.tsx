@@ -12,10 +12,10 @@ import {
 import { STRINGS } from '@/lib/strings';
 import { IImageData } from '@/data/types';
 import axiosClient from '@/utils/axiosClient';
+import { shuffleImage } from './helper';
 
 const ImageGrid: FC = () => {
   const [openModal, setOpenModal] = useState<string>('');
-  const [nextPageTokenPagination, setNextPageTokenPagination] = useState(''); // Use for pagination supported by google drive api
   const [isLoadingData, setIsLoadingData] = useState(false);
   const [form] = Form.useForm();
 
@@ -106,7 +106,7 @@ const ImageGrid: FC = () => {
     return newImages;
   };
 
-  const handleGenerateImages = async (isLoadingMore = false) => {
+  const handleGenerateImages = async () => {
     setIsLoadingData(true);
 
     try {
@@ -114,7 +114,6 @@ const ImageGrid: FC = () => {
         params: {
           folderId: process.env.NEXT_PUBLIC_SOURCE_FOLDER,
           pageSize: process.env.NEXT_PUBLIC_PAGE_SIZE ?? 20, // default
-          nextPageToken: isLoadingMore ? nextPageTokenPagination : '',
         },
       });
       if (!(response.data && response.data?.data)) {
@@ -124,25 +123,14 @@ const ImageGrid: FC = () => {
       }
 
       const {
-        data,
-        nextPageToken,
+        data
       }: {
         data: Partial<Pick<IImageData, 'fileId' | 'fileName' | 'url'>>[];
         nextPageToken: string;
       } = response.data;
-      setNextPageTokenPagination(nextPageToken);
-      const newlyGeneratedImages = transformResponseDataToImageData(data);
 
-      if (isLoadingMore) {
-        const newImages = { ...images, ...newlyGeneratedImages };
-
-        dispatchImgAction(
-          setAll({
-            data: newImages,
-          })
-        );
-        return;
-      }
+      const shuffledData = shuffleImage(data);
+      const newlyGeneratedImages = transformResponseDataToImageData(shuffledData.slice(0, 20));
 
       dispatchImgAction(
         setAll({
@@ -174,6 +162,7 @@ const ImageGrid: FC = () => {
     if (!userAgreeToSubmit) {
       return;
     }
+
     setIsLoadingData(true);
     try {
       const response = await axiosClient.patch('/api/files/rename', {
@@ -192,10 +181,9 @@ const ImageGrid: FC = () => {
       setIsLoadingData(false);
     }
 
-    window.alert('Save label to new images sucessfully');
-
     // If changes are made, we need to reload the page
     handleGenerateImages();
+    window.alert('Save label to new images sucessfully');
   };
 
   return (
@@ -213,7 +201,7 @@ const ImageGrid: FC = () => {
               name="GenerateNewButton"
               className="w-full md:w-[40%]"
               type="primary"
-              onClick={() => handleGenerateImages()}
+              onClick={handleGenerateImages}
               disabled={isLoadingData}
             >
               Generate Images
@@ -226,9 +214,9 @@ const ImageGrid: FC = () => {
               onClick={handleSubmitImages}
               disabled={
                 isLoadingData ||
-                Object.keys(images).filter(
+                !(Object.keys(images).some(
                   (fileId) => images[fileId].isModified
-                ).length > 0
+                ))
               }
             >
               Submit Images
@@ -251,7 +239,7 @@ const ImageGrid: FC = () => {
                   url={img?.url}
                   isModified={img?.isModified || false}
                   onClick={() => {
-                    setOpenModal(img.fileId);
+                    setOpenModal(img.fileId); 3
                   }}
                 />
               </Col>
@@ -259,15 +247,6 @@ const ImageGrid: FC = () => {
           </Row>
         )}
         {isLoadingData && <Spin size="large" />}
-        <Button
-          type="primary"
-          className="bg-current w-full fixed bottom-0 md:w-auto md:block md:relative"
-          name="LoadMoreButton"
-          onClick={() => handleGenerateImages(true)}
-          disabled={!nextPageTokenPagination || isLoadingData}
-        >
-          Load more image
-        </Button>
       </div>
       <Modal
         title={`Rename image`}
