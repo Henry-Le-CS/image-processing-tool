@@ -28,7 +28,7 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
 
   return (
     <Fragment>
-      <div className="p-4 rounded-md flex justify-center items-center gap-4">
+      <div className="p-4 rounded-md flex flex-col md:flex-row justify-center items-center gap-4">
         <div className="grow h-full">
           <ImageContainer
             url={imageUrl}
@@ -36,9 +36,8 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
             preview={true}
           />
         </div>
-        <Form form={form} layout="vertical" className="shrink max-w-[40%]">
+        <Form form={form} layout="vertical" className="shrink md:max-w-[40%]">
           <Form.Item
-            // className="max-w-[40%]"
             name="condition"
             label="Condition"
             rules={[{ required: true }]}
@@ -57,7 +56,6 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
             />
           </Form.Item>
           <Form.Item
-            // className="max-w-[40%]"
             name="density"
             label="Density"
             rules={[
@@ -83,7 +81,6 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
             <Input placeholder="Select the appropriate traffic density" />
           </Form.Item>
           <Form.Item
-            // className="max-w-[40%]"
             name="velocity"
             label="Velocity (km/h)"
             rules={[

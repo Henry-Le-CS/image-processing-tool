@@ -123,14 +123,16 @@ const ImageGrid: FC = () => {
       }
 
       const {
-        data
+        data,
       }: {
         data: Partial<Pick<IImageData, 'fileId' | 'fileName' | 'url'>>[];
         nextPageToken: string;
       } = response.data;
 
       const shuffledData = shuffleImage(data);
-      const newlyGeneratedImages = transformResponseDataToImageData(shuffledData.slice(0, 20));
+      const newlyGeneratedImages = transformResponseDataToImageData(
+        shuffledData.slice(0, 20)
+      );
 
       dispatchImgAction(
         setAll({
@@ -188,7 +190,7 @@ const ImageGrid: FC = () => {
 
   return (
     <Fragment>
-      <div className="relative min-w-100 md:min-w-[50%] md:max-w-[80%] min-h-screen md:min-h-[60%] flex flex-col justify-center items-center bg-blue-100 rounded-md p-4 md:mt-8 gap-4">
+      <div className="relative min-w-100 w-full md:min-w-[50%] md:max-w-[80%] min-h-screen md:min-h-[60%] flex flex-col justify-center items-center bg-blue-100 rounded-md p-2 md:mt-8 gap-4">
         <div
           className="sticky top-0 flex flex-col md:flex-row gap-2 md:gap-4 w-full items-center justify-center py-4 drop-shadow-lg rounded-b-[12px] px-6"
           style={{
@@ -214,9 +216,7 @@ const ImageGrid: FC = () => {
               onClick={handleSubmitImages}
               disabled={
                 isLoadingData ||
-                !(Object.keys(images).some(
-                  (fileId) => images[fileId].isModified
-                ))
+                !Object.keys(images).some((fileId) => images[fileId].isModified)
               }
             >
               Submit Images
@@ -225,21 +225,22 @@ const ImageGrid: FC = () => {
         </div>
         {Object.keys(images).length > 0 && (
           <Row
-            className="z-200"
+            className="z-200 "
             gutter={[
-              { xs: 8, lg: 16 },
-              { xs: 16, lg: 16 },
+              { xs: 8, md: 16 },
+              { xs: 8, md: 16 },
             ]}
           >
             {Object.entries(images).map(([fileId, img]) => (
-              <Col key={fileId} xs={24} md={6}>
+              <Col key={fileId} xs={24} md={6} className="px-4">
                 <ImageCard
                   filename={img.fileName}
                   id={''}
                   url={img?.url}
                   isModified={img?.isModified || false}
                   onClick={() => {
-                    setOpenModal(img.fileId); 3
+                    setOpenModal(img.fileId);
+                    3;
                   }}
                 />
               </Col>
@@ -254,6 +255,7 @@ const ImageGrid: FC = () => {
         onOk={handleApplyChanges}
         onCancel={handleCancelChanges}
         width={'720px'}
+        centered
       >
         <LabelingForm
           form={form}
