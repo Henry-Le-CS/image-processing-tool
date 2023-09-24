@@ -28,15 +28,11 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
 
   return (
     <Fragment>
-      <div className="p-4 rounded-md flex flex-col md:flex-row justify-center items-center gap-4">
-        <div className="grow h-full">
-          <ImageContainer
-            url={imageUrl}
-            className=" grow h-full"
-            preview={true}
-          />
+      <div className="p-4 w-full rounded-md flex flex-col md:flex-row justify-center items-center gap-4">
+        <div>
+          <ImageContainer url={imageUrl} preview={true} />
         </div>
-        <Form form={form} layout="vertical" className="shrink md:max-w-[40%]">
+        <Form form={form} layout="vertical" className=" md:min-w-[35%]">
           <Form.Item
             name="condition"
             label="Condition"
