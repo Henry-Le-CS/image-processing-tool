@@ -1,4 +1,4 @@
-import { Row, Col, Modal, Form, Button, Spin } from 'antd';
+import { Row, Col, Modal, Form, Button, Spin, Input } from 'antd';
 import ImageCard from '../ImageCard';
 import { FC, Fragment, useState } from 'react';
 import LabelingForm from '../LabelingForm';
@@ -12,11 +12,14 @@ import {
 import { STRINGS } from '@/lib/strings';
 import { IImageData } from '@/data/types';
 import axiosClient from '@/utils/axiosClient';
-import { shuffleImage } from './helper';
+import { folderUrlParse, shuffleImage } from './helper';
 
 const ImageGrid: FC = () => {
   const [openModal, setOpenModal] = useState<string>('');
   const [isLoadingData, setIsLoadingData] = useState(false);
+  const [srcFolderUrl, setSrcFolderUrl] = useState<string | undefined>(
+    process.env.NEXT_PUBLIC_SOURCE_FOLDER
+  );
   const [form] = Form.useForm();
 
   // TODO: Implement async api call here + dispatching the initial state
@@ -109,10 +112,12 @@ const ImageGrid: FC = () => {
   const handleGenerateImages = async () => {
     setIsLoadingData(true);
 
+    const srcFolderId = folderUrlParse(srcFolderUrl ?? '');
+
     try {
       const response = await axiosClient.get('/api/files', {
         params: {
-          folderId: process.env.NEXT_PUBLIC_SOURCE_FOLDER,
+          folderId: srcFolderId,
           pageSize: process.env.NEXT_PUBLIC_PAGE_SIZE ?? 20, // default
         },
       });
@@ -166,10 +171,12 @@ const ImageGrid: FC = () => {
     }
 
     setIsLoadingData(true);
+    const srcFolderId = folderUrlParse(srcFolderUrl ?? '');
+
     try {
       const response = await axiosClient.patch('/api/files/rename', {
         data: modifiedImages,
-        sourceFolder: process.env.NEXT_PUBLIC_SOURCE_FOLDER,
+        sourceFolder: srcFolderId,
         destinationFolder: process.env.NEXT_PUBLIC_DESTINATION_FOLDER,
       });
 
@@ -199,15 +206,22 @@ const ImageGrid: FC = () => {
           }}
         >
           {Object.keys(images).length === 0 && (
-            <Button
-              name="GenerateNewButton"
-              className="w-full md:w-[40%]"
-              type="primary"
-              onClick={handleGenerateImages}
-              disabled={isLoadingData}
-            >
-              Generate Images
-            </Button>
+            <div className="md:flex md:gap-4">
+              <Input
+                placeholder="Insert the source folder\'s url"
+                onChange={(e) => setSrcFolderUrl(e.target.value)}
+                onPressEnter={handleGenerateImages}
+              />
+              <Button
+                name="GenerateNewButton"
+                className="w-full md:w-[40%]"
+                type="primary"
+                onClick={handleGenerateImages}
+                disabled={isLoadingData}
+              >
+                Generate Images
+              </Button>
+            </div>
           )}
           {Object.keys(images).length > 0 && (
             <Button
