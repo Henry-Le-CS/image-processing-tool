@@ -9,6 +9,7 @@ import {
 import ImageContainer from '../ImageContainer';
 
 const conditionList = STRINGS.traffic.condition;
+const densityList = STRINGS.traffic.density;
 
 interface ILabelingFormProps {
   form: FormInstance;
@@ -28,15 +29,11 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
 
   return (
     <Fragment>
-      <div className="p-4 rounded-md flex flex-col md:flex-row justify-center items-center gap-4">
-        <div className="grow h-full">
-          <ImageContainer
-            url={imageUrl}
-            className=" grow h-full"
-            preview={true}
-          />
+      <div className="p-4 w-full rounded-md flex flex-col md:flex-row justify-center items-center gap-4">
+        <div>
+          <ImageContainer url={imageUrl} preview={true} />
         </div>
-        <Form form={form} layout="vertical" className="shrink md:max-w-[40%]">
+        <Form form={form} layout="vertical" className=" md:min-w-[35%]">
           <Form.Item
             name="condition"
             label="Condition"
@@ -58,27 +55,14 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
           <Form.Item
             name="density"
             label="Density"
-            rules={[
-              { required: true },
-              () => ({
-                validator(_, value) {
-                  const num = Number(value);
-                  if (
-                    !isNaN(num) &&
-                    Number.isInteger(num) &&
-                    num >= 0 &&
-                    num <= 3
-                  )
-                    return Promise.resolve();
-                  else
-                    return Promise.reject(
-                      new Error('Density must be an integer between 0 and 3')
-                    );
-                },
-              }),
-            ]}
+            rules={[{ required: true }]}
           >
-            <Input placeholder="Select the appropriate traffic density" />
+            <Select
+              placeholder="Select the appropriate traffic density"
+              options={densityList.map((density) => {
+                return { value: Number(density), label: density };
+              })}
+            />
           </Form.Item>
           <Form.Item
             name="velocity"
@@ -88,7 +72,7 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
               () => ({
                 validator(_, value) {
                   const num = Number(value);
-                  if (!isNaN(num) && num >= 0 && num <= 120)
+                  if (!isNaN(num) && num >= 0 && num <= 60)
                     return Promise.resolve();
                   else
                     return Promise.reject(
