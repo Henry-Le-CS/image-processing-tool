@@ -9,6 +9,7 @@ import {
 import ImageContainer from '../ImageContainer';
 
 const conditionList = STRINGS.traffic.condition;
+const densityList = STRINGS.traffic.density;
 
 interface ILabelingFormProps {
   form: FormInstance;
@@ -54,27 +55,14 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
           <Form.Item
             name="density"
             label="Density"
-            rules={[
-              { required: true },
-              () => ({
-                validator(_, value) {
-                  const num = Number(value);
-                  if (
-                    !isNaN(num) &&
-                    Number.isInteger(num) &&
-                    num >= 0 &&
-                    num <= 3
-                  )
-                    return Promise.resolve();
-                  else
-                    return Promise.reject(
-                      new Error('Density must be an integer between 0 and 3')
-                    );
-                },
-              }),
-            ]}
+            rules={[{ required: true }]}
           >
-            <Input placeholder="Select the appropriate traffic density" />
+            <Select
+              placeholder="Select the appropriate traffic density"
+              options={densityList.map((density) => {
+                return { value: Number(density), label: density };
+              })}
+            />
           </Form.Item>
           <Form.Item
             name="velocity"
