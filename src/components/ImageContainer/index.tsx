@@ -24,7 +24,7 @@ const ImageContainer: FC<IImageContainer> = ({
       preview={false}
       alt="Traffic image"
       placeholder={
-        <div className="flex justify-center w-4 h-12">Loading...</div>
+        <div className="flex justify-center ml-4 w-4 h-12">Loading...</div>
       }
       {...restProps}
     />
