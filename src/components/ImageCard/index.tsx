@@ -1,6 +1,7 @@
 import { Card } from 'antd';
 import { FC } from 'react';
 import ImageContainer from '../ImageContainer';
+import { CardTitle } from './components';
 
 interface IImageCardProps {
   filename: string;
@@ -23,13 +24,12 @@ const ImageCard: FC<IImageCardProps> = ({
         <div className="absolute t-0 l-0 w-full h-full bg-gray-800 z-[2] opacity-40 rounded-lg pointer-events-none"></div>
       )}
       <Card
-        onClick={() => onClick()}
-        title={filename + id}
+        title={<CardTitle fileName={filename} fileId={id} />}
         size="small"
         hoverable
         className="min-w-200"
       >
-        <ImageContainer url={url} />
+        <ImageContainer onClick={onClick} url={url} />
       </Card>
     </div>
   );

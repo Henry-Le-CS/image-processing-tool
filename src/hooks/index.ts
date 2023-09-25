@@ -1,0 +1,1 @@
+export { default as useHandleImage } from './useHandleImage';

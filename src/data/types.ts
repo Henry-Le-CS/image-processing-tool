@@ -17,4 +17,5 @@ export interface IImageData {
   url: string;
   isModified?: boolean;
   trafficCondition?: ITrafficData;
+  isSelected?: boolean;
 }
