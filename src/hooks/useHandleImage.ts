@@ -7,6 +7,9 @@ import axiosClient from "@/utils/axiosClient";
 import { Form } from "antd";
 import { useState } from "react";
 
+/**
+ * This hook is created to simplify the logic of ImageGrid component
+ */
 const useHandleImage = () => {
     const [openModal, setOpenModal] = useState<string>('');
     const [isLoadingData, setIsLoadingData] = useState(false);

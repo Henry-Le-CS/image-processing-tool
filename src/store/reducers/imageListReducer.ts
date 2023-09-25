@@ -34,6 +34,7 @@ export const imageListSlice = createSlice({
         state.data[fileId] = {
           ...imageData,
           isModified: false,
+          isSelected: false, // Also deselect
           trafficCondition: {}
         }
       }

@@ -1,7 +1,7 @@
 import { IImageData } from "@/data/types";
 import { selectImageList, selectOne } from "@/store/reducers/imageListReducer";
 import { useAppDispatch, useAppSelector } from "@/store/store";
-import { FC, HTMLAttributes, useMemo, useState } from "react";
+import { FC, HTMLAttributes, useMemo } from "react";
 
 export interface IImageCardProps extends HTMLAttributes<HTMLDivElement> {
     fileName: string;
@@ -19,19 +19,16 @@ const CardTitle: FC<IImageCardProps> = ({ fileName, fileId }) => {
 
     const cardDispatcher = useAppDispatch()
 
-    const [isSelected, setIsSelected] = useState(isImageSelected);
-
     const handleRadioCheck = () => {
-        setIsSelected(!isSelected);
         cardDispatcher(selectOne({
             fileId,
-            isSelected: !isSelected
+            isSelected: !isImageSelected
         }))
     }
 
     return <div className="flex items-center justify-between">
         <p className="text-sm font-semibold">{fileName}</p>
-        <input type="checkbox" value={fileId} checked={isSelected} onChange={handleRadioCheck} />
+        <input type="checkbox" value={fileId} checked={isImageSelected} onChange={handleRadioCheck} />
     </div>
 }
 

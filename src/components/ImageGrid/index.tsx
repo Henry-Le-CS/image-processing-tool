@@ -3,6 +3,7 @@ import ImageCard from '../ImageCard';
 import { FC, Fragment } from 'react';
 import LabelingForm from '../LabelingForm'
 import { useHandleImage } from '@/hooks';
+import { ImageHandler } from '../ImageHandler';
 
 const ImageGrid: FC = () => {
   const {
@@ -32,7 +33,7 @@ const ImageGrid: FC = () => {
           }}
         >
           {!hasImages && (
-            <div className="md:flex md:gap-4">
+            <div className="flex flex-col gap-2 md:flex-row md:gap-4">
               <Input
                 placeholder="Insert the source folder\'s url"
                 onChange={(e) => setSrcFolderUrl(e.target.value)}
@@ -50,17 +51,20 @@ const ImageGrid: FC = () => {
             </div>
           )}
           {hasImages && (
-            <Button
-              className="w-full md:w-[40%]"
-              type="primary"
-              onClick={handleSubmitImages}
-              disabled={
-                isLoadingData ||
-                !hasModifiedImages
-              }
-            >
-              Submit Images
-            </Button>
+            <div className='flex flex-col w-full lg:w-[60%] justify-center items-center gap-2 max-w-max'>
+              <Button
+                className="w-full"
+                type="primary"
+                onClick={handleSubmitImages}
+                disabled={
+                  isLoadingData ||
+                  !hasModifiedImages
+                }
+              >
+                Submit Images
+              </Button>
+              <ImageHandler isLoading={isLoadingData} />
+            </div>
           )}
         </div>
         {hasImages && (
