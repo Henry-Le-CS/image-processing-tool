@@ -21,6 +21,7 @@ const ImageGrid: FC = () => {
 
   const hasImages = Object.keys(images).length > 0;
   const hasModifiedImages = Object.keys(images).some((fileId) => images[fileId].isModified)
+  const modifiedImageCount = Object.values(images).filter((img) => img.isModified).length;
 
   return (
     <Fragment>
@@ -61,7 +62,7 @@ const ImageGrid: FC = () => {
                   !hasModifiedImages
                 }
               >
-                Submit Images
+                Submit {modifiedImageCount ? modifiedImageCount : ""} images
               </Button>
               <ImageHandler isLoading={isLoadingData} />
             </div>
