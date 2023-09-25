@@ -75,7 +75,7 @@ const ImageGrid: FC = () => {
               <Col key={fileId} xs={24} md={6} className="px-4">
                 <ImageCard
                   filename={img.fileName}
-                  id={''}
+                  id={fileId}
                   url={img?.url}
                   isModified={img?.isModified || false}
                   onClick={() => {
