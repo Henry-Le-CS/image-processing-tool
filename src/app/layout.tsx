@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { ReduxProvider } from '@/store/provider';
 import { ConfigProvider } from 'antd';
 import { Analytics } from '@vercel/analytics/react';
+import NavBar from '@/components/NavBar';
 
 export const metadata: Metadata = {
   title: 'Image Processing Tool',
@@ -32,6 +33,7 @@ export default function RootLayout({
           //   },
           // }}
           >
+            <NavBar />
             {children}
           </ConfigProvider>
         </ReduxProvider>
