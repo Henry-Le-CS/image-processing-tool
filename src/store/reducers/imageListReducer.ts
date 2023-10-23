@@ -5,11 +5,13 @@ export interface IImageListState {
   data: {
     [key: string]: IImageData;
   };
+  remainingCount: number;
 }
 
 // Define the initial state using that type
 const initialState: IImageListState = {
   data: {},
+  remainingCount: -1,
 };
 
 export const imageListSlice = createSlice({
@@ -36,25 +38,29 @@ export const imageListSlice = createSlice({
           ...imageData,
           isModified: false,
           isSelected: false, // Also deselect
-          trafficCondition: {}
-        }
+          trafficCondition: {},
+        };
       }
     },
     setAll: (state, action: PayloadAction<IImageListState>) => {
       state.data = action.payload.data;
+      state.remainingCount = action.payload.remainingCount;
     },
-    selectOne: (state, action: PayloadAction<{ fileId: string, isSelected: boolean }>) => {
-      const fileId = action.payload.fileId
-      const isSelected = action.payload.isSelected
+    selectOne: (
+      state,
+      action: PayloadAction<{ fileId: string; isSelected: boolean }>
+    ) => {
+      const fileId = action.payload.fileId;
+      const isSelected = action.payload.isSelected;
 
-      state.data[fileId].isSelected = isSelected
+      state.data[fileId].isSelected = isSelected;
     },
     selectAll: (state) => {
       for (const [fileId, imageData] of Object.entries(state.data)) {
         state.data[fileId] = {
           ...imageData,
           isSelected: true,
-        }
+        };
       }
     },
     deselectAll: (state) => {
@@ -62,7 +68,7 @@ export const imageListSlice = createSlice({
         state.data[fileId] = {
           ...imageData,
           isSelected: false,
-        }
+        };
       }
     },
     updateSelected: (state, action: PayloadAction<{ data: ITrafficData }>) => {
@@ -73,17 +79,29 @@ export const imageListSlice = createSlice({
             isModified: true,
             isSelected: false, // Deselect once we modified
             trafficCondition: action.payload.data,
-          }
+          };
         }
       }
     },
   },
 });
 
-export const { updateOne, resetOne, setAll, resetAll, selectOne, selectAll, deselectAll, updateSelected } = imageListSlice.actions;
+export const {
+  updateOne,
+  resetOne,
+  setAll,
+  resetAll,
+  selectOne,
+  selectAll,
+  deselectAll,
+  updateSelected,
+} = imageListSlice.actions;
 
 // Other code such as selectors can use the imported `rootState` type
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const selectImageList = (state: any) => state.imageList.data;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const selectRemainingImageCount = (state: any) =>
+  state.imageList.remainingCount;
 
 export default imageListSlice.reducer;

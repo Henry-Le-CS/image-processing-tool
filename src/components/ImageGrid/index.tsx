@@ -1,9 +1,10 @@
 import { Row, Col, Modal, Button, Spin, Input } from 'antd';
 import ImageCard from '../ImageCard';
 import { FC, Fragment } from 'react';
-import LabelingForm from '../LabelingForm'
+import LabelingForm from '../LabelingForm';
 import { useHandleImage } from '@/hooks';
 import { ImageHandler } from '../ImageHandler';
+import RemainingImageCount from '../RemainingImageCount';
 
 const ImageGrid: FC = () => {
   const {
@@ -16,12 +17,16 @@ const ImageGrid: FC = () => {
     handleApplyChanges,
     handleCancelChanges,
     handleGenerateImages,
-    setSrcFolderUrl
-  } = useHandleImage()
+    setSrcFolderUrl,
+  } = useHandleImage();
 
   const hasImages = Object.keys(images).length > 0;
-  const hasModifiedImages = Object.keys(images).some((fileId) => images[fileId].isModified)
-  const modifiedImageCount = Object.values(images).filter((img) => img.isModified).length;
+  const hasModifiedImages = Object.keys(images).some(
+    (fileId) => images[fileId].isModified
+  );
+  const modifiedImageCount = Object.values(images).filter(
+    (img) => img.isModified
+  ).length;
 
   return (
     <Fragment>
@@ -52,19 +57,17 @@ const ImageGrid: FC = () => {
             </div>
           )}
           {hasImages && (
-            <div className='flex flex-col w-full lg:w-[60%] justify-center items-center gap-2 max-w-max'>
+            <div className="flex flex-col w-full lg:w-[60%] justify-center items-center gap-2 max-w-max">
               <Button
                 className="w-full"
                 type="primary"
                 onClick={handleSubmitImages}
-                disabled={
-                  isLoadingData ||
-                  !hasModifiedImages
-                }
+                disabled={isLoadingData || !hasModifiedImages}
               >
-                Submit {modifiedImageCount ? modifiedImageCount : ""} images
+                Submit {modifiedImageCount ? modifiedImageCount : ''} images
               </Button>
               <ImageHandler isLoading={isLoadingData} />
+              <RemainingImageCount />
             </div>
           )}
         </div>
