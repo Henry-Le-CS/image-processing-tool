@@ -1,7 +1,6 @@
 "use client";
 import CameraPane from "@/components/CameraPane";
 import Tab from "@/components/Tab";
-import { useState } from "react";
 
 /**
  * TODO: 
@@ -26,13 +25,10 @@ const items = [
 ]
 
 export default function LivePage() {
-    const [currentTab, setCurrentTab] = useState("camera")
-
     return <div className="w-full flex items-center justify-center">
         <Tab
             className="w-full flex items-center justify-center"
             items={items}
-            onChange={(value: string) => setCurrentTab(value)}
         />
     </div>;
 }
