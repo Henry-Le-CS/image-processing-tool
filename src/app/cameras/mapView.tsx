@@ -9,7 +9,6 @@ import {
 } from '@react-google-maps/api';
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
-// import { useCallback, useState } from 'react';
 
 const containerStyle = {
   width: '800px',
@@ -19,10 +18,6 @@ const containerStyle = {
 const center = {
   lat: 10.77231740416534,
   lng: 106.65797689722078,
-};
-const center2 = {
-  lat: 11.77231740416534,
-  lng: 116.65797689722078,
 };
 
 interface IRawCameraData {
