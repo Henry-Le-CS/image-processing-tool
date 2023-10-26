@@ -30,6 +30,7 @@ export const imageListSlice = createSlice({
     },
     resetOne: (state, action: PayloadAction<string>) => {
       state.data[action.payload].isModified = false;
+      state.data[action.payload].trafficCondition = {}; // Clear current traffic condition settings
     },
     resetAll: (state) => {
       for (const [fileId, imageData] of Object.entries(state.data)) {

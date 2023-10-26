@@ -1,5 +1,5 @@
 import { Form, FormInstance, Input, Select } from 'antd';
-import { FC, Fragment, useEffect } from 'react';
+import { FC, Fragment } from 'react';
 import { STRINGS } from '@/lib/strings';
 import {
   TrafficConditionDetailEnum,
@@ -22,10 +22,8 @@ interface ILabelingFormProps {
 }
 
 const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
-  useEffect(() => {
-    // Set initial form values when formData changes
-    form.setFieldsValue(formData);
-  }, [formData, form]);
+  // Set initial form values when formData changes
+  form.setFieldsValue(formData);
 
   return (
     <Fragment>
@@ -46,7 +44,7 @@ const LabelingForm: FC<ILabelingFormProps> = ({ form, formData, imageUrl }) => {
                   value: condition,
                   label:
                     TrafficConditionDetailEnum[
-                      condition as TrafficConditionKeyAsString
+                    condition as TrafficConditionKeyAsString
                     ],
                 };
               })}
