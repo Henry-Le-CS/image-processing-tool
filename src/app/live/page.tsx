@@ -27,7 +27,7 @@ const items = [
 
 export default function LivePage() {
     const [currentTab, setCurrentTab] = useState("camera")
-    console.log(currentTab)
+
     return <div className="w-full flex items-center justify-center">
         <Tab
             className="w-full flex items-center justify-center"
