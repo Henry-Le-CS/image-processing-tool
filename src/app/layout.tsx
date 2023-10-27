@@ -18,9 +18,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/HCMUT_official_logo.ico"></link>
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="upgrade-insecure-requests" />
       </head>
       <body>
         <ReduxProvider>
