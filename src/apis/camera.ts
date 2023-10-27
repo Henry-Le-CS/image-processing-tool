@@ -29,3 +29,16 @@ export const fetchListCamera = async (pageSize: number, currentPage: number): Pr
         }
     }
 }
+
+export const fetchImageUrl = async (cameraId: string): Promise<string | undefined> => {
+    try {
+        const endpoint = process.env.NEXT_PUBLIC_MODEL_ENDPOINT + `/api/get_image/${cameraId}`;
+
+        const response = await fetch(endpoint);
+        const dataUrl = await response.text();
+
+        return dataUrl;
+    } catch (error) {
+        return ""
+    }
+}
