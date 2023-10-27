@@ -5,8 +5,10 @@ import Autocomplete from "./Autocomplete"
 
 const Search = ({
     selection,
+    parentDisable,
     onChange
 }: {
+    parentDisable: boolean,
     selection: ICameraPaneSelection,
     onChange: (value: ICameraPaneSelection) => void
 }) => {
@@ -24,6 +26,7 @@ const Search = ({
             defaultValue={CAMERA_PANE_OPTIONS[0].value} // address
             onChange={onSelectChange}
             options={CAMERA_PANE_OPTIONS}
+            disabled={parentDisable}
         />
         {
             isSearchingCameraId &&
@@ -37,11 +40,13 @@ const Search = ({
                     cameraId: e.target.value
                 })}
                 placeholder="Camera Id"
+                disabled={parentDisable}
             />
         }
         {
             !isSearchingCameraId &&
             <Autocomplete
+                parentDisable={parentDisable}
                 onSelect={(value) => onChange({
                     ...selection,
                     value,

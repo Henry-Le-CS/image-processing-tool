@@ -10,12 +10,13 @@ const CameraPane = () => {
         value: "",
         cameraId: ""
     })
+    const [parentDisable, setParentDisable] = useState(false)
 
-    return <div className="flex flex-col items-center justify-center w-full md:min-w-[400px]">
-        <Search selection={selection} onChange={setSelection} />
+    return <div className="flex flex-col gap-6 items-center justify-center w-full md:min-w-[400px]">
+        <Search parentDisable={parentDisable} selection={selection} onChange={setSelection} />
         {
             selection.cameraId &&
-            <CameraDetail cameraId={selection.cameraId}></CameraDetail>
+            <CameraDetail setParentDisable={setParentDisable} cameraId={selection.cameraId}></CameraDetail>
         }
     </div>
 }

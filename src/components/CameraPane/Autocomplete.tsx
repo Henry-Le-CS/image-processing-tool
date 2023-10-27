@@ -3,7 +3,7 @@ import { Select } from 'antd';
 import { ICameraPaneAutocompleteProps } from './interface';
 import { fetchListCamera } from '@/apis/camera';
 
-const Autocomplete: FC<ICameraPaneAutocompleteProps> = ({ onSelect }) => {
+const Autocomplete: FC<ICameraPaneAutocompleteProps> = ({ parentDisable, onSelect }) => {
     const [inputValue, setInputValue] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [options, setOptions] = useState<Array<{ value: string, label: string }>>([]);
@@ -39,7 +39,7 @@ const Autocomplete: FC<ICameraPaneAutocompleteProps> = ({ onSelect }) => {
             onSearch={(value) => setInputValue(value)}
             onSelect={(value) => onSelect(value)}
             filterOption={false} // Disable default filtering
-            disabled={isLoading}
+            disabled={isLoading || parentDisable}
             loading={isLoading}
             placeholder="Street name"
         >
