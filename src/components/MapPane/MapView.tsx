@@ -1,45 +1,27 @@
-'use client';
-
 import {
-  useLoadScript,
-  GoogleMap,
   Autocomplete,
-  Marker,
   CircleF,
+  GoogleMap,
+  Marker,
+  useLoadScript,
 } from '@react-google-maps/api';
+import { Typography } from 'antd';
+import { FC, useEffect, useRef, useState } from 'react';
+import { ICameraData, IMapView, IRawCameraData } from './type';
+import {
+  CAMERA_LIST_ENDPOINT,
+  DEFAULT_LOCATION_LATLNG,
+  DEFAULT_RADIUS,
+} from './constants';
 import axios from 'axios';
-import { useEffect, useRef, useState } from 'react';
 
 const containerStyle = {
-  width: '800px',
-  height: '500px',
+  width: '100%',
+  minWidth: '100%',
+  aspectRatio: '4/3',
 };
 
-const center = {
-  lat: 10.77231740416534,
-  lng: 106.65797689722078,
-};
-
-interface IRawCameraData {
-  address: string;
-  latitude: string;
-  longitude: string;
-  camera_id: string;
-}
-
-interface ICameraData {
-  address: string;
-  lat: number;
-  lng: number;
-  cameraId: string;
-}
-
-const DEFAULT_RADIUS = 2000;
-
-const CAMERA_LIST_ENDPOINT =
-  'https://us-central1-image-labelling-web.cloudfunctions.net/app/api/camera/list?pageSize=200&currentPage=3';
-
-export default function MapView() {
+const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange }) => {
   const { isLoaded } = useLoadScript({
     id: 'google-map-script',
     googleMapsApiKey: 'AIzaSyB2ukoL3IFwRX2r7yUDZkp5VjH_H-f9B2A',
@@ -54,7 +36,6 @@ export default function MapView() {
       lng: 106.687554,
     },
   ]);
-  const [camerasInRange, setCamerasInRange] = useState<ICameraData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -110,7 +91,10 @@ export default function MapView() {
     <>
       {!isLoaded && <div>Loading...</div>}
       {isLoaded && (
-        <div className="w-full p-4 bg-blue-200 flex flex-col gap-2 justify-center items-center">
+        <div className="w-full flex flex-col gap-2 justify-center items-center">
+          <Typography.Title level={5} className="m-0">
+            Map View
+          </Typography.Title>
           <Autocomplete
             onLoad={(autocomplete) => {
               console.log('autocomplete loaded', autocomplete);
@@ -119,11 +103,15 @@ export default function MapView() {
             onPlaceChanged={handlePlaceChange}
             className="w-full flex items-center justify-center"
           >
-            <input type="text" className="w-[80%]" />
+            <input
+              type="text"
+              placeholder="Input a location name"
+              className="w-full rounded px-2 py-1 border"
+            />
           </Autocomplete>
           <GoogleMap
             mapContainerStyle={containerStyle}
-            center={searchLatLng || center}
+            center={searchLatLng || DEFAULT_LOCATION_LATLNG}
             zoom={14}
             // onUnmount={onUnmount}
           >
@@ -159,4 +147,6 @@ export default function MapView() {
       )}
     </>
   );
-}
+};
+
+export default MapView;

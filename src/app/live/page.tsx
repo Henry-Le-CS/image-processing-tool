@@ -1,9 +1,10 @@
-"use client";
-import CameraPane from "@/components/CameraPane";
-import Tab from "@/components/Tab";
+'use client';
+import CameraPane from '@/components/CameraPane';
+import MapPane from '@/components/MapPane';
+import Tab from '@/components/Tab';
 
 /**
- * TODO: 
+ * TODO:
  * Allow user to search and select camera based on id / address
  * show single camera
  * Allow user to select a point from map with a radius
@@ -12,23 +13,25 @@ import Tab from "@/components/Tab";
  */
 
 const items = [
-    {
-        key: "camera",
-        label: "Camera",
-        children: <CameraPane />
-    },
-    {
-        key: "map",
-        label: "Map",
-        children: <div className="text-blue-600">Coming soon</div>
-    }
-]
+  {
+    key: 'camera',
+    label: 'Camera',
+    children: <CameraPane />,
+  },
+  {
+    key: 'map',
+    label: 'Map',
+    children: <MapPane />,
+  },
+];
 
 export default function LivePage() {
-    return <div className="w-full flex items-center justify-center">
-        <Tab
-            className="w-full flex items-center justify-center"
-            items={items}
-        />
-    </div>;
+  return (
+    <div className="w-full flex items-center justify-center">
+      <Tab
+        className="w-full min-w-full flex items-center justify-center"
+        items={items}
+      />
+    </div>
+  );
 }
