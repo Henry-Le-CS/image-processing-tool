@@ -43,7 +43,7 @@ const CameraPrediction: FC<ICameraPanePredictionProps> = ({ cameraId, setParentD
     return <div className="flex flex-col gap-4 items-center justify-center sm:mt-[12px]">
         <div className="font-bold">Current traffic estimation</div>
         <div className="flex flex-col gap-4">
-            <p>Recommended velocity: <span>{Math.ceil(Number(velocity)) || "Calculating"}</span></p>
+            <p>Recommended velocity: <span>{Math.ceil(Number(velocity)) || "Calculating"} km/h</span></p>
             <p>Density: <span className="text-blue-400">{density}</span></p>
             <p>Condition: <span className="text-blue-400">{condition}</span></p>
             <Button className="text-white" onClick={() => fetchPredictions()}>Estimate again</Button>
