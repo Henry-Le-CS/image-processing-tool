@@ -1,0 +1,2150 @@
+[
+  {
+    "cameraId": "5a6065c58576340017d06615",
+    "locationName": "Tô Ngọc Vân - TX25"
+  },
+  {
+    "cameraId": "583f969161cfea0012cf68f7",
+    "locationName": "Nguyễn Thị Định - Đường D"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481299",
+    "locationName": "Võ Văn Kiệt - An Dương Vương 2"
+  },
+  {
+    "cameraId": "595dc29c3dcfc400106f2894",
+    "locationName": "Quốc lộ 1 - Rạch Láng Le 1"
+  },
+  {
+    "cameraId": "5d9de4de766c880017188cbb",
+    "locationName": "Cao tốc LTDG - Võ Chí Công"
+  },
+  {
+    "cameraId": "5a605f828576340017d06608",
+    "locationName": "Nguyễn Thái Sơn - Nguyễn Văn Nghi 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad15",
+    "locationName": "Lý Tự Trọng - Chu Mạnh Trinh"
+  },
+  {
+    "cameraId": "5b8b2323ca057700116405d0",
+    "locationName": "Trường Sơn - Ga Quốc Nội 2"
+  },
+  {
+    "cameraId": "63ae7a50bfd3d90017e8f2b2",
+    "locationName": "Ba Tháng Hai – Sư Vạn Hạnh"
+  },
+  {
+    "cameraId": "587ee0ecb807da0011e33d50",
+    "locationName": "Phan Đăng Lưu - Lê Văn Duyệt"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48128f",
+    "locationName": "Võ Văn Kiệt - Huỳnh Mẫn Đạt"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c4812a2",
+    "locationName": "Nút giao Mỹ Thủy 2"
+  },
+  {
+    "cameraId": "58b571c817139d0010f35d5d",
+    "locationName": "Nguyễn Văn Trỗi - Trần Huy Liệu"
+  },
+  {
+    "cameraId": "63bd1f21bfd3d90017ec3d04",
+    "locationName": "Huỳnh Tấn Phát - Phạm Hữu Lầu"
+  },
+  {
+    "cameraId": "58df4d95dc195800111e04b9",
+    "locationName": "Phổ Quang - Hoàng Minh Giám"
+  },
+  {
+    "cameraId": "591c6552a6bfb5001194009a",
+    "locationName": "Cầu Long Kiểng (Long An)"
+  },
+  {
+    "cameraId": "586e28a0f9fab7001111b0b3",
+    "locationName": "Quốc lộ 1 - KCX Linh Trung 1"
+  },
+  {
+    "cameraId": "595dd8463dcfc400106f28b2",
+    "locationName": "Quốc lộ 1 - Đường Lê Thị Riêng 2"
+  },
+  {
+    "cameraId": "5d8cd4ee766c880017188946",
+    "locationName": "Lê Văn Sỹ - Huỳnh Văn Bánh"
+  },
+  {
+    "cameraId": "5a8269c45058170011f6eae4",
+    "locationName": "Cầu Phú Mỹ (Q7)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481297",
+    "locationName": "Võ Văn Kiệt - Nguyễn Tri Phương 2"
+  },
+  {
+    "cameraId": "5822adbbedeb6c0012a2d65f",
+    "locationName": "Võ Văn Kiệt - Cầu Chữ Y 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad00",
+    "locationName": "Điện Biên Phủ - Hai Bà Trưng"
+  },
+  {
+    "cameraId": "5a823e425058170011f6eaa4",
+    "locationName": "Đinh Tiên Hoàng - Võ Thị Sáu 1"
+  },
+  {
+    "cameraId": "649da72ca6068200171a6dbb",
+    "locationName": "Tôn Đức Thắng - Cầu Khánh Hội"
+  },
+  {
+    "cameraId": "63b65fd8bfd3d90017eaa461",
+    "locationName": "Lê Văn Duyệt - Vũ Huy Tấn"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad08",
+    "locationName": "Cộng Hòa - Tân Kỳ Tân Quý"
+  },
+  {
+    "cameraId": "595dc70d3dcfc400106f289a",
+    "locationName": "Quốc lộ 1 - Ngã 4 Ga"
+  },
+  {
+    "cameraId": "587c79e9b807da0011e33d3d",
+    "locationName": "Điện Biên Phủ - Nguyễn Văn Thương (D1)"
+  },
+  {
+    "cameraId": "63b65ebebfd3d90017eaa3ae",
+    "locationName": "Nguyễn Hữu Cảnh - Ngô Tất Tố 2 (Dạ cầu Thủ Thiêm 1)"
+  },
+  {
+    "cameraId": "5874769eb807da0011e33cec",
+    "locationName": "Cộng Hòa - Út Tịch 2"
+  },
+  {
+    "cameraId": "63b660f8bfd3d90017eaa4ea",
+    "locationName": "Cầu Tân Thuận 2 - Q7 (Q7-Q4)"
+  },
+  {
+    "cameraId": "58af994abd82540010390c37",
+    "locationName": "Nguyễn Hữu Cảnh - Tôn Đức Thắng"
+  },
+  {
+    "cameraId": "56df8108c062921100c143db",
+    "locationName": "Hoàng Minh Giám - Hồng Hà"
+  },
+  {
+    "cameraId": "63ae7903bfd3d90017e8f211",
+    "locationName": "Hậu Giang -Hẻm 491"
+  },
+  {
+    "cameraId": "63ae7727bfd3d90017e8f14a",
+    "locationName": "Hoàng Diệu - Đoàn Văn Bơ 2"
+  },
+  {
+    "cameraId": "5d9ddec9766c880017188c9c",
+    "locationName": "Nút giao Hàng Xanh 5 (Hàng Xanh - Bạch Đằng)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad02",
+    "locationName": "Điện Biên Phủ - Pasteur"
+  },
+  {
+    "cameraId": "63ae79aabfd3d90017e8f26a",
+    "locationName": "Cách Mạng Tháng Tám - Trường Sơn"
+  },
+  {
+    "cameraId": "5d8cd7fb766c880017188954",
+    "locationName": "Phạm Văn Đồng - Đường 20 (hướng đi Sân bay)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481293",
+    "locationName": "Võ Văn Kiệt - Hải Thượng Lãn Ông 1"
+  },
+  {
+    "cameraId": "63b66089bfd3d90017eaa4bd",
+    "locationName": "Nơ Trang Long - Chu Văn An"
+  },
+  {
+    "cameraId": "63ae798abfd3d90017e8f255",
+    "locationName": "Cách Mạng Tháng Tám - Bắc Hải"
+  },
+  {
+    "cameraId": "6318287ec9eae60017a19f36",
+    "locationName": "Nguyễn Thị Minh Khai - Đinh Tiên Hoàng 2"
+  },
+  {
+    "cameraId": "587476e3b807da0011e33cee",
+    "locationName": "Cộng Hòa - Út Tịch 1"
+  },
+  {
+    "cameraId": "597bf277faa7ea0011c7c29f",
+    "locationName": "Cầu Phú Hữu 2"
+  },
+  {
+    "cameraId": "5d9de49d766c880017188cb9",
+    "locationName": "Cao tốc LTDG - Đỗ Xuân Hợp 2"
+  },
+  {
+    "cameraId": "5d9ddf49766c880017188ca0",
+    "locationName": "Nút giao Hàng Xanh 7 (Hàng Xanh - Cầu Văn Thánh)"
+  },
+  {
+    "cameraId": "63ae763bbfd3d90017e8f0c4",
+    "locationName": "Lý Thái Tổ - Nguyễn Đình Chiểu"
+  },
+  {
+    "cameraId": "5d8cda6a766c880017188960",
+    "locationName": "Phạm Văn Đồng - Kha Vạn Cân (hướng đi Sân bay)"
+  },
+  {
+    "cameraId": "56df84abc062921100c143e5",
+    "locationName": "Nút giao Nguyễn Thái Sơn 3 (Phạm Văn Đồng)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48128b",
+    "locationName": "Võ Văn Kiệt - Nguyễn Văn Cừ 1"
+  },
+  {
+    "cameraId": "58e49ff8d9d6200011e0b9d4",
+    "locationName": "Nam Kỳ Khởi Nghĩa - Trần Quốc Toản"
+  },
+  {
+    "cameraId": "5a8241105058170011f6eaa6",
+    "locationName": "Đinh Tiên Hoàng - Võ Thị Sáu 2"
+  },
+  {
+    "cameraId": "5a825ded5058170011f6ead7",
+    "locationName": "Quốc lộ 50 - Cầu Ông Thìn (2)"
+  },
+  {
+    "cameraId": "5d8cdb0a766c880017188964",
+    "locationName": "Trường Chinh - Xuân Hồng"
+  },
+  {
+    "cameraId": "56df833ac062921100c143e1",
+    "locationName": "Nguyễn Hữu Thọ - Nguyễn Thị Thập 2"
+  },
+  {
+    "cameraId": "5a6082698576340017d06678",
+    "locationName": "QL1 - Trạm thu phí AS-AL 2"
+  },
+  {
+    "cameraId": "63b5503bbfd3d90017ea7ccc",
+    "locationName": "Nút giao Mỹ Thủy (7)"
+  },
+  {
+    "cameraId": "5ad0621c98d8fc001102e268",
+    "locationName": "Lý Tự Trọng - Hai Bà Trưng 2"
+  },
+  {
+    "cameraId": "595f89323dcfc400106f28ee",
+    "locationName": "Quốc lộ 1 - BQB Cầu vượt Quang Trung A (hướng An Sương)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48128c",
+    "locationName": "Võ Văn Kiệt - Nguyễn Văn Cừ 2"
+  },
+  {
+    "cameraId": "595d98fc3dcfc400106f287b",
+    "locationName": "Quốc lộ 1 - An Phú Đông 13 (2)"
+  },
+  {
+    "cameraId": "63b3c274bfd3d90017e9ab93",
+    "locationName": "Hồng Bàng - Phù Đổng Thiên Vương"
+  },
+  {
+    "cameraId": "63b54bcdbfd3d90017ea7a82",
+    "locationName": "Tỉnh lộ 43 - KCX Linh Trung 2"
+  },
+  {
+    "cameraId": "5b5995a3fd4edb0019c7d9ab",
+    "locationName": "Võ Văn Kiệt - Cầu Chà Và 2 (trên cầu)"
+  },
+  {
+    "cameraId": "63ae7b3cbfd3d90017e8f34d",
+    "locationName": "Ba Tháng Hai - Lý Thường Kiệt 3"
+  },
+  {
+    "cameraId": "6318283cc9eae60017a19f0c",
+    "locationName": "Nguyễn Thị Minh Khai - Đinh Tiên Hoàng 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acf6",
+    "locationName": "Nút giao Ngã sáu Cộng Hòa"
+  },
+  {
+    "cameraId": "56f8e796025e9511002786cf",
+    "locationName": "Đường hầm - Trạm Thu Phí"
+  },
+  {
+    "cameraId": "58746488b807da0011e33cd7",
+    "locationName": "Cầu vượt Sóng Thần 2"
+  },
+  {
+    "cameraId": "5822b5ededeb6c0012a2d66a",
+    "locationName": "Mai Chí Thọ - Nguyễn Cơ Thạch 1"
+  },
+  {
+    "cameraId": "63b660d8bfd3d90017eaa4d5",
+    "locationName": "Cầu Tân Thuận 2 - Q7 (Q4-Q7)"
+  },
+  {
+    "cameraId": "63ae7be0bfd3d90017e8f3a8",
+    "locationName": "Ba Tháng Hai - Lê Đại Hành 1"
+  },
+  {
+    "cameraId": "63b54a04bfd3d90017ea783e",
+    "locationName": "Lê Văn Việt - Hoàng Hữu Nam"
+  },
+  {
+    "cameraId": "63b54f70bfd3d90017ea7c86",
+    "locationName": "Cầu Sài Gòn (10)"
+  },
+  {
+    "cameraId": "5a8267fe5058170011f6eae1",
+    "locationName": "Lê Văn Lương - Cầu Rạch Đĩa"
+  },
+  {
+    "cameraId": "595d984b3dcfc400106f2879",
+    "locationName": "Quốc lộ 1 - An Phú Đông 13 (1)"
+  },
+  {
+    "cameraId": "58746122b807da0011e33cc5",
+    "locationName": "Quốc lộ 1 - ĐH Nông Lâm 2"
+  },
+  {
+    "cameraId": "5b25a268f13cba001124e713",
+    "locationName": "Nam Kỳ Khởi Nghĩa - Lê Thánh Tôn"
+  },
+  {
+    "cameraId": "63ae768dbfd3d90017e8f0f1",
+    "locationName": "Khánh Hội - Vĩnh Hội"
+  },
+  {
+    "cameraId": "63b54a70bfd3d90017ea7862",
+    "locationName": "Lã Xuân Oai - Đường D2"
+  },
+  {
+    "cameraId": "58e49783d9d6200011e0b9ce",
+    "locationName": "Trường Chinh - Phan Văn Hớn 2 (HM-Q12)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad0c",
+    "locationName": "Nút giao Ngã sáu Phù Đổng"
+  },
+  {
+    "cameraId": "58d7bbf2c1e33c00112b3216",
+    "locationName": "Quốc lộ 1 - Đinh Đức Thiện 2"
+  },
+  {
+    "cameraId": "58746295b807da0011e33ccb",
+    "locationName": "Quốc lộ 1 - Bình Đường"
+  },
+  {
+    "cameraId": "585b2baec3f96200127dc508",
+    "locationName": "Nguyễn Văn Linh - Huỳnh Tấn Phát 2"
+  },
+  {
+    "cameraId": "591c662ba6bfb5001194009c",
+    "locationName": "Cầu Long Kiểng (HCM)"
+  },
+  {
+    "cameraId": "5a606cd08576340017d06628",
+    "locationName": "BX Miền Đông - Đinh Bộ Lĩnh 2"
+  },
+  {
+    "cameraId": "589d0bceb3bf7600110283d6",
+    "locationName": "Cầu Sài Gòn 2 (Bình Thạnh)"
+  },
+  {
+    "cameraId": "5d8cd253766c88001718893a",
+    "locationName": "Nguyễn Tri Phương - Hùng Vương"
+  },
+  {
+    "cameraId": "587ee2aeb807da0011e33d52",
+    "locationName": "Phan Đăng Lưu - Phan Xích Long"
+  },
+  {
+    "cameraId": "56f8e708025e9511002786cb",
+    "locationName": "Đường hầm - Ký Con"
+  },
+  {
+    "cameraId": "5874644cb807da0011e33cd5",
+    "locationName": "Cầu vượt Sóng Thần 1"
+  },
+  {
+    "cameraId": "597bf0b8faa7ea0011c7c293",
+    "locationName": "Cầu Phú Hữu 1"
+  },
+  {
+    "cameraId": "5a10c79f02eb490011a0b0dd",
+    "locationName": "Mai Chí Thọ - Tố Hữu (C6)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad19",
+    "locationName": "Nguyễn Thị Minh Khai - Mạc Đĩnh Chi"
+  },
+  {
+    "cameraId": "591c6b71a6bfb500119400a5",
+    "locationName": "Cầu Cái Tâm (Long An)"
+  },
+  {
+    "cameraId": "5b6329fdfd4edb0019c7dc0b",
+    "locationName": "Nguyễn Trãi - Nguyễn Văn Cừ"
+  },
+  {
+    "cameraId": "589add0fb3bf7600110283ae",
+    "locationName": "Tô Ký (Tỉnh lộ 15) - Đông Bắc"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad01",
+    "locationName": "Võ Thị Sáu - Hai Bà Trưng"
+  },
+  {
+    "cameraId": "58abbf72bd82540010390ba4",
+    "locationName": "Cầu Sài Gòn 9 (Bình Thạnh - Thủ Đức)"
+  },
+  {
+    "cameraId": "58ad6961bd82540010390be5",
+    "locationName": "Nút giao Phú Nhuận 1 (Phan Đình Phùng)"
+  },
+  {
+    "cameraId": "59ca2fa302eb490011a0a3fd",
+    "locationName": "QL1 - cầu Bình Thuận"
+  },
+  {
+    "cameraId": "5a8257e25058170011f6eacd",
+    "locationName": "Hoàng Hữu Nam - Đường D400"
+  },
+  {
+    "cameraId": "5a606dbc8576340017d0662b",
+    "locationName": "Điện Biên Phủ - Nguyễn Hữu Cảnh"
+  },
+  {
+    "cameraId": "58abbee5bd82540010390ba2",
+    "locationName": "Cầu Sài Gòn 5 (dạ cầu Thủ Đức)"
+  },
+  {
+    "cameraId": "58d7b756c1e33c00112b320d",
+    "locationName": "Nút giao Chợ Đệm 2 (CT Trung Lương - Bùi Thanh Khiết)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acfe",
+    "locationName": "Lý Chính Thắng - Trương Định"
+  },
+  {
+    "cameraId": "58df4e22dc195800111e04bb",
+    "locationName": "Yên Thế - Bạch Đằng"
+  },
+  {
+    "cameraId": "58d7b3e8c1e33c00112b3207",
+    "locationName": "Quốc lộ 1 - Nguyễn Văn Linh"
+  },
+  {
+    "cameraId": "58e49e3dd9d6200011e0b9d1",
+    "locationName": "Nam Kỳ Khởi Nghĩa - Lý Chính Thắng"
+  },
+  {
+    "cameraId": "5d8cdc57766c88001718896e",
+    "locationName": "Lý Thường Kiệt - Lạc Long Quân"
+  },
+  {
+    "cameraId": "5ad0679598d8fc001102e274",
+    "locationName": "Lê Văn Việt - Man Thiện"
+  },
+  {
+    "cameraId": "5a824b6c5058170011f6eaab",
+    "locationName": "Nút giao Bốn Xã 3 (Lê Văn Quới)"
+  },
+  {
+    "cameraId": "58175ac4edeb6c0012a2d5bb",
+    "locationName": "Mai Chí Thọ - Đồng Văn Cống 1"
+  },
+  {
+    "cameraId": "62da3e840637a10017d7073d",
+    "locationName": "Quốc Lộ 13 - Nguyễn Thị Thi 3"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481288",
+    "locationName": "Võ Văn Kiệt - Cầu Ông Lãnh 1"
+  },
+  {
+    "cameraId": "5d8cd614766c88001718894a",
+    "locationName": "Lê Quang Định - Nơ Trang Long"
+  },
+  {
+    "cameraId": "5a824f975058170011f6eab8",
+    "locationName": "Nguyễn Oanh - Phan Văn Trị (2)"
+  },
+  {
+    "cameraId": "5a824c3e5058170011f6eaae",
+    "locationName": "Nút giao Bốn Xã 1 (Bình Long)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acf9",
+    "locationName": "Nút giao Công Trường Dân Chủ"
+  },
+  {
+    "cameraId": "587470c2b807da0011e33ce4",
+    "locationName": "Nguyễn Hữu Cảnh - Ngô Tất Tố (Cầu Thủ Thiêm 1)"
+  },
+  {
+    "cameraId": "591c6d3ba6bfb500119400ac",
+    "locationName": "Cầu Rạch Dơi (HCM)"
+  },
+  {
+    "cameraId": "584e734a61cfea0012cf694f",
+    "locationName": "Quốc lộ 1 - Lê Trọng Tấn"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad23",
+    "locationName": "Ba Tháng Hai - Lý Thường Kiệt"
+  },
+  {
+    "cameraId": "595d9ba43dcfc400106f2880",
+    "locationName": "Quốc lộ 1 - An Phú Đông 12 (2)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad0d",
+    "locationName": "Lê Lợi - Pasteur"
+  },
+  {
+    "cameraId": "587efb60b807da0011e33d5d",
+    "locationName": "Phạm Văn Đồng - Lê Quang Định 1"
+  },
+  {
+    "cameraId": "589ad89eb3bf7600110283ac",
+    "locationName": "Tô Ký (Tỉnh lộ 15) - Hẻm 146"
+  },
+  {
+    "cameraId": "5701e22bc4350a1100e26f6c",
+    "locationName": "Nguyễn Công Trứ - Calmette 1"
+  },
+  {
+    "cameraId": "5b87c386ca057700116404a6",
+    "locationName": "Đường hầm (Đầu hầm Tp Thủ Đức)"
+  },
+  {
+    "cameraId": "5d8cd542766c880017188948",
+    "locationName": "Võ Văn Ngân - Đặng Văn Bi"
+  },
+  {
+    "cameraId": "5875cef0b807da0011e33d14",
+    "locationName": "Trường Chinh - Phạm Văn Bạch 2"
+  },
+  {
+    "cameraId": "5a823d555058170011f6eaa2",
+    "locationName": "Lý Tự Trọng - Hai Bà Trưng 1"
+  },
+  {
+    "cameraId": "595da2853dcfc400106f2883",
+    "locationName": "Quốc lộ 1 - Đường 15 (1)"
+  },
+  {
+    "cameraId": "587c8183b807da0011e33d3f",
+    "locationName": "Hoàng Văn Thụ - Trần Quốc Hoàn"
+  },
+  {
+    "cameraId": "5b632950fd4edb0019c7dc07",
+    "locationName": "Nguyễn Văn Cừ - Trần Hưng Đạo 3"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad06",
+    "locationName": "Đinh Tiên Hoàng - Nguyễn Đình Chiểu"
+  },
+  {
+    "cameraId": "5a8279865058170011f6eaef",
+    "locationName": "Nguyễn Văn Linh - Phạm Hùng 2"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c4812a1",
+    "locationName": "Nút giao Mỹ Thủy 1"
+  },
+  {
+    "cameraId": "63ae7669bfd3d90017e8f0d9",
+    "locationName": "Khánh Hội - Cầu Kênh Tẻ"
+  },
+  {
+    "cameraId": "63b65e6abfd3d90017eaa361",
+    "locationName": "Nguyễn Thị Định - Thân Văn Nhiếp"
+  },
+  {
+    "cameraId": "56f11afc3ac17b11001c504e",
+    "locationName": "Trường Sơn - Phan Đình Giót"
+  },
+  {
+    "cameraId": "585b2b1ec3f96200127dc505",
+    "locationName": "Nguyễn Văn Linh - Huỳnh Tấn Phát 1"
+  },
+  {
+    "cameraId": "5a825b7d5058170011f6ead4",
+    "locationName": "Nguyễn Văn Linh - Nguyễn Hữu Thọ (3)"
+  },
+  {
+    "cameraId": "5a6069238576340017d0661c",
+    "locationName": "Bạch Đằng - Lê Quang Định"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481298",
+    "locationName": "Võ Văn Kiệt - An Dương Vương 1"
+  },
+  {
+    "cameraId": "63ae75f9bfd3d90017e8f097",
+    "locationName": "Cao Thắng – Võ Văn Tần 2"
+  },
+  {
+    "cameraId": "63ae7829bfd3d90017e8f1ac",
+    "locationName": "Nguyễn Tất Thành - Cầu Tân Thuận 1"
+  },
+  {
+    "cameraId": "63ae78ccbfd3d90017e8f1f9",
+    "locationName": "Trần Hưng Đạo – Nguyễn Biểu 2"
+  },
+  {
+    "cameraId": "595dd9ac3dcfc400106f28b4",
+    "locationName": "Quốc lộ 1 - BQB Trước UBND Q12 (hướng đi An Sương)"
+  },
+  {
+    "cameraId": "63b54d27bfd3d90017ea7ae5",
+    "locationName": "Xa lộ Hà Nội - Đường D1"
+  },
+  {
+    "cameraId": "587654d3b807da0011e33d36",
+    "locationName": "Võ Chí Công - Đường số 2"
+  },
+  {
+    "cameraId": "5990ffdbbec3b90016d2ad2d",
+    "locationName": "Đường hầm (Đầu hầm Tp Thủ Đức)"
+  },
+  {
+    "cameraId": "5a8259035058170011f6eacf",
+    "locationName": "Nguyễn Văn Linh - Nguyễn Hữu Thọ (1)"
+  },
+  {
+    "cameraId": "58744f1fb807da0011e33cbd",
+    "locationName": "Hưng Phú - Chánh Hưng 1"
+  },
+  {
+    "cameraId": "63b54cffbfd3d90017ea7ad0",
+    "locationName": "Tỉnh lộ 43 - Chân cầu Gò Dưa"
+  },
+  {
+    "cameraId": "589b4644b3bf7600110283ce",
+    "locationName": "Hà Huy Giáp - Cầu Phú Long 1"
+  },
+  {
+    "cameraId": "5d8cd8e2766c880017188958",
+    "locationName": "Phạm Văn Đồng - Hiệp Bình (hướng đi Sân bay)"
+  },
+  {
+    "cameraId": "63b54fe4bfd3d90017ea7ca2",
+    "locationName": "Nút giao Mỹ Thủy (5)"
+  },
+  {
+    "cameraId": "63b54938bfd3d90017ea77f6",
+    "locationName": "Nguyễn Duy Trinh - Lã Xuân Oai"
+  },
+  {
+    "cameraId": "5a6086e88576340017d0668a",
+    "locationName": "QL1-Cty Pouyuen (1)"
+  },
+  {
+    "cameraId": "5b6c15b8ca0577001163fe39",
+    "locationName": "Nguyễn Hữu Cảnh 3 (Hầm chui)"
+  },
+  {
+    "cameraId": "586e2995f9fab7001111b0b5",
+    "locationName": "Ung Văn Khiêm - Nguyễn Gia Trí (D2)"
+  },
+  {
+    "cameraId": "5d8cd98d766c88001718895a",
+    "locationName": "Phạm Văn Đồng - Tô Ngọc Vân (hướng đi Bình Dương)"
+  },
+  {
+    "cameraId": "56df8198c062921100c143dd",
+    "locationName": "Nút giao Thủ Đức (Võ Văn Ngân)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481282",
+    "locationName": "Mai Chí Thọ - Đồng Văn Cống 2"
+  },
+  {
+    "cameraId": "58df4c2bdc195800111e04b7",
+    "locationName": "Thăng Long - Phan Thúc Duyện"
+  },
+  {
+    "cameraId": "5a6066608576340017d06617",
+    "locationName": "Quang Trung - Tân Sơn"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48127e",
+    "locationName": "Mai Chí Thọ - Xa lộ Hà Nội (Cát Lái cầu B)"
+  },
+  {
+    "cameraId": "595dd3a63dcfc400106f28a7",
+    "locationName": "Quốc lộ 1 - Đường Tô Ngọc Vân 1"
+  },
+  {
+    "cameraId": "56f8d743025e9511002786c5",
+    "locationName": "Trường Sơn - Ga Quốc Nội 1"
+  },
+  {
+    "cameraId": "5a8266105058170011f6eadf",
+    "locationName": "Nguyễn Văn Linh - Quốc lộ 50 (2)"
+  },
+  {
+    "cameraId": "5a82602c5058170011f6ead9",
+    "locationName": "Vĩnh Lộc - Nguyễn Thị Tú 1"
+  },
+  {
+    "cameraId": "585b2980c3f96200127dc502",
+    "locationName": "Huỳnh Tấn Phát - Lưu Trọng Lư 2"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481284",
+    "locationName": "Nguyễn Thị Minh Khai - Nguyễn Thiện Thuật"
+  },
+  {
+    "cameraId": "63ae7a08bfd3d90017e8f285",
+    "locationName": "Ba Tháng Hai - Lê Hồng Phong 1"
+  },
+  {
+    "cameraId": "587ee7d7b807da0011e33d55",
+    "locationName": "Phan Đăng Lưu - Nơ Trang Long"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad12",
+    "locationName": "Nam Kỳ Khởi Nghĩa - Lê Lợi"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad17",
+    "locationName": "Nguyễn Thị Minh Khai - Hai Bà Trưng"
+  },
+  {
+    "cameraId": "63ae7893bfd3d90017e8f1e1",
+    "locationName": "Nguyễn Tất Thành - Lê Văn Linh"
+  },
+  {
+    "cameraId": "5a823ba75058170011f6ea9e",
+    "locationName": "Trần Hưng Đạo - Nguyễn Thái Học 1"
+  },
+  {
+    "cameraId": "56df8544c062921100c143e6",
+    "locationName": "Trường Sơn - Ga Quốc Tế"
+  },
+  {
+    "cameraId": "595ddb493dcfc400106f28b6",
+    "locationName": "Quốc lộ 1 - Cầu vượt Tân Thới Hiệp 2"
+  },
+  {
+    "cameraId": "589b4379b3bf7600110283c9",
+    "locationName": "QL 22 - Giáp Hải"
+  },
+  {
+    "cameraId": "5a60604f8576340017d0660b",
+    "locationName": "Nguyễn Thái Sơn - Nguyễn Văn Nghi 2"
+  },
+  {
+    "cameraId": "5d8cd9cb766c88001718895c",
+    "locationName": "Phạm Văn Đồng - Tô Ngọc Vân (hướng đi Sân bay)"
+  },
+  {
+    "cameraId": "5a8256315058170011f6eac9",
+    "locationName": "Đinh Bộ Lĩnh - Nguyễn Xí"
+  },
+  {
+    "cameraId": "5ad064b498d8fc001102e26f",
+    "locationName": "Lã Xuân Oai - Cầu Tăng Long (2)"
+  },
+  {
+    "cameraId": "58af8d68bd82540010390c2e",
+    "locationName": "Nam Kỳ Khởi Nghĩa - Điện Biên Phủ 2"
+  },
+  {
+    "cameraId": "595da7783dcfc400106f2888",
+    "locationName": "Quốc lộ 1 - Đường Vườn Lài 1"
+  },
+  {
+    "cameraId": "5b728aafca0577001163ff7e",
+    "locationName": "Hồng Bàng - Châu Văn Liêm"
+  },
+  {
+    "cameraId": "63ae7966bfd3d90017e8f240",
+    "locationName": "Cách Mạng Tháng Tám - Tô Hiến Thành"
+  },
+  {
+    "cameraId": "5a607fa38576340017d06671",
+    "locationName": "QL1-KCN Vĩnh Lộc (2) - Hướng An Lạc"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad21",
+    "locationName": "Nút giao Ngã sáu Nguyễn Tri Phương"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481289",
+    "locationName": "Võ Văn Kiệt - Cầu Ông Lãnh 2"
+  },
+  {
+    "cameraId": "58ad69c4bd82540010390be7",
+    "locationName": "Nút giao Phú Nhuận 2 (Phan Đăng Lưu)"
+  },
+  {
+    "cameraId": "63b54898bfd3d90017ea77ae",
+    "locationName": "Nguyễn Duy Trinh - Bưng Ông Thoàn"
+  },
+  {
+    "cameraId": "63b549b8bfd3d90017ea782c",
+    "locationName": "Đỗ Xuân Hợp - Tây Hòa"
+  },
+  {
+    "cameraId": "56f8e7c9025e9511002786d1",
+    "locationName": "Đường hầm (Đầu hầm Tp Thủ Đức)"
+  },
+  {
+    "cameraId": "5a823bd55058170011f6eaa0",
+    "locationName": "Trần Hưng Đạo - Nguyễn Thái Học 2"
+  },
+  {
+    "cameraId": "5a6085688576340017d06684",
+    "locationName": "QL1-Tỉnh lộ 10 (3)"
+  },
+  {
+    "cameraId": "595dd7693dcfc400106f28b0",
+    "locationName": "Quốc lộ 1 - Đường Lê Thị Riêng 1"
+  },
+  {
+    "cameraId": "59ca329d02eb490011a0a410",
+    "locationName": "QL1 - Nút giao An Lạc 1"
+  },
+  {
+    "cameraId": "63b54996bfd3d90017ea781a",
+    "locationName": "Đỗ Xuân Hợp - Dương Đình Hội"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481283",
+    "locationName": "Mai Chí Thọ - Trần Não 1"
+  },
+  {
+    "cameraId": "5d8cdcf0766c880017188972",
+    "locationName": "Nút giao Lê Đại Hành 1 (Bình Thới)"
+  },
+  {
+    "cameraId": "58af9670bd82540010390c34",
+    "locationName": "Phạm Văn Đồng - Phan Văn Trị 1"
+  },
+  {
+    "cameraId": "56df8274c062921100c143df",
+    "locationName": "Xa Lộ Hà Nội - Tây Hòa 1"
+  },
+  {
+    "cameraId": "5a6061fd8576340017d06613",
+    "locationName": "Quang Trung - Trưng Nữ Vương"
+  },
+  {
+    "cameraId": "591c6cdfa6bfb500119400aa",
+    "locationName": "Cầu Rạch Dơi (Hướng LA)"
+  },
+  {
+    "cameraId": "595da7d93dcfc400106f288a",
+    "locationName": "Quốc lộ 1 - Đường Vườn Lài 2"
+  },
+  {
+    "cameraId": "589b39d9b3bf7600110283c1",
+    "locationName": "QL 22 - Nguyễn Ảnh Thủ 2"
+  },
+  {
+    "cameraId": "5d8cd326766c88001718893e",
+    "locationName": "Nút giao Cây Gõ 3 (dạ cầu)"
+  },
+  {
+    "cameraId": "587461c1b807da0011e33cc8",
+    "locationName": "Quốc lộ 1 - KCX Linh Trung 2"
+  },
+  {
+    "cameraId": "63ae76afbfd3d90017e8f106",
+    "locationName": "Khánh Hội - Đường số 41"
+  },
+  {
+    "cameraId": "63b661a3bfd3d90017eaa520",
+    "locationName": "Nguyễn Tất Thành - Cảng SG (Q4-Q7)"
+  },
+  {
+    "cameraId": "583f926761cfea0012cf68f1",
+    "locationName": "Nguyễn Thị Định - Cổng A Cảng Cát Lái"
+  },
+  {
+    "cameraId": "56df81d8c062921100c143de",
+    "locationName": "Nút giao Thủ Đức (trên cầu)"
+  },
+  {
+    "cameraId": "63ae73cebfd3d90017e8f00d",
+    "locationName": "Nguyễn Thị Minh Khai - Cống Quỳnh"
+  },
+  {
+    "cameraId": "5a6084898576340017d06680",
+    "locationName": "QL1 - Tân Tạo Chợ Đệm 3"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48129b",
+    "locationName": "Võ Văn Kiệt - Hồ Học Lãm 2"
+  },
+  {
+    "cameraId": "587447b4b807da0011e33ca0",
+    "locationName": "Nguyễn Văn Linh - Cầu Ông Lớn 2 làn"
+  },
+  {
+    "cameraId": "586e2492f9fab7001111b0ab",
+    "locationName": "Nguyễn Văn Trỗi - Nguyễn Đình Chính"
+  },
+  {
+    "cameraId": "587479b1b807da0011e33cf9",
+    "locationName": "Trường Chinh - Tây Thạnh 2"
+  },
+  {
+    "cameraId": "62da3e620637a10017d70720",
+    "locationName": "Quốc Lộ 13 - Nguyễn Thị Thi 2"
+  },
+  {
+    "cameraId": "5b0b7aba0e517b00119fd800",
+    "locationName": "Nguyễn Văn Cừ - Trần Hưng Đạo 1"
+  },
+  {
+    "cameraId": "63b54909bfd3d90017ea77e4",
+    "locationName": "Nguyễn Duy Trinh - Võ Chí Công 2"
+  },
+  {
+    "cameraId": "595ddbbf3dcfc400106f28b8",
+    "locationName": "Quốc lộ 1 - Cầu vượt Tân Thới Hiệp 3"
+  },
+  {
+    "cameraId": "5d9de43b766c880017188cb6",
+    "locationName": "Cao tốc LTDG - Đỗ Xuân Hợp 1"
+  },
+  {
+    "cameraId": "5a8250cc5058170011f6eaba",
+    "locationName": "Lê Văn Việt - Đình Phong Phú 1"
+  },
+  {
+    "cameraId": "595f8f0b3dcfc400106f28f4",
+    "locationName": "Quốc lộ 1 - BQB Cầu vượt Quang Trung B (hướng Ngã 4 Ga)"
+  },
+  {
+    "cameraId": "5b0b7e1c0e517b00119fd80b",
+    "locationName": "Nguyễn Duy Trinh (Chợ Long Trường)"
+  },
+  {
+    "cameraId": "5d8cd3b7766c880017188942",
+    "locationName": "Lê Hồng Phong - Nguyễn Trãi"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48129a",
+    "locationName": "Võ Văn Kiệt - Hồ Học Lãm 1"
+  },
+  {
+    "cameraId": "58744810b807da0011e33ca2",
+    "locationName": "Nguyễn Văn Linh - Cầu Ông Lớn 3 làn"
+  },
+  {
+    "cameraId": "63b54968bfd3d90017ea7808",
+    "locationName": "Nguyễn Duy Trinh - Đỗ Xuân Hợp"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48127f",
+    "locationName": "Mai Chí Thọ - Lương Định Của 1"
+  },
+  {
+    "cameraId": "58df5016dc195800111e04bd",
+    "locationName": "Yên Thế - Hồng Hà"
+  },
+  {
+    "cameraId": "5d8cdac3766c880017188962",
+    "locationName": "Trường Chinh - Đồng Đen"
+  },
+  {
+    "cameraId": "587ef5dfb807da0011e33d59",
+    "locationName": "Nguyễn Văn Trỗi - Huỳnh Văn Bánh"
+  },
+  {
+    "cameraId": "595dc2f03dcfc400106f2896",
+    "locationName": "Quốc lộ 1 - Rạch Láng Le 2"
+  },
+  {
+    "cameraId": "5d8cdbdc766c88001718896a",
+    "locationName": "Hoàng Văn Thụ - Cộng Hòa"
+  },
+  {
+    "cameraId": "63b54d5abfd3d90017ea7afe",
+    "locationName": "Đường số 1 - Cảng Phước Long"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad13",
+    "locationName": "Pasteur - Lê Thánh Tôn"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acf2",
+    "locationName": "Điện Biên Phủ - Cách Mạng Tháng Tám"
+  },
+  {
+    "cameraId": "5a824e465058170011f6eab4",
+    "locationName": "Quang Trung - Lê Văn Thọ (2)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481291",
+    "locationName": "Võ Văn Kiệt - Nguyễn Tri Phương 1"
+  },
+  {
+    "cameraId": "584e71cb61cfea0012cf694b",
+    "locationName": "Quốc lộ 1 - KCN Vĩnh Lộc 3"
+  },
+  {
+    "cameraId": "63b54c93bfd3d90017ea7ab8",
+    "locationName": "Lê Văn Chí - Linh Trung"
+  },
+  {
+    "cameraId": "595f874d3dcfc400106f28ec",
+    "locationName": "Quốc lộ 1 - Nguyễn Văn Quá 2"
+  },
+  {
+    "cameraId": "5b19d34faf4ff60011d6ea52",
+    "locationName": "Nguyễn Tất Thành - Tôn Đản"
+  },
+  {
+    "cameraId": "63b3c9bfbfd3d90017e9b039",
+    "locationName": "Kha Vạn Cân - Đường Số 2"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acf4",
+    "locationName": "Nút giao Ngã bảy Lý Thái Tổ"
+  },
+  {
+    "cameraId": "58af99abbd82540010390c39",
+    "locationName": "Nguyễn Hữu Cảnh - Nguyễn Bỉnh Khiêm"
+  },
+  {
+    "cameraId": "595f86c43dcfc400106f28ea",
+    "locationName": "Quốc lộ 1 - Nguyễn Văn Quá 1"
+  },
+  {
+    "cameraId": "59ca321b02eb490011a0a40d",
+    "locationName": "QL1 - Cầu An Lập"
+  },
+  {
+    "cameraId": "5a82439f5058170011f6eaa9",
+    "locationName": "Nguyễn Biểu - Cầu Chữ Y"
+  },
+  {
+    "cameraId": "58d7c20ac1e33c00112b321c",
+    "locationName": "Phạm Văn Đồng - Phan Văn Trị 2"
+  },
+  {
+    "cameraId": "589d0b74b3bf7600110283d4",
+    "locationName": "Cầu Sài Gòn 4 (Thủ Đức 1)"
+  },
+  {
+    "cameraId": "56df807bc062921100c143da",
+    "locationName": "Trường Chinh - Âu Cơ"
+  },
+  {
+    "cameraId": "586e266ef9fab7001111b0b0",
+    "locationName": "Trường Chinh - Phạm Văn Bạch 1"
+  },
+  {
+    "cameraId": "63ae7a74bfd3d90017e8f2c7",
+    "locationName": "Tô Hiến Thành – Sư Vạn Hạnh"
+  },
+  {
+    "cameraId": "59d3414302eb490011a0a610",
+    "locationName": "Xa Lộ Hà Nội - Đường 120"
+  },
+  {
+    "cameraId": "63ae7a9cbfd3d90017e8f303",
+    "locationName": "Điện Biên Phủ – Cao Thắng"
+  },
+  {
+    "cameraId": "5a6085188576340017d06682",
+    "locationName": "QL1-Tỉnh lộ 10 (2)"
+  },
+  {
+    "cameraId": "58d8ebd2dc195800111e0429",
+    "locationName": "Cao tốc LTDG - Cầu Bà Dạt 2"
+  },
+  {
+    "cameraId": "5a606a0f8576340017d0661e",
+    "locationName": "Nơ Trang Long - Nguyễn Xí"
+  },
+  {
+    "cameraId": "591c6467a6bfb50011940096",
+    "locationName": "Cầu Rạch Tôm (Long An)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481286",
+    "locationName": "Mai Chí Thọ - Nguyễn Cơ Thạch 2"
+  },
+  {
+    "cameraId": "595d9b3b3dcfc400106f287e",
+    "locationName": "Quốc lộ 1 - An Phú Đông 12 (1)"
+  },
+  {
+    "cameraId": "58df50ffdc195800111e04c0",
+    "locationName": "Cộng Hòa - Thăng Long"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad1a",
+    "locationName": "Pasteur - Lê Duẩn"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad0b",
+    "locationName": "Nam Kỳ Khởi Nghĩa - Lý Tự Trọng"
+  },
+  {
+    "cameraId": "5a6087858576340017d0668e",
+    "locationName": "QL1-Trạm Biến Áp 500Kv Phú Lâm"
+  },
+  {
+    "cameraId": "587464e2b807da0011e33cd9",
+    "locationName": "Cầu vượt nút giao thông Gò Dưa"
+  },
+  {
+    "cameraId": "58afdbaebd82540010390c48",
+    "locationName": "Quốc lộ 1 - Cao tốc Trung Lương"
+  },
+  {
+    "cameraId": "63b54c51bfd3d90017ea7aa0",
+    "locationName": "Đường số 1 - Nguyễn Văn Bá"
+  },
+  {
+    "cameraId": "58ad6214bd82540010390be2",
+    "locationName": "Cộng Hòa - Hoàng Hoa Thám"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad09",
+    "locationName": "Trường Chinh - Hoàng Hoa Thám"
+  },
+  {
+    "cameraId": "58af8a0bbd82540010390c25",
+    "locationName": "Nam Kỳ Khởi Nghĩa - Võ Thị Sáu"
+  },
+  {
+    "cameraId": "5b0b74280e517b00119fd7f9",
+    "locationName": "Nguyễn Tất Thành - Cảng Sài Gòn"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48128e",
+    "locationName": "Võ Văn Kiệt - Cầu Chữ Y 2"
+  },
+  {
+    "cameraId": "587ef859b807da0011e33d5b",
+    "locationName": "Phạm Văn Đồng - Lê Quang Định 2"
+  },
+  {
+    "cameraId": "58744e97b807da0011e33cb9",
+    "locationName": "Dương Bá Trạc - Tạ Quang Bửu 2"
+  },
+  {
+    "cameraId": "63b54a48bfd3d90017ea7850",
+    "locationName": "Lã Xuân Oai - Lò Lu"
+  },
+  {
+    "cameraId": "59c8adf202eb490011a0a352",
+    "locationName": "Phan Văn Hớn -> An Sương"
+  },
+  {
+    "cameraId": "58c2717ed56e930010a39ac0",
+    "locationName": "Quốc Lộ 50 - Cầu Nhị Thiên Đường 2"
+  },
+  {
+    "cameraId": "58afcd9bbd82540010390c41",
+    "locationName": "Quốc lộ 1 - Nguyễn Hữu Trí 2"
+  },
+  {
+    "cameraId": "63b54a9ebfd3d90017ea7911",
+    "locationName": "Nguyễn Xiển - Nguyễn Văn Tăng"
+  },
+  {
+    "cameraId": "5bbc7163ca0577001164127f",
+    "locationName": "Lê Văn Lương - Cầu Long Kiểng (HCM)"
+  },
+  {
+    "cameraId": "5b6005b6fd4edb0019c7db25",
+    "locationName": "Trần Hưng Đạo - Nguyễn Biểu"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48129c",
+    "locationName": "Võ Văn Kiệt - Quốc Lộ 1"
+  },
+  {
+    "cameraId": "587c8661b807da0011e33d43",
+    "locationName": "Lê Văn Sỹ - Hoàng Văn Thụ"
+  },
+  {
+    "cameraId": "5b632a79fd4edb0019c7dc0f",
+    "locationName": "Nguyễn Tri Phương - Trần Hưng Đạo"
+  },
+  {
+    "cameraId": "595dd4133dcfc400106f28a9",
+    "locationName": "Quốc lộ 1 - Đường Tô Ngọc Vân 2"
+  },
+  {
+    "cameraId": "5ad0644698d8fc001102e26b",
+    "locationName": "Lã Xuân Oai - Cầu Tăng Long (1)"
+  },
+  {
+    "cameraId": "5d8cd7bb766c880017188952",
+    "locationName": "Phạm Văn Đồng - Đường 20 (hướng đi Thủ Đức)"
+  },
+  {
+    "cameraId": "56df857fc062921100c143e7",
+    "locationName": "Trần Quốc Hoàn - Phan Thúc Duyện"
+  },
+  {
+    "cameraId": "58af9a07bd82540010390c3b",
+    "locationName": "Tôn Đức Thắng - Lê Duẩn"
+  },
+  {
+    "cameraId": "63ae75debfd3d90017e8f082",
+    "locationName": "Cao Thắng – Võ Văn Tần 1"
+  },
+  {
+    "cameraId": "5a824dc05058170011f6eab2",
+    "locationName": "Quang Trung - Lê Văn Thọ (1)"
+  },
+  {
+    "cameraId": "5d8cd49f766c880017188944",
+    "locationName": "Nguyễn Tri Phương - Nguyễn Trãi"
+  },
+  {
+    "cameraId": "5a606c078576340017d06624",
+    "locationName": "Quốc lộ 13 - Hiệp Bình"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acf3",
+    "locationName": "Ba Tháng Hai - Lý Thái Tổ"
+  },
+  {
+    "cameraId": "591c67dea6bfb500119400a1",
+    "locationName": "Cầu Rạch Đĩa (HCM)"
+  },
+  {
+    "cameraId": "5a8254b05058170011f6eac3",
+    "locationName": "Xô Viết Nghệ Tĩnh - Nguyễn Xí 1"
+  },
+  {
+    "cameraId": "63ae77bfbfd3d90017e8f18f",
+    "locationName": "Nguyễn Tất Thành - Cầu Tân Thuận 2"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad1b",
+    "locationName": "Hoàng Diệu - Cầu Ông Lãnh"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad0a",
+    "locationName": "Hoàng Văn Thụ - Xuân Diệu"
+  },
+  {
+    "cameraId": "58744e3eb807da0011e33cb7",
+    "locationName": "Dương Bá Trạc - Tạ Quang Bửu 1"
+  },
+  {
+    "cameraId": "58744dd9b807da0011e33cb5",
+    "locationName": "Quốc lộ 50 - Tạ Quang Bửu"
+  },
+  {
+    "cameraId": "56df8416c062921100c143e4",
+    "locationName": "Nút giao Nguyễn Thái Sơn 2 (Nguyễn Kiệm)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481290",
+    "locationName": "Võ Văn Kiệt - An Bình"
+  },
+  {
+    "cameraId": "58af8b69bd82540010390c28",
+    "locationName": "Nam Kỳ Khởi Nghĩa - Điện Biên Phủ 1"
+  },
+  {
+    "cameraId": "589b3ceeb3bf7600110283c3",
+    "locationName": "QL 22 - Nguyễn Văn Bứa 1"
+  },
+  {
+    "cameraId": "595dcab53dcfc400106f289d",
+    "locationName": "Quốc lộ 1 - BQB Trước bến xe Ngã 4 Ga (hướng đi Bình Phước)"
+  },
+  {
+    "cameraId": "58ad7291bd82540010390bf9",
+    "locationName": "Phan Đăng Lưu - Nguyễn Văn Đậu"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad05",
+    "locationName": "Điện Biên Phủ - Đinh Tiên Hoàng"
+  },
+  {
+    "cameraId": "595dd4f43dcfc400106f28ab",
+    "locationName": "Quốc lộ 1 - Cầu Bến Cát 1"
+  },
+  {
+    "cameraId": "5a607f078576340017d0666f",
+    "locationName": "QL1-Phan Văn Hớn (H.Hoc Mon)"
+  },
+  {
+    "cameraId": "5a824ee15058170011f6eab6",
+    "locationName": "Nguyễn Oanh - Phan Văn Trị (1)"
+  },
+  {
+    "cameraId": "5b632b60fd4edb0019c7dc12",
+    "locationName": "Hồng Bàng - Ngô Quyền 1"
+  },
+  {
+    "cameraId": "587c8d97b807da0011e33d49",
+    "locationName": "Hoàng Văn Thụ - Nguyễn Văn Trỗi 2"
+  },
+  {
+    "cameraId": "59414c883dcfc400106f260b",
+    "locationName": "Cộng Hòa - Bình Giã"
+  },
+  {
+    "cameraId": "56df82d4c062921100c143e0",
+    "locationName": "Xa Lộ Hà Nội - Tây Hòa 2"
+  },
+  {
+    "cameraId": "58affc6017139d0010f35cc8",
+    "locationName": "Phạm Văn Đồng - Quốc Lộ 13 (1)"
+  },
+  {
+    "cameraId": "587463bab807da0011e33cd3",
+    "locationName": "Quốc lộ 1 - Lê Thị Hoa"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad1c",
+    "locationName": "Hoàng Diệu - Nguyễn Tất Thành"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481287",
+    "locationName": "Võ Văn Kiệt - Ký Con"
+  },
+  {
+    "cameraId": "5d8cdb4b766c880017188966",
+    "locationName": "Hoàng Văn Thụ - Út Tịch"
+  },
+  {
+    "cameraId": "58b57a6c17139d0010f35d65",
+    "locationName": "Xa Lộ Hà Nội - Đường D13"
+  },
+  {
+    "cameraId": "63b66051bfd3d90017eaa4a3",
+    "locationName": "Nơ Trang Long - Phan Văn Trị"
+  },
+  {
+    "cameraId": "62da3e390637a10017d706ff",
+    "locationName": "Quốc Lộ 13 - Nguyễn Thị Thi 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad10",
+    "locationName": "Cách Mạng Tháng Tám - Nguyễn Thị Minh Khai"
+  },
+  {
+    "cameraId": "56f11ac33ac17b11001c504c",
+    "locationName": "Nguyễn Văn Trỗi - Hoàng Văn Thụ 1"
+  },
+  {
+    "cameraId": "631813ebc9eae60017a196b0",
+    "locationName": "Cầu Sài Gòn 6 (Thủ Đức)"
+  },
+  {
+    "cameraId": "587475abb807da0011e33cea",
+    "locationName": "Trường Sơn - Cửu Long"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad0e",
+    "locationName": "Cách Mạng Tháng Tám - Nguyễn Đình Chiểu"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad11",
+    "locationName": "Nguyễn Đình Chiểu - Trương Định"
+  },
+  {
+    "cameraId": "587478d8b807da0011e33cf3",
+    "locationName": "Nút giao Bảy Hiền 1 (Cách Mạng Tháng Tám)"
+  },
+  {
+    "cameraId": "591c64caa6bfb50011940098",
+    "locationName": "Cầu Rạch Tôm (HCM)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acf8",
+    "locationName": "Ba Tháng Hai - Cao Thắng"
+  },
+  {
+    "cameraId": "591c6833a6bfb500119400a3",
+    "locationName": "Cầu Rạch Đĩa (LA)"
+  },
+  {
+    "cameraId": "63ae7938bfd3d90017e8f226",
+    "locationName": "Quốc Lộ 1- Công ty Pouyen 3 (Cổng)"
+  },
+  {
+    "cameraId": "63b664edbfd3d90017eaaa24",
+    "locationName": "CT Trung Lương - Võ Trần Chí 2"
+  },
+  {
+    "cameraId": "56df83d8c062921100c143e3",
+    "locationName": "Nút giao Nguyễn Thái Sơn 1 (Hồng Hà)"
+  },
+  {
+    "cameraId": "59ca308302eb490011a0a403",
+    "locationName": "QL1 - Tân Tạo Chợ Đệm 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acfd",
+    "locationName": "Lý Chính Thắng - Nguyễn Thông"
+  },
+  {
+    "cameraId": "56df8159c062921100c143dc",
+    "locationName": "Nút giao Thủ Đức (Lê Văn Việt)"
+  },
+  {
+    "cameraId": "587ef2e4b807da0011e33d57",
+    "locationName": "Nguyễn Văn Trỗi - Nguyễn Trọng Tuyển"
+  },
+  {
+    "cameraId": "589b3f7db3bf7600110283c6",
+    "locationName": "QL 22 - Nguyễn Văn Bứa 2"
+  },
+  {
+    "cameraId": "649da77ea6068200171a6dd4",
+    "locationName": "Tôn Đức Thắng - Công trường Mê Linh"
+  },
+  {
+    "cameraId": "63b3c59fbfd3d90017e9ace8",
+    "locationName": "Vĩnh Lộc - Quách Điêu"
+  },
+  {
+    "cameraId": "58b5510817139d0010f35d4e",
+    "locationName": "Phạm Văn Đồng - Quốc Lộ 13 (2)"
+  },
+  {
+    "cameraId": "5a824c905058170011f6eab0",
+    "locationName": "Nút giao Bốn Xã 2 (Hòa Bình)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad16",
+    "locationName": "Nguyễn Thị Minh Khai - Pasteur"
+  },
+  {
+    "cameraId": "63ae7c73bfd3d90017e8f3ed",
+    "locationName": "Lý Thường Kiệt - Tô Hiến Thành 2"
+  },
+  {
+    "cameraId": "586e1d4ef9fab7001111b0a2",
+    "locationName": "Cộng Hòa - Đường C 18"
+  },
+  {
+    "cameraId": "63195512c9eae60017a1c279",
+    "locationName": "Nguyễn Trãi - Cống Quỳnh 1"
+  },
+  {
+    "cameraId": "59ca2ecb02eb490011a0a3f6",
+    "locationName": "QL1 - Trạm thu phí AS-AL 1"
+  },
+  {
+    "cameraId": "5d8cdc9d766c880017188970",
+    "locationName": "Lạc Long Quân - Âu Cơ"
+  },
+  {
+    "cameraId": "58d8ec0adc195800111e042b",
+    "locationName": "Cao tốc LTDG - Cầu Bà Dạt 1"
+  },
+  {
+    "cameraId": "595dc5ac3dcfc400106f2898",
+    "locationName": "Quốc lộ 1 - BQB Đường dẫn cầu vượt Ngã 4 Ga (hướng đi An Sương)"
+  },
+  {
+    "cameraId": "5a8254f25058170011f6eac5",
+    "locationName": "Xô Viết Nghệ Tĩnh - Nguyễn Xí 2"
+  },
+  {
+    "cameraId": "63ae7c53bfd3d90017e8f3d8",
+    "locationName": "Lý Thường Kiệt - Tô Hiến Thành 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad20",
+    "locationName": "Hồng Bàng - Ngô Quyền 2"
+  },
+  {
+    "cameraId": "5874796db807da0011e33cf7",
+    "locationName": "Trường Chinh - Tây Thạnh 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acfa",
+    "locationName": "Nút giao Công Trường Dân Chủ"
+  },
+  {
+    "cameraId": "58746536b807da0011e33cdc",
+    "locationName": "Cầu vượt Bình Phước 1"
+  },
+  {
+    "cameraId": "5a8251575058170011f6eabc",
+    "locationName": "Lê Văn Việt - Đình Phong Phú 2"
+  },
+  {
+    "cameraId": "584e80a761cfea0012cf6989",
+    "locationName": "Nguyễn Huệ 24"
+  },
+  {
+    "cameraId": "5a6060a88576340017d0660d",
+    "locationName": "Nguyễn Thái Sơn - Phan Văn Trị1"
+  },
+  {
+    "cameraId": "63b65f33bfd3d90017eaa405",
+    "locationName": "Nguyễn Hữu Cảnh - Ngô Tất Tố 3 (Nhánh chính cầu Thủ Thiêm 1)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad1e",
+    "locationName": "Pasteur - Hàm Nghi"
+  },
+  {
+    "cameraId": "5a6061868576340017d06611",
+    "locationName": "Quang Trung - Bà Triệu"
+  },
+  {
+    "cameraId": "5875cb72b807da0011e33d0c",
+    "locationName": "Lê Văn Sỹ - Nguyễn Trọng Tuyển"
+  },
+  {
+    "cameraId": "589b3705b3bf7600110283bd",
+    "locationName": "QL 22 - Nguyễn Ảnh Thủ 1"
+  },
+  {
+    "cameraId": "63ae7759bfd3d90017e8f162",
+    "locationName": "Nguyễn Tất Thành - Cầu Khánh Hội"
+  },
+  {
+    "cameraId": "63ae7709bfd3d90017e8f135",
+    "locationName": "Hoàng Diệu - Đoàn Văn Bơ 1"
+  },
+  {
+    "cameraId": "649da419a6068200171a6c90",
+    "locationName": "Nguyễn Chí Thanh - Ngô Quyền"
+  },
+  {
+    "cameraId": "58afccadbd82540010390c3f",
+    "locationName": "Quốc lộ 1 - Nguyễn Hữu Trí 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acf7",
+    "locationName": "Nút giao Ngã sáu Cộng Hòa"
+  },
+  {
+    "cameraId": "5d9ddd49766c880017188c94",
+    "locationName": "Nút giao Hàng Xanh 1 (Viện Máy tính)"
+  },
+  {
+    "cameraId": "5d8cd767766c880017188950",
+    "locationName": "Phạm Văn Đồng - Nguyễn Xí (hướng đi Sân bay)"
+  },
+  {
+    "cameraId": "595f8d813dcfc400106f28f2",
+    "locationName": "Quốc lộ 1 - Quang Trung 2 (hướng đi An Sương)"
+  },
+  {
+    "cameraId": "5874656eb807da0011e33cde",
+    "locationName": "Cầu vượt Bình Phước 2"
+  },
+  {
+    "cameraId": "5abbb6d698d8fc001102dfc8",
+    "locationName": "Nguyễn Văn Linh - Nguyễn Lương Bằng (1)"
+  },
+  {
+    "cameraId": "587c87e8b807da0011e33d45",
+    "locationName": "Lê Văn Sỹ - Phạm Văn Hai"
+  },
+  {
+    "cameraId": "5d8cdd26766c880017188974",
+    "locationName": "Nút giao Lê Đại Hành 2 (Lê Đại Hành)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481296",
+    "locationName": "Võ Văn Kiệt - Cao Văn Lầu"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad03",
+    "locationName": "Nam Kỳ Khởi Nghĩa - Nguyễn Đình Chiểu"
+  },
+  {
+    "cameraId": "5874461db807da0011e33c9c",
+    "locationName": "Đồng Văn Cống - Cầu Giồng Ông Tố 2"
+  },
+  {
+    "cameraId": "63ae777cbfd3d90017e8f177",
+    "locationName": "Nguyễn Tất Thành - Đoàn Như Hài"
+  },
+  {
+    "cameraId": "631828cac9eae60017a19f50",
+    "locationName": "Nguyễn Thị Minh Khai - Nguyễn Bỉnh Khiêm"
+  },
+  {
+    "cameraId": "63b3c2fbbfd3d90017e9abbf",
+    "locationName": "Cầu Sài Gòn 1"
+  },
+  {
+    "cameraId": "58d7c2e6c1e33c00112b321e",
+    "locationName": "Trường Chinh - Phan Văn Hớn 1 (Q12-HM)"
+  },
+  {
+    "cameraId": "63b54ad1bfd3d90017ea7974",
+    "locationName": "Võ Chí Công - Liên Phường 1"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48129e",
+    "locationName": "Đồng Văn Cống - Phan Văn Đáng"
+  },
+  {
+    "cameraId": "5d9dddb9766c880017188c96",
+    "locationName": "Nút giao Hàng Xanh 2 (ĐH Hồng Bàng)"
+  },
+  {
+    "cameraId": "5d8cd372766c880017188940",
+    "locationName": "Nút giao Cây Gõ 2 (Minh Phụng)"
+  },
+  {
+    "cameraId": "5ad06a0d98d8fc001102e27b",
+    "locationName": "Vĩnh Lộc - Nguyễn Thị Tú 2"
+  },
+  {
+    "cameraId": "5a60839c8576340017d0667c",
+    "locationName": "QL1 - Hương Lộ 2 (2)"
+  },
+  {
+    "cameraId": "63b65f64bfd3d90017eaa41f",
+    "locationName": "Xô Viết Nghệ Tĩnh - Đường D5"
+  },
+  {
+    "cameraId": "58746371b807da0011e33cd1",
+    "locationName": "Quốc lộ 1 - Đường 14"
+  },
+  {
+    "cameraId": "63bd1e95bfd3d90017ec3cd5",
+    "locationName": "Nguyễn Lương Bằng - Hoàng Quốc Việt"
+  },
+  {
+    "cameraId": "63ae7cd3bfd3d90017e8f408",
+    "locationName": "Lạc Long Quân - Ông Ích Khiêm"
+  },
+  {
+    "cameraId": "5d8cd70e766c88001718894e",
+    "locationName": "Phạm Văn Đồng - Nguyễn Xí (hướng đi Thủ Đức)"
+  },
+  {
+    "cameraId": "58b555ac17139d0010f35d59",
+    "locationName": "Tùng Thiện Vương - Cầu Nhị Thiên Đường"
+  },
+  {
+    "cameraId": "595ddc123dcfc400106f28ba",
+    "locationName": "Quốc lộ 1 - Cầu vượt Tân Thới Hiệp 1"
+  },
+  {
+    "cameraId": "587460aab807da0011e33cc2",
+    "locationName": "Quốc lộ 1 - ĐH Nông Lâm 1"
+  },
+  {
+    "cameraId": "59d3524f02eb490011a0a61b",
+    "locationName": "Cầu vượt Trạm 2 (TĐ ->Q9)"
+  },
+  {
+    "cameraId": "63b55020bfd3d90017ea7cb7",
+    "locationName": "Nút giao Mỹ Thủy (6)"
+  },
+  {
+    "cameraId": "5b19d2f9af4ff60011d6ea4f",
+    "locationName": "Nguyễn Tất Thành - Xóm Chiếu"
+  },
+  {
+    "cameraId": "5a606a958576340017d06621",
+    "locationName": "Đinh Bộ Lĩnh - Bạch Đằng 3"
+  },
+  {
+    "cameraId": "63b6617ebfd3d90017eaa50b",
+    "locationName": "Nguyễn Tất Thành - Cảng SG (Q7-Q4)"
+  },
+  {
+    "cameraId": "595f91653dcfc400106f28f6",
+    "locationName": "Quốc lộ 1 - Cầu vượt An Sương (Song hành QL 22)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48129d",
+    "locationName": "Quốc lộ 1 - Trần Đại Nghĩa"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481292",
+    "locationName": "Võ Văn Kiệt - Phạm Phú Thứ"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acff",
+    "locationName": "Hai Bà Trưng - Lý Chính Thắng"
+  },
+  {
+    "cameraId": "63b548ecbfd3d90017ea77d2",
+    "locationName": "Nguyễn Duy Trinh - Võ Chí Công 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acfb",
+    "locationName": "Điện Biên Phủ - Trương Định"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48127d",
+    "locationName": "Mai Chí Thọ - Xa lộ Hà Nội (Cát Lái cầu A)"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48128d",
+    "locationName": "Hải Thượng Lãn Ông - Cầu Chà Và"
+  },
+  {
+    "cameraId": "591c6bdba6bfb500119400a7",
+    "locationName": "Cầu Cái Tâm (Hướng HCM)"
+  },
+  {
+    "cameraId": "59ca2cac02eb490011a0a3e9",
+    "locationName": "Cầu vượt An Sương 2"
+  },
+  {
+    "cameraId": "5aab1f852d266a0017e5afd4",
+    "locationName": "Võ Chí Công - Cầu Phú Mỹ"
+  },
+  {
+    "cameraId": "5d8cda2e766c88001718895e",
+    "locationName": "Phạm Văn Đồng - Kha Vạn Cân (hướng đi Quốc lộ 1)"
+  },
+  {
+    "cameraId": "586e25e1f9fab7001111b0ae",
+    "locationName": "Trường Chinh - Tân Kỳ Tân Quý"
+  },
+  {
+    "cameraId": "5d9dde8e766c880017188c9a",
+    "locationName": "Nút giao Hàng Xanh 4 (Cầu Văn Thánh - Hàng Xanh)"
+  },
+  {
+    "cameraId": "5d9ddf0f766c880017188c9e",
+    "locationName": "Nút giao Hàng Xanh 6 (Cầu Điện Biên Phủ - Hàng Xanh)"
+  },
+  {
+    "cameraId": "63ae76ddbfd3d90017e8f11b",
+    "locationName": "Khánh Hội -Hoàng Diệu"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad14",
+    "locationName": "Lý Tự Trọng - Pasteur 2"
+  },
+  {
+    "cameraId": "63b66035bfd3d90017eaa48e",
+    "locationName": "Nơ Trang Long - Nguyễn Huy Lượng (Bệnh viện Ung Bướu)"
+  },
+  {
+    "cameraId": "585b284ac3f96200127dc500",
+    "locationName": "Huỳnh Tấn Phát - Lưu Trọng Lư 1"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481295",
+    "locationName": "Võ Văn Kiệt - Cầu Chà Và 1 (dạ cầu)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad04",
+    "locationName": "Võ Thị Sáu - Pasteur"
+  },
+  {
+    "cameraId": "5a8278f35058170011f6eaed",
+    "locationName": "Nguyễn Văn Linh - Phạm Hùng 1"
+  },
+  {
+    "cameraId": "5a6084208576340017d0667e",
+    "locationName": "QL1 - Tân Tạo Chợ Đệm 2"
+  },
+  {
+    "cameraId": "63b54aedbfd3d90017ea79c3",
+    "locationName": "Võ Chí Công - Liên Phường 2"
+  },
+  {
+    "cameraId": "5a825ab55058170011f6ead2",
+    "locationName": "Nguyễn Văn Linh - Nguyễn Hữu Thọ (2)"
+  },
+  {
+    "cameraId": "586e20a0f9fab7001111b0a7",
+    "locationName": "Nguyễn Kiệm - Hồ Văn Huê"
+  },
+  {
+    "cameraId": "5b0b7bbe0e517b00119fd806",
+    "locationName": "Nguyễn Văn Cừ - Trần Hưng Đạo 2"
+  },
+  {
+    "cameraId": "5a8255a55058170011f6eac7",
+    "locationName": "BX Miền Đông - Đinh Bộ Lĩnh 1"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481294",
+    "locationName": "Đường hầm - Đầu Quận 1"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c481280",
+    "locationName": "Mai Chí Thọ - Lương Định Của 2"
+  },
+  {
+    "cameraId": "587ed91db807da0011e33d4e",
+    "locationName": "Phan Đăng Lưu - Đinh Tiên Hoàng 2"
+  },
+  {
+    "cameraId": "63b54dcbbfd3d90017ea7ba8",
+    "locationName": "Quốc Lộ 1 - Cổng ĐH Quốc gia TPHCM"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48128a",
+    "locationName": "Võ Văn Kiệt - Trần Đình Xu 2"
+  },
+  {
+    "cameraId": "58b5752e17139d0010f35d5f",
+    "locationName": "Nam Kỳ Khởi Nghĩa -Nguyễn Thị Minh Khai 2"
+  },
+  {
+    "cameraId": "58175c81edeb6c0012a2d5c2",
+    "locationName": "Mai Chí Thọ - Trần Não 2"
+  },
+  {
+    "cameraId": "631812e6c9eae60017a19567",
+    "locationName": "Cầu Sài Gòn 11 (Bình Thạnh)"
+  },
+  {
+    "cameraId": "5ad068b198d8fc001102e278",
+    "locationName": "Quốc lộ 50 - Cầu Ông Thìn (1)"
+  },
+  {
+    "cameraId": "63ae75a3bfd3d90017e8f051",
+    "locationName": "Cống Quỳnh - Phạm Viết Chánh"
+  },
+  {
+    "cameraId": "5abbb77298d8fc001102dfce",
+    "locationName": "Nguyễn Văn Linh - Nguyễn Lương Bằng (2)"
+  },
+  {
+    "cameraId": "63bd1f48bfd3d90017ec3d19",
+    "locationName": "Huỳnh Tấn Phát - Nguyễn Thị Thập"
+  },
+  {
+    "cameraId": "58aff2c6bd82540010390c55",
+    "locationName": "Quốc lộ 1 - Đinh Đức Thiện 1"
+  },
+  {
+    "cameraId": "5b25a1dcf13cba001124e710",
+    "locationName": "Lý Tự Trọng - Pasteur 1"
+  },
+  {
+    "cameraId": "5d8cd886766c880017188956",
+    "locationName": "Phạm Văn Đồng - Hiệp Bình (hướng đi Thủ Đức)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad18",
+    "locationName": "Hai Bà Trưng - Lê Duẩn"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c4812a0",
+    "locationName": "Nguyễn Thị Định - Đường A"
+  },
+  {
+    "cameraId": "58abc0cbbd82540010390ba6",
+    "locationName": "Cầu Sài Gòn 3 (Dạ cầu Bình Thạnh)"
+  },
+  {
+    "cameraId": "58afea5dbd82540010390c4d",
+    "locationName": "Quốc lộ 1 - Bùi Thanh Khiết 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad07",
+    "locationName": "Nguyễn Văn Trỗi - Trương Quốc Dung"
+  },
+  {
+    "cameraId": "5d8cdc1d766c88001718896c",
+    "locationName": "Trường Sơn - Hậu Giang"
+  },
+  {
+    "cameraId": "5a606c758576340017d06626",
+    "locationName": "BX Miền Đông - Quốc Lộ 13 (1)"
+  },
+  {
+    "cameraId": "63b66008bfd3d90017eaa476",
+    "locationName": "Ung Văn Khiêm - Nguyễn Văn Thương (D1)"
+  },
+  {
+    "cameraId": "59ca2cf302eb490011a0a3eb",
+    "locationName": "Cầu vượt An Sương 3"
+  },
+  {
+    "cameraId": "5a82628e5058170011f6eadb",
+    "locationName": "Nguyễn Văn Linh - Quốc lộ 50 (1)"
+  },
+  {
+    "cameraId": "589b46b3b3bf7600110283d0",
+    "locationName": "Hà Huy Giáp - Cầu Phú Long 2"
+  },
+  {
+    "cameraId": "5d8cd653766c88001718894c",
+    "locationName": "Kha Vạn Cân - Võ Văn Ngân"
+  },
+  {
+    "cameraId": "58af8eb2bd82540010390c30",
+    "locationName": "Nam Kỳ Khởi Nghĩa -Nguyễn Thị Minh Khai 1"
+  },
+  {
+    "cameraId": "5b0b7d240e517b00119fd809",
+    "locationName": "Hương Lộ 2 (Số 878)"
+  },
+  {
+    "cameraId": "58746314b807da0011e33cce",
+    "locationName": "Quốc lộ 1 - Cầu vượt Linh Xuân"
+  },
+  {
+    "cameraId": "595f8d233dcfc400106f28f0",
+    "locationName": "Quốc lộ 1 - Quang Trung 1 (hướng đi Bình Phước)"
+  },
+  {
+    "cameraId": "59d34ce302eb490011a0a616",
+    "locationName": "Đỗ Xuân Hợp - Cầu Cống Đập."
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad1d",
+    "locationName": "Nguyễn Công Trứ - Calmette 2"
+  },
+  {
+    "cameraId": "63ae7c12bfd3d90017e8f3c0",
+    "locationName": "Ba Tháng Hai - Lê Đại Hành 2"
+  },
+  {
+    "cameraId": "5b0b835b0e517b00119fd80d",
+    "locationName": "Tam Bình (Số 81)"
+  },
+  {
+    "cameraId": "5b6c155aca0577001163fe36",
+    "locationName": "Nguyễn Hữu Cảnh 1 (Dạ cầu)"
+  },
+  {
+    "cameraId": "5d8cd2a3766c88001718893c",
+    "locationName": "Nút giao Cây Gõ 1 (trên cầu)"
+  },
+  {
+    "cameraId": "59c8c17602eb490011a0a37e",
+    "locationName": "KCN Vĩnh Lộc -> Phan Văn Hớn"
+  },
+  {
+    "cameraId": "58747923b807da0011e33cf5",
+    "locationName": "Nút giao Bảy Hiền 2 (Hoàng Văn Thụ)"
+  },
+  {
+    "cameraId": "63ae7af4bfd3d90017e8f32c",
+    "locationName": "Ba Tháng Hai - Lý Thường Kiệt 2"
+  },
+  {
+    "cameraId": "5875d4f8b807da0011e33d1a",
+    "locationName": "Tạ Quang Bửu - Phạm Hùng 1"
+  },
+  {
+    "cameraId": "595d92013dcfc400106f2877",
+    "locationName": "Quốc Lộ 1A - Cầu Bình Phước"
+  },
+  {
+    "cameraId": "583f976361cfea0012cf68f9",
+    "locationName": "Nguyễn Thị Định - Lê Phụng Hiểu"
+  },
+  {
+    "cameraId": "59ca2f4402eb490011a0a3f9",
+    "locationName": "QL1 - Tân Kỳ Tân Quý 2"
+  },
+  {
+    "cameraId": "586e1f18f9fab7001111b0a5",
+    "locationName": "Cộng Hòa - Trường Chinh"
+  },
+  {
+    "cameraId": "63b65f8dbfd3d90017eaa434",
+    "locationName": "Xô Viết Nghệ Tĩnh - Phan Văn Hân (Cầu Thị Nghè)"
+  },
+  {
+    "cameraId": "5d9de3c2766c880017188cb3",
+    "locationName": "Cao tốc LTDG - Cầu Bà Dạt 3"
+  },
+  {
+    "cameraId": "63ae7cfcbfd3d90017e8f422",
+    "locationName": "Cách Mạng Tháng Tám – Phạm Văn Hai"
+  },
+  {
+    "cameraId": "5b0e1faacddcc80011ceb449",
+    "locationName": "Nút giao Hàng Xanh 8 (HX-VT)"
+  },
+  {
+    "cameraId": "63b65fa9bfd3d90017eaa449",
+    "locationName": "Xô Viết Nghệ Tĩnh - Nguyễn Văn Lạc"
+  },
+  {
+    "cameraId": "56df8381c062921100c143e2",
+    "locationName": "Nguyễn Hữu Thọ - Nguyễn Thị Thập 1"
+  },
+  {
+    "cameraId": "5d8cd1f9766c880017188938",
+    "locationName": "Nguyễn Tri Phương - Trần Phú"
+  },
+  {
+    "cameraId": "595da2dd3dcfc400106f2885",
+    "locationName": "Quốc lộ 1 - Đường 15 (2)"
+  },
+  {
+    "cameraId": "595f80e83dcfc400106f28e4",
+    "locationName": "Quốc lộ 1 - BQB Cầu vượt Tân Thới Hiệp B (hướng Bình Phước)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acf5",
+    "locationName": "Nút giao Ngã bảy Lý Thái Tổ"
+  },
+  {
+    "cameraId": "631955e7c9eae60017a1c30a",
+    "locationName": "Cách Mạng Tháng Tám – Hòa Hưng"
+  },
+  {
+    "cameraId": "5a6060e08576340017d0660f",
+    "locationName": "Nguyễn Thái Sơn - Phan Văn Trị 2"
+  },
+  {
+    "cameraId": "5a607ea98576340017d0666d",
+    "locationName": "QL1-Phan Văn Hớn (Q12)"
+  },
+  {
+    "cameraId": "63ae7a26bfd3d90017e8f29a",
+    "locationName": "Ba Tháng Hai - Lê Hồng Phong 2"
+  },
+  {
+    "cameraId": "63b548c3bfd3d90017ea77c0",
+    "locationName": "Nguyễn Duy Trinh - Nguyễn Thị Tư"
+  },
+  {
+    "cameraId": "63195556c9eae60017a1c2ba",
+    "locationName": "Nguyễn Trãi - Cống Quỳnh 2"
+  },
+  {
+    "cameraId": "58df4adedc195800111e04b4",
+    "locationName": "Phổ Quang - Huỳnh Lan Khanh"
+  },
+  {
+    "cameraId": "59ca301902eb490011a0a400",
+    "locationName": "QL1 - Hương Lộ 2 (1)"
+  },
+  {
+    "cameraId": "584e738361cfea0012cf6951",
+    "locationName": "Quốc lộ 1 - Nguyễn Thị Tú"
+  },
+  {
+    "cameraId": "583f958161cfea0012cf68f5",
+    "locationName": "Nguyễn Thị Định - Đường C"
+  },
+  {
+    "cameraId": "5a8253615058170011f6eabf",
+    "locationName": "Đinh Bộ Lĩnh - Bạch Đằng 1"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad0f",
+    "locationName": "Nguyễn Thị Minh Khai - Trương Định"
+  },
+  {
+    "cameraId": "59ca2e6002eb490011a0a3f3",
+    "locationName": "QL1 - TTDK 50-07V"
+  },
+  {
+    "cameraId": "5d9dde1f766c880017188c98",
+    "locationName": "Nút giao Hàng Xanh 3 (Cầu Thị Nghè - Hàng Xanh)"
+  },
+  {
+    "cameraId": "5b6c1618ca0577001163fe3c",
+    "locationName": "Nguyễn Hữu Cảnh 2 (Chân cầu)"
+  },
+  {
+    "cameraId": "58b5528e17139d0010f35d52",
+    "locationName": "Xa Lộ Hà Nội - Đường D400"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad22",
+    "locationName": "Nút giao Ngã sáu Nguyễn Tri Phương"
+  },
+  {
+    "cameraId": "63b664d2bfd3d90017eaaa0f",
+    "locationName": "CT Trung Lương - Võ Trần Chí 1"
+  },
+  {
+    "cameraId": "56df85bdc062921100c143e8",
+    "locationName": "Phan Đình Giót - Phan Thúc Duyện"
+  },
+  {
+    "cameraId": "58d7b5a7c1e33c00112b320a",
+    "locationName": "Nút giao Chợ Đệm 1 (CT Trung Lương - Bùi Thanh Khiết)"
+  },
+  {
+    "cameraId": "58744693b807da0011e33c9e",
+    "locationName": "Võ Chí Công - Cầu Kỳ Hà 1"
+  },
+  {
+    "cameraId": "58aff01fbd82540010390c50",
+    "locationName": "Quốc lộ 1 - Bùi Thanh Khiết 2"
+  },
+  {
+    "cameraId": "5d8cdb9f766c880017188968",
+    "locationName": "Hoàng Văn Thụ - Trần Huy Liệu"
+  },
+  {
+    "cameraId": "5a6085fb8576340017d06686",
+    "locationName": "QL1-Tỉnh lộ 10B (1)"
+  },
+  {
+    "cameraId": "5a8253bc5058170011f6eac1",
+    "locationName": "Đinh Bộ Lĩnh - Bạch Đằng 2"
+  },
+  {
+    "cameraId": "59ca31d602eb490011a0a40b",
+    "locationName": "QL1 - Hồ Học Lãm"
+  },
+  {
+    "cameraId": "587c782db807da0011e33d3b",
+    "locationName": "Xa lộ HN - Thảo Điền"
+  },
+  {
+    "cameraId": "63ae7d29bfd3d90017e8f437",
+    "locationName": "Lý Thường Kiệt - Bắc Hải"
+  },
+  {
+    "cameraId": "56de42f611f398ec0c48129f",
+    "locationName": "Đồng Văn Cống - Nguyễn Thị Định"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515ad1f",
+    "locationName": "Hùng Vương - Ngô Gia Tự"
+  },
+  {
+    "cameraId": "59ca2d9d02eb490011a0a3f0",
+    "locationName": "QL1 - Phan Văn Hớn 2"
+  },
+  {
+    "cameraId": "5a8256df5058170011f6eacb",
+    "locationName": "BX Miền Đông - Quốc Lộ 13 (2)"
+  },
+  {
+    "cameraId": "5deb576d1dc17d7c5515acfc",
+    "locationName": "Võ Thị Sáu - Bà Huyện Thanh Quan"
+  },
+  {
+    "cameraId": "587c8c20b807da0011e33d47",
+    "locationName": "Hoàng Văn Thụ - Hồ Văn Huê"
+  },
+  {
+    "cameraId": "58744fb0b807da0011e33cc0",
+    "locationName": "Hưng Phú - Chánh Hưng 2"
+  },
+  {
+    "cameraId": "5822f23aedeb6c0012a2d6a8",
+    "locationName": "Hồng Bàng - Nguyễn Thị Nhỏ"
+  },
+  {
+    "cameraId": "649da495a6068200171a6cb6",
+    "locationName": "Mai Chí Thọ - Trần Quý Kiên (3"
+  }
+]
