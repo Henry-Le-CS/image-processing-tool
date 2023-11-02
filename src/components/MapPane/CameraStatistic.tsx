@@ -2,11 +2,12 @@ import { Col, Row, Select, Typography } from 'antd';
 import { FC, useState } from 'react';
 import { ICameraStatistic } from './type';
 import CameraPrediction from '../CameraPane/CameraPrediction';
+import CameraImage from '../CameraPane/CameraImage';
 
-const CameraStatistic: FC<ICameraStatistic> = ({ cameras }) => {
+const CameraStatistic: FC<ICameraStatistic> = ({ cameras, selectedCameraId, setSelectedCameraId }) => {
   const [isFetchingPrediction, setIsFetchingPrediction] =
     useState<boolean>(false);
-  const [selectedCameraId, setSelectedCameraId] = useState<string>();
+
   return (
     <div className="flex flex-col gap-2 items-center">
       <Typography.Title level={5} className="m-0">
@@ -30,7 +31,8 @@ const CameraStatistic: FC<ICameraStatistic> = ({ cameras }) => {
         </Col>
       </Row>
       {selectedCameraId && (
-        <div className="border rounded p-2 mt-0">
+        <div className="border flex flex-col gap-4 rounded p-2 mt-0">
+          <CameraImage cameraId={selectedCameraId} />
           <CameraPrediction
             cameraId={selectedCameraId}
             setParentDisable={setIsFetchingPrediction}
