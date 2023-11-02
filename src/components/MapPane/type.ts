@@ -16,9 +16,13 @@ export interface ICameraData {
 
 export interface ICameraStatistic {
   cameras: ICameraData[];
+  selectedCameraId: string;
+  setSelectedCameraId: Dispatch<SetStateAction<string>>;
 }
 
 export interface IMapView {
   camerasInRange: ICameraData[];
+  selectedCameraId: string;
+  setSelectedCameraId: Dispatch<SetStateAction<string>>;
   setCamerasInRange: Dispatch<SetStateAction<ICameraData[]>>;
 }
