@@ -1,6 +1,7 @@
 import {
   CircleF,
   GoogleMap,
+  InfoWindow,
   Marker,
   useLoadScript,
 } from '@react-google-maps/api';
@@ -23,12 +24,15 @@ const containerStyle = {
   aspectRatio: '4/3',
 };
 
-const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange }) => {
+const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange, selectedCameraId, setSelectedCameraId }) => {
   const { isLoaded } = useLoadScript({
     id: 'google-map-script',
     googleMapsApiKey: 'AIzaSyB2ukoL3IFwRX2r7yUDZkp5VjH_H-f9B2A',
     libraries: ['places', 'geometry'],
   });
+
+  const [map, setMap] = useState<google.maps.Map | null>(null)
+  const [zoom, setZoom] = useState<number>(14)
 
   const [cameras, setCameras] = useState<ICameraData[]>([
     {
@@ -63,6 +67,7 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange }) => {
 
   const [selectedPlace, setSelectedPlace] = useState('');
   const [searchLatLng, setSearchLatLng] = useState<google.maps.LatLngLiteral>();
+  const [selectedPlaceLatLng, setSelectedPlaceLatLng] = useState<google.maps.LatLngLiteral>();
 
   const [text, setText] = useState('');
   const [options, setOptions] = useState<string[]>([]); // Used for autocomplete component
@@ -133,6 +138,15 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange }) => {
 
   }, [debouncedValue])
 
+  const handleMarkerClick = (camera: ICameraData) => {
+    const { cameraId, lat, lng } = camera
+
+    setSelectedCameraId(cameraId);
+    setZoom(16);
+
+    setSelectedPlaceLatLng({ lat, lng })
+  }
+
   return (
     <>
       {!isLoaded && <div>Loading...</div>}
@@ -150,9 +164,11 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange }) => {
             onSearch={(value) => setText(value)}
           />
           <GoogleMap
+            onLoad={(map) => setMap(map)}
             mapContainerStyle={containerStyle}
-            center={searchLatLng || DEFAULT_LOCATION_LATLNG}
-            zoom={14}
+            center={selectedPlaceLatLng || searchLatLng || DEFAULT_LOCATION_LATLNG}
+            zoom={zoom}
+            onZoomChanged={() => setZoom(map?.getZoom() || 14)}
           >
             {selectedPlace && (
               <>
@@ -177,7 +193,18 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange }) => {
                         lng: cam.lng,
                       } as google.maps.LatLngLiteral
                     }
-                  />
+                    onClick={() => handleMarkerClick(cam)}
+                  >
+                    {
+                      selectedCameraId == cam.cameraId
+                      &&
+                      <InfoWindow>
+                        <Typography.Text strong>
+                          {cam.address}
+                        </Typography.Text>
+                      </InfoWindow>
+                    }
+                  </Marker>
                 ))}
               </>
             )}
