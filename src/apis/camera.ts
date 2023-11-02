@@ -1,5 +1,5 @@
 import axios from "axios"
-import { IFetchListCameraResult, ISearchAddressResult } from "./interface"
+import { IFetchListCameraResult, ISearchAddressResult } from "./interfaces"
 
 const CAMERA_URL = process.env.NEXT_PUBLIC_END_POINT
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IAllAspectsPredictionResult } from "./interface";
+import { IAllAspectsPredictionResult } from "./interfaces";
 
 const PREDICT_MODEL_URL = process.env.NEXT_PUBLIC_MODEL_ENDPOINT
 export const predictAllAspects = async (cameraId: string): Promise<IAllAspectsPredictionResult | undefined> => {
