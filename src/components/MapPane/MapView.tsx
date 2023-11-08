@@ -156,7 +156,7 @@ const MapView: FC<IMapView> = ({
     <>
       {!isLoaded && <div>Loading...</div>}
       {isLoaded && (
-        <div className="w-full flex flex-col gap-2 justify-center items-center">
+        <div className="w-full h-max flex flex-col gap-2 justify-center items-center">
           <Typography.Title level={5} className="m-0">
             Map View
           </Typography.Title>
