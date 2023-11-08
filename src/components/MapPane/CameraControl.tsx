@@ -13,6 +13,7 @@ export const CameraControl: FC<ICameraControl> = ({ isPaused, setIsPaused, isFet
         if (!setIsPaused) return;
 
         setIsPaused(newPauseStatus);
+        setOnNavigate(true);
 
         // On paused
         if (newPauseStatus && handleClearTimeout) {
@@ -68,6 +69,7 @@ export const CameraControl: FC<ICameraControl> = ({ isPaused, setIsPaused, isFet
             <LeftOutlined className="text-white" />
         </Button>
         <Button
+            disabled={onNavigate}
             className={CONTROL_BUTTON_CLASSNAME}
             onClick={handleOnClick}>
             {
