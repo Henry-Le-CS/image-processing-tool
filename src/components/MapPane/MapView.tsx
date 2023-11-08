@@ -10,8 +10,10 @@ import { FC, useEffect, useState } from 'react';
 import { ICameraData, IMapView, IRawCameraData } from './type';
 import {
   CAMERA_LIST_ENDPOINT,
+  DEFAULT_CAMERA,
   DEFAULT_LOCATION_LATLNG,
   DEFAULT_RADIUS,
+  libraries,
 } from './constants';
 import axios from 'axios';
 import { fetchLocationOptions } from '@/apis/map';
@@ -24,24 +26,22 @@ const containerStyle = {
   aspectRatio: '4/3',
 };
 
-const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange, selectedCameraId, setSelectedCameraId }) => {
+const MapView: FC<IMapView> = ({
+  camerasInRange,
+  setCamerasInRange,
+  selectedCameraId,
+  setSelectedCameraId,
+}) => {
   const { isLoaded } = useLoadScript({
     id: 'google-map-script',
     googleMapsApiKey: 'AIzaSyB2ukoL3IFwRX2r7yUDZkp5VjH_H-f9B2A',
-    libraries: ['places', 'geometry'],
+    libraries,
   });
 
-  const [map, setMap] = useState<google.maps.Map | null>(null)
-  const [zoom, setZoom] = useState<number>(14)
+  const [map, setMap] = useState<google.maps.Map | null>(null);
+  const [zoom, setZoom] = useState<number>(14);
 
-  const [cameras, setCameras] = useState<ICameraData[]>([
-    {
-      address: 'Hai Bà Trưng - Lý Chính Thắng',
-      lat: 10.791464,
-      cameraId: '5deb576d1dc17d7c5515acff',
-      lng: 106.687554,
-    },
-  ]);
+  const [cameras, setCameras] = useState<ICameraData[]>([DEFAULT_CAMERA]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,11 +67,16 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange, selectedCame
 
   const [selectedPlace, setSelectedPlace] = useState('');
   const [searchLatLng, setSearchLatLng] = useState<google.maps.LatLngLiteral>();
-  const [selectedPlaceLatLng, setSelectedPlaceLatLng] = useState<google.maps.LatLngLiteral>();
+  const [selectedPlaceLatLng, setSelectedPlaceLatLng] =
+    useState<google.maps.LatLngLiteral>();
 
   const [text, setText] = useState('');
   const [options, setOptions] = useState<string[]>([]); // Used for autocomplete component
-  const [locationOptions, setLocationOptions] = useState<IBKLocationOptions | undefined>(undefined) // Used for retrieving lat lng
+  const [locationOptions, setLocationOptions] = useState<
+    IBKLocationOptions | undefined
+  >(undefined); // Used for retrieving lat lng
+
+  const [hoveringCamId, setHoveringCamId] = useState<string>();
 
   const debouncedValue = useDebounce(text, 500);
 
@@ -82,14 +87,14 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange, selectedCame
     const autocompleteOptions = items.map((item) => item.title);
 
     setOptions(autocompleteOptions);
-  }
+  };
 
   const findLocationCoordinate = (location: string) => {
     const items = locationOptions?.items || [];
     const foundItem = items.find((item) => item.title === location);
 
     return foundItem?.position;
-  }
+  };
 
   const onSelect = (value: string) => {
     const coordinate = findLocationCoordinate(value);
@@ -107,20 +112,18 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange, selectedCame
 
       const placesInRange = cameras.filter(
         ({ lat, lng }) =>
-          google.maps
-            .geometry.spherical
-            .computeDistanceBetween(
-              searchPlaceLatLng,
-              {
-                lat,
-                lng,
-              }
-            ) <= DEFAULT_RADIUS
+          google.maps.geometry.spherical.computeDistanceBetween(
+            searchPlaceLatLng,
+            {
+              lat,
+              lng,
+            }
+          ) <= DEFAULT_RADIUS
       );
 
       setCamerasInRange(placesInRange);
     }
-  }
+  };
 
   useEffect(() => {
     if (!debouncedValue) return;
@@ -132,20 +135,22 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange, selectedCame
 
       setLocationOptions(options);
       generateAutocomplateOptions(options);
-    }
+    };
 
     fetchLocation();
-
-  }, [debouncedValue])
+  }, [debouncedValue]);
 
   const handleMarkerClick = (camera: ICameraData) => {
-    const { cameraId, lat, lng } = camera
+    const { cameraId, lat, lng } = camera;
 
     setSelectedCameraId(cameraId);
     setZoom(16);
 
-    setSelectedPlaceLatLng({ lat, lng })
-  }
+    setSelectedPlaceLatLng({ lat, lng });
+  };
+
+  const showInfo = (id: string) =>
+    hoveringCamId == id || selectedCameraId == id;
 
   return (
     <>
@@ -156,7 +161,7 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange, selectedCame
             Map View
           </Typography.Title>
           <AutoComplete
-            className='w-full'
+            className="w-full"
             placeholder="Input a location name"
             value={text}
             options={options.map((value) => ({ value }))}
@@ -166,7 +171,9 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange, selectedCame
           <GoogleMap
             onLoad={(map) => setMap(map)}
             mapContainerStyle={containerStyle}
-            center={selectedPlaceLatLng || searchLatLng || DEFAULT_LOCATION_LATLNG}
+            center={
+              selectedPlaceLatLng || searchLatLng || DEFAULT_LOCATION_LATLNG
+            }
             zoom={zoom}
             onZoomChanged={() => setZoom(map?.getZoom() || 14)}
           >
@@ -194,16 +201,14 @@ const MapView: FC<IMapView> = ({ camerasInRange, setCamerasInRange, selectedCame
                       } as google.maps.LatLngLiteral
                     }
                     onClick={() => handleMarkerClick(cam)}
+                    onMouseOver={() => setHoveringCamId(cam.cameraId)}
+                    onMouseOut={() => setHoveringCamId('')}
                   >
-                    {
-                      selectedCameraId == cam.cameraId
-                      &&
+                    {showInfo(cam.cameraId) && (
                       <InfoWindow>
-                        <Typography.Text strong>
-                          {cam.address}
-                        </Typography.Text>
+                        <Typography.Text strong>{cam.address}</Typography.Text>
                       </InfoWindow>
-                    }
+                    )}
                   </Marker>
                 ))}
               </>

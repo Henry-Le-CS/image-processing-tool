@@ -18,6 +18,7 @@ export interface ICameraStatistic {
   cameras: ICameraData[];
   selectedCameraId: string;
   setSelectedCameraId: Dispatch<SetStateAction<string>>;
+  isFetchingPrediction?: boolean;
 }
 
 export interface IMapView {
