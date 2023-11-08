@@ -1,5 +1,6 @@
 'use client';
 
+import { libraries } from '@/components/MapPane/constants';
 import {
   useLoadScript,
   GoogleMap,
@@ -26,7 +27,7 @@ export default function Home() {
   const { isLoaded } = useLoadScript({
     id: 'google-map-script',
     googleMapsApiKey: 'AIzaSyClU-_Z-y35WQyasQ5C40OmWCAHUd21sWc',
-    libraries: ['places', 'geometry'],
+    libraries,
   });
 
   const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
