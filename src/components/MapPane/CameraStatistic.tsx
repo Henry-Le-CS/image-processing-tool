@@ -1,5 +1,5 @@
 import { Row, Typography } from 'antd';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { ICameraData, ICameraStatistic } from './type';
 import CameraPrediction from '../CameraPane/CameraPrediction';
 import CameraImage from '../CameraPane/CameraImage';
@@ -16,23 +16,58 @@ const CameraStatistic: FC<ICameraStatistic> = ({
     useState<boolean>(false);
 
   const [viewMode, setViewmode] = useState<string>('individual');
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+
+  const swapTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // This function return the next camera id
+  const swapCameraId = (cameras: ICameraData[], id: string) => {
+    const currentIdx = cameras.findIndex((c) => c.cameraId == id);
+    return currentIdx == cameras.length - 1
+      ? cameras[0].cameraId
+      : cameras[currentIdx + 1].cameraId;
+  };
+
+  const findPrevCameraId = (cameras: ICameraData[], currentId: string) => {
+    const currentIdx = cameras.findIndex((c) => c.cameraId == currentId);
+    return currentIdx == 0
+      ? cameras[cameras.length - 1].cameraId
+      : cameras[currentIdx - 1].cameraId;
+  }
+
+  const handleSwapPrevCamera = () => {
+    const prevCameraId = findPrevCameraId(cameras, selectedCameraId);
+    setSelectedCameraId(prevCameraId);
+  }
+
+  const handleClearTimeout = () => {
+    if (!swapTimeoutRef.current) return;
+
+    clearTimeout(swapTimeoutRef.current);
+  }
+
+  const handleSwapCamera = () => {
+    if (!selectedCameraId) return;
+
+    const cameraId = swapCameraId(cameras, selectedCameraId);
+    setSelectedCameraId(cameraId);
+  }
 
   useEffect(() => {
     console.log('ufx ran:', viewMode, selectedCameraId, isFetchingPrediction);
-    const swapCameraId = (cameras: ICameraData[], id: string) => {
-      const currentIdx = cameras.findIndex((c) => c.cameraId == id);
-      return currentIdx == cameras.length - 1
-        ? cameras[0].cameraId
-        : cameras[currentIdx + 1].cameraId;
-    };
 
-    if (viewMode === 'interval' && selectedCameraId && !isFetchingPrediction) {
-      const swapTimeout = setTimeout(() => {
-        setSelectedCameraId(swapCameraId(cameras, selectedCameraId));
+    if (viewMode === 'interval' && selectedCameraId && !isFetchingPrediction && !isPaused) {
+      swapTimeoutRef.current = setTimeout(() => {
+        handleSwapCamera();
       }, 3000);
+
+      // clearTimeout(swapTimeoutRef.current);
+
       return () => {
+        if (!swapTimeoutRef.current) return;
+
         console.log('timeout cleaned');
-        clearTimeout(swapTimeout);
+        clearTimeout(swapTimeoutRef.current);
       };
     }
     return () => {
@@ -41,7 +76,7 @@ const CameraStatistic: FC<ICameraStatistic> = ({
   }, [isFetchingPrediction, viewMode, selectedCameraId]);
 
   return (
-    <div className="flex flex-col gap-2 items-center">
+    <div className="w-full flex flex-col gap-2 items-center">
       <Typography.Title level={5} className="m-0">
         Camera prediction
       </Typography.Title>
@@ -63,11 +98,16 @@ const CameraStatistic: FC<ICameraStatistic> = ({
             key: 'interval',
             label: 'Multiple Views',
             children: (
-              // <div>hehe</div>
               <MultipleStatistic
                 cameras={cameras}
+                isPaused={isPaused}
+                setIsPaused={setIsPaused}
+                handleClearTimeout={handleClearTimeout}
+                handleSwapCamera={handleSwapCamera}
+                handleSwapPrevCamera={handleSwapPrevCamera}
                 setSelectedCameraId={setSelectedCameraId}
                 selectedCameraId={selectedCameraId}
+                isFetchingPrediction={isFetchingPrediction}
               />
             ),
           },
@@ -93,7 +133,7 @@ const CameraStatistic: FC<ICameraStatistic> = ({
         </Col> */}
       </Row>
       {selectedCameraId && (
-        <div className="border flex flex-col gap-4 rounded p-2 mt-0">
+        <div className="w-full border flex flex-col gap-4 rounded p-2 mt-0">
           <CameraImage cameraId={selectedCameraId} />
           <CameraPrediction
             cameraId={selectedCameraId}
