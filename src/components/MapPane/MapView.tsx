@@ -149,6 +149,66 @@ const MapView: FC<IMapView> = ({
     setSelectedPlaceLatLng({ lat, lng });
   };
 
+  const routeCoordinates = [
+    { lat: 10.770023226733251, lng: 106.59139559067812 }, // 10.770023226733251, 106.59139559067812
+    { lat: 10.770967187550223, lng: 106.5915891043086 }, // 10.770967187550223, 106.5915891043086
+  ];
+
+
+
+  const point = { lat: 10.770568017836563, lng: 106.59151137197117 }; // 10.770568017836563, 106.59151137197117
+
+  const calculateAndDisplayRoute = () => {
+    const directionsService = new google.maps.DirectionsService();
+    const directionsDisplay = new google.maps.DirectionsRenderer();
+
+    directionsDisplay.setMap(map);
+
+    directionsService.route(
+      {
+        origin: routeCoordinates[0],
+        destination: routeCoordinates[routeCoordinates.length - 1],
+        waypoints: routeCoordinates.slice(1, -1).map(coordinate => ({ location: coordinate })),
+        travelMode: google.maps.TravelMode.DRIVING,
+      },
+      (response, status) => {
+        if (status === 'OK') {
+          directionsDisplay.setDirections(response);
+          console.log(response);
+          if (!response) return;
+          const routes = response.routes;
+          window.alert(pointBelongsToRoute(point, routes[0].legs));
+        } else {
+          console.error('Directions request failed due to ' + status);
+        }
+      }
+    );
+  };
+
+  function pointBelongsToRoute(point: any, routeCoordinates: any) {
+    for (const leg of routeCoordinates) {
+      for (const step of leg.steps) {
+        const path = step.path;
+        for (const routePoint of path) {
+          // Calculate the distance between the point and the route point
+          const distance = google.maps.geometry.spherical.computeDistanceBetween(
+            new google.maps.LatLng(point.lat, point.lng),
+            new google.maps.LatLng(routePoint.lat(), routePoint.lng())
+          );
+
+          // If the distance is below a threshold (e.g., 10 meters), consider it part of the route
+          if (distance < 10) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+
+
+
   const showInfo = (id: string) =>
     hoveringCamId == id || selectedCameraId == id;
 
@@ -160,6 +220,7 @@ const MapView: FC<IMapView> = ({
           <Typography.Title level={5} className="m-0">
             Map View
           </Typography.Title>
+          <button onClick={calculateAndDisplayRoute}>hehe</button>
           <AutoComplete
             className="w-full"
             placeholder="Input a location name"
@@ -169,7 +230,10 @@ const MapView: FC<IMapView> = ({
             onSearch={(value) => setText(value)}
           />
           <GoogleMap
-            onLoad={(map) => setMap(map)}
+            onLoad={(map) => {
+              setMap(map)
+
+            }}
             mapContainerStyle={containerStyle}
             center={
               selectedPlaceLatLng || searchLatLng || DEFAULT_LOCATION_LATLNG

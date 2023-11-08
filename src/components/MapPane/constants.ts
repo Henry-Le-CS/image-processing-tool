@@ -11,7 +11,7 @@ export const DEFAULT_LOCATION_LATLNG = {
   lng: 106.65797689722078,
 };
 
-export const libraries = ['places' as Library, 'geometry' as Library];
+export const libraries = ['places' as Library, 'geometry' as Library, 'routes' as Library];
 
 export const DEFAULT_CAMERA: ICameraData = {
   address: 'Hai Bà Trưng - Lý Chính Thắng',
