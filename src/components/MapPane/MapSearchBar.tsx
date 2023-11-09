@@ -153,6 +153,9 @@ export const MapSearchBar: FC<IMapSearchBar> = ({
                 onClick={() => {
                     setCurrentView('route')
                     setCamerasInRange([])
+                    setSearchLatLng(undefined)
+                    setSelectedPlace('')
+                    setText('')
                     setSearchDestinationLatLng(undefined)
                     setDestinationText('')
                 }}
@@ -190,6 +193,9 @@ export const MapSearchBar: FC<IMapSearchBar> = ({
                     setCamerasInRange([])
                     setSearchDestinationLatLng(undefined)
                     setDestinationText('')
+                    setSearchLatLng(undefined)
+                    setSelectedPlace('')
+                    setText('')
                 }}
                 className="flex items-center justify-center w-[35px] shadow-none"
             >
