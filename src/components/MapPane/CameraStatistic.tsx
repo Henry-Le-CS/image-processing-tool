@@ -23,16 +23,17 @@ const CameraStatistic: FC<ICameraStatistic> = ({
   // This function return the next camera id
   const swapCameraId = (cameras: ICameraData[], id: string) => {
     const currentIdx = cameras.findIndex((c) => c.cameraId == id);
+    if (!id) return "";
     return currentIdx == cameras.length - 1
-      ? cameras[0].cameraId
-      : cameras[currentIdx + 1].cameraId;
+      ? cameras[0]?.cameraId
+      : cameras[currentIdx + 1]?.cameraId || "";
   };
 
   const findPrevCameraId = (cameras: ICameraData[], currentId: string) => {
     const currentIdx = cameras.findIndex((c) => c.cameraId == currentId);
     return currentIdx == 0
-      ? cameras[cameras.length - 1].cameraId
-      : cameras[currentIdx - 1].cameraId;
+      ? cameras[cameras.length - 1]?.cameraId
+      : cameras[currentIdx - 1]?.cameraId || "";
   }
 
   const handleSwapPrevCamera = () => {
