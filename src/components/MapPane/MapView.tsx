@@ -5,8 +5,8 @@ import {
   Marker,
   useLoadScript,
 } from '@react-google-maps/api';
-import { AutoComplete, Typography } from 'antd';
-import { FC, useEffect, useState } from 'react';
+import { Typography } from 'antd';
+import { FC, useEffect, useRef, useState } from 'react';
 import { ICameraData, IMapView, IRawCameraData } from './type';
 import {
   CAMERA_LIST_ENDPOINT,
@@ -16,9 +16,7 @@ import {
   libraries,
 } from './constants';
 import axios from 'axios';
-import { fetchLocationOptions } from '@/apis/map';
-import { useDebounce } from '@/hooks/useDebounce';
-import { IBKLocationOptions } from '@/apis/interfaces';
+import { MapSearchBar } from './MapSearchBar';
 
 const containerStyle = {
   width: '100%',
@@ -38,6 +36,7 @@ const MapView: FC<IMapView> = ({
     libraries,
   });
 
+  const [currentView, setCurrentView] = useState<'circle' | 'route'>('circle')
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [zoom, setZoom] = useState<number>(14);
 
@@ -70,75 +69,11 @@ const MapView: FC<IMapView> = ({
   const [selectedPlaceLatLng, setSelectedPlaceLatLng] =
     useState<google.maps.LatLngLiteral>();
 
-  const [text, setText] = useState('');
-  const [options, setOptions] = useState<string[]>([]); // Used for autocomplete component
-  const [locationOptions, setLocationOptions] = useState<
-    IBKLocationOptions | undefined
-  >(undefined); // Used for retrieving lat lng
+  const [searchDestinationLatLng, setSearchDestinationLatLng] = useState<google.maps.LatLngLiteral>();
+
+  const googleMapDirectionsRenderer = useRef<google.maps.DirectionsRenderer | null>(null);
 
   const [hoveringCamId, setHoveringCamId] = useState<string>();
-
-  const debouncedValue = useDebounce(text, 500);
-
-  const generateAutocomplateOptions = (options?: IBKLocationOptions) => {
-    if (!options) return [];
-
-    const items = options?.items || [];
-    const autocompleteOptions = items.map((item) => item.title);
-
-    setOptions(autocompleteOptions);
-  };
-
-  const findLocationCoordinate = (location: string) => {
-    const items = locationOptions?.items || [];
-    const foundItem = items.find((item) => item.title === location);
-
-    return foundItem?.position;
-  };
-
-  const onSelect = (value: string) => {
-    const coordinate = findLocationCoordinate(value);
-
-    if (coordinate) {
-      const searchPlaceLatLng = {
-        lat: Number(coordinate.lat),
-        lng: Number(coordinate.lng),
-      };
-
-      setSearchLatLng(searchPlaceLatLng);
-
-      setSelectedPlace(value);
-      setText(value);
-
-      const placesInRange = cameras.filter(
-        ({ lat, lng }) =>
-          google.maps.geometry.spherical.computeDistanceBetween(
-            searchPlaceLatLng,
-            {
-              lat,
-              lng,
-            }
-          ) <= DEFAULT_RADIUS
-      );
-
-      setCamerasInRange(placesInRange);
-    }
-  };
-
-  useEffect(() => {
-    if (!debouncedValue) return;
-
-    const fetchLocation = async () => {
-      const options = await fetchLocationOptions({
-        location: debouncedValue,
-      });
-
-      setLocationOptions(options);
-      generateAutocomplateOptions(options);
-    };
-
-    fetchLocation();
-  }, [debouncedValue]);
 
   const handleMarkerClick = (camera: ICameraData) => {
     const { cameraId, lat, lng } = camera;
@@ -149,35 +84,68 @@ const MapView: FC<IMapView> = ({
     setSelectedPlaceLatLng({ lat, lng });
   };
 
-  const routeCoordinates = [
-    { lat: 10.770023226733251, lng: 106.59139559067812 }, // 10.770023226733251, 106.59139559067812
-    { lat: 10.770967187550223, lng: 106.5915891043086 }, // 10.770967187550223, 106.5915891043086
-  ];
+  const camerasBelongToRoute = (cameras: ICameraData[], routes: google.maps.DirectionsRoute[]) => {
+    const legs = routes[0].legs; // We take the first leg because we only have 2 endpoint
 
+    const routePoinsLatLng = [];
 
+    for (const leg of legs) {
+      const steps = leg.steps
 
-  const point = { lat: 10.770568017836563, lng: 106.59151137197117 }; // 10.770568017836563, 106.59151137197117
+      for (const step of steps) {
+        const path = step.path;
+
+        for (const routePoint of path) {
+          routePoinsLatLng.push({ lat: routePoint.lat(), lng: routePoint.lng() })
+        }
+      }
+    }
+
+    const camerasInRange = []
+
+    for (const camera of cameras) {
+      for (const routePoint of routePoinsLatLng) {
+        const distance = google.maps.geometry.spherical.computeDistanceBetween(
+          new google.maps.LatLng(camera.lat, camera.lng),
+          new google.maps.LatLng(routePoint.lat, routePoint.lng)
+        );
+
+        if (distance < 10) {
+          camerasInRange.push(camera);
+          break;
+        }
+      }
+    }
+
+    return camerasInRange;
+  }
 
   const calculateAndDisplayRoute = () => {
     const directionsService = new google.maps.DirectionsService();
-    const directionsDisplay = new google.maps.DirectionsRenderer();
 
-    directionsDisplay.setMap(map);
+    const originLat = searchLatLng?.lat, originLng = searchLatLng?.lng;
+    const destinationLat = searchDestinationLatLng?.lat, destinationLng = searchDestinationLatLng?.lng;
+
+    if (!originLat || !originLng || !destinationLat || !destinationLng) return;
 
     directionsService.route(
       {
-        origin: routeCoordinates[0],
-        destination: routeCoordinates[routeCoordinates.length - 1],
-        waypoints: routeCoordinates.slice(1, -1).map(coordinate => ({ location: coordinate })),
+        origin: searchLatLng,
+        destination: searchDestinationLatLng,
         travelMode: google.maps.TravelMode.DRIVING,
       },
       (response, status) => {
         if (status === 'OK') {
-          directionsDisplay.setDirections(response);
-          console.log(response);
+
+          if (!googleMapDirectionsRenderer.current) return;
+
+          googleMapDirectionsRenderer.current.setMap(map);
+          googleMapDirectionsRenderer.current.setDirections(response);
           if (!response) return;
+
           const routes = response.routes;
-          window.alert(pointBelongsToRoute(point, routes[0].legs));
+          const camerasInRange = camerasBelongToRoute(cameras, routes);
+          setCamerasInRange(camerasInRange);
         } else {
           console.error('Directions request failed due to ' + status);
         }
@@ -185,29 +153,20 @@ const MapView: FC<IMapView> = ({
     );
   };
 
-  function pointBelongsToRoute(point: any, routeCoordinates: any) {
-    for (const leg of routeCoordinates) {
-      for (const step of leg.steps) {
-        const path = step.path;
-        for (const routePoint of path) {
-          // Calculate the distance between the point and the route point
-          const distance = google.maps.geometry.spherical.computeDistanceBetween(
-            new google.maps.LatLng(point.lat, point.lng),
-            new google.maps.LatLng(routePoint.lat(), routePoint.lng())
-          );
+  useEffect(() => {
+    const originLat = searchLatLng?.lat, originLng = searchLatLng?.lng;
+    const destinationLat = searchDestinationLatLng?.lat, destinationLng = searchDestinationLatLng?.lng;
 
-          // If the distance is below a threshold (e.g., 10 meters), consider it part of the route
-          if (distance < 10) {
-            return true;
-          }
-        }
-      }
+    if (!originLat || !originLng || !destinationLat || !destinationLng) return;
+
+    calculateAndDisplayRoute();
+  }, [searchLatLng, searchDestinationLatLng])
+
+  useEffect(() => {
+    if (currentView == "circle") {
+      googleMapDirectionsRenderer.current?.setMap(null);
     }
-    return false;
-  }
-
-
-
+  }, [currentView])
 
   const showInfo = (id: string) =>
     hoveringCamId == id || selectedCameraId == id;
@@ -220,19 +179,20 @@ const MapView: FC<IMapView> = ({
           <Typography.Title level={5} className="m-0">
             Map View
           </Typography.Title>
-          <button onClick={calculateAndDisplayRoute}>hehe</button>
-          <AutoComplete
-            className="w-full"
-            placeholder="Input a location name"
-            value={text}
-            options={options.map((value) => ({ value }))}
-            onSelect={onSelect}
-            onSearch={(value) => setText(value)}
+          <MapSearchBar
+            cameras={cameras}
+            currentView={currentView}
+            setCurrentView={setCurrentView}
+            setSearchLatLng={setSearchLatLng}
+            setSelectedPlace={setSelectedPlace}
+            setCamerasInRange={setCamerasInRange}
+            setSelectedPlaceLatLng={setSelectedPlaceLatLng}
+            setSearchDestinationLatLng={setSearchDestinationLatLng}
           />
           <GoogleMap
             onLoad={(map) => {
               setMap(map)
-
+              googleMapDirectionsRenderer.current = new google.maps.DirectionsRenderer();
             }}
             mapContainerStyle={containerStyle}
             center={
@@ -243,18 +203,22 @@ const MapView: FC<IMapView> = ({
           >
             {selectedPlace && (
               <>
-                <Marker position={searchLatLng as google.maps.LatLngLiteral} />
-                <CircleF
-                  center={searchLatLng as google.maps.LatLngLiteral}
-                  radius={DEFAULT_RADIUS}
-                  options={{
-                    fillColor: 'turquoise',
-                    strokeColor: 'turquoise',
-                    strokeOpacity: 0.8,
-                    fillOpacity: 0.1,
-                  }}
-                />
-                {camerasInRange.map((cam, id) => (
+                {currentView == 'circle' &&
+                  <>
+                    <CircleF
+                      center={searchLatLng as google.maps.LatLngLiteral}
+                      radius={DEFAULT_RADIUS}
+                      options={{
+                        fillColor: 'turquoise',
+                        strokeColor: 'turquoise',
+                        strokeOpacity: 0.8,
+                        fillOpacity: 0.1,
+                      }}
+                    />
+                    <Marker position={searchLatLng as google.maps.LatLngLiteral} />
+                  </>
+                }
+                {camerasInRange.map((cam, id) => cam && (
                   <Marker
                     key={cam.cameraId}
                     label={{ color: 'white', text: `${id + 1}` }}
