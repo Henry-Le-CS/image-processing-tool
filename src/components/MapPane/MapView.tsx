@@ -13,6 +13,7 @@ import {
   DEFAULT_CAMERA,
   DEFAULT_LOCATION_LATLNG,
   DEFAULT_RADIUS,
+  TOLERANT_DISTANCE,
   libraries,
 } from './constants';
 import axios from 'axios';
@@ -110,7 +111,7 @@ const MapView: FC<IMapView> = ({
           new google.maps.LatLng(routePoint.lat, routePoint.lng)
         );
 
-        if (distance < 10) {
+        if (distance < TOLERANT_DISTANCE) {
           camerasInRange.push(camera);
           break;
         }

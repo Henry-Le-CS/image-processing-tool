@@ -19,3 +19,6 @@ export const DEFAULT_CAMERA: ICameraData = {
   cameraId: '5deb576d1dc17d7c5515acff',
   lng: 106.687554,
 };
+
+
+export const TOLERANT_DISTANCE = 15;
