@@ -8,12 +8,11 @@ const CONTROL_BUTTON_CLASSNAME = "flex items-center justify-center w-[40px] h-[2
 export const CameraControl: FC<ICameraControl> = ({ isPaused, setIsPaused, isFetchingPrediction, handleSwapPrevCamera, handleClearTimeout, handleSwapCamera }) => {
     const [onNavigate, setOnNavigate] = useState(false);
 
-    const handleOnClick = () => {
+    const handleOnPause = () => {
         const newPauseStatus = !isPaused;
         if (!setIsPaused) return;
 
         setIsPaused(newPauseStatus);
-        setOnNavigate(true);
 
         // On paused
         if (newPauseStatus && handleClearTimeout) {
@@ -22,6 +21,7 @@ export const CameraControl: FC<ICameraControl> = ({ isPaused, setIsPaused, isFet
         // On play
         else if (handleSwapCamera) {
             handleSwapCamera();
+            setOnNavigate(true);
         }
     }
 
@@ -71,7 +71,7 @@ export const CameraControl: FC<ICameraControl> = ({ isPaused, setIsPaused, isFet
         <Button
             disabled={onNavigate}
             className={CONTROL_BUTTON_CLASSNAME}
-            onClick={handleOnClick}>
+            onClick={handleOnPause}>
             {
                 isPaused ?
                     <PlayCircleOutlined className="text-white" /> :

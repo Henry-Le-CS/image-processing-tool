@@ -22,3 +22,37 @@ export const IMAGE_AUTH_ENDPOINT_HEADERS = {
 }
 
 export const LIVE_IMAGE_ENDPOINT = "http://giaothong.hochiminhcity.gov.vn/expandcameraplayer?camId="
+
+export const CONDITION_STATUS_CLASSNAME = {
+    'F': "text-[#FF0000]",
+    'E': "text-[#FF4500]",
+    'D': "text-[#FFA500]",
+    'C': "text-[#FFA500]",
+    'B': "text-[#329A40]",
+    'A': "text-[#329A40]",
+}
+
+export const DENSITY_STATUS_CLASSNAME = {
+    '4': "text-[#FF0000]",
+    '3': "text-[#FF4500]",
+    '2': "text-[#FFA500]",
+    '1': "text-[#329A40]",
+    '0': "text-[#329A40]",
+}
+
+export const CONDITION_MAPPING = {
+    'A': 'Free flow',
+    'B': 'Reasonable free flow',
+    'C': 'Stable flow',
+    'D': 'Approaching unstable flow',
+    'E': 'Unstable flow',
+    'F': 'Break down'
+}
+
+export const DENSITY_MAPPING = {
+    '0': 'Sparse',
+    '1': 'Low',
+    '2': 'Moderate',
+    '3': 'High',
+    '4': 'Very High'
+};

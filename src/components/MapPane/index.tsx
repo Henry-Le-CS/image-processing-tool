@@ -11,7 +11,7 @@ export default function MapPane() {
 
   return (
     <>
-      <div className="w-full md:min-w-[90vw] flex md:gap-2 gap-4 flex-col-reverse md:flex-row h-max">
+      <div className="w-[90vw] flex md:gap-2 gap-4 flex-col-reverse sm:flex-row h-max">
         <div className="w-full rounded border p-2 md:max-w-[40%]">
           <CameraStatistic
             selectedCameraId={selectedCameraId}

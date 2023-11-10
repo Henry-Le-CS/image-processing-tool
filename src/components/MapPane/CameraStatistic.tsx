@@ -15,6 +15,8 @@ const CameraStatistic: FC<ICameraStatistic> = ({
   const [isFetchingPrediction, setIsFetchingPrediction] =
     useState<boolean>(false);
 
+  const [isFetchingSignal, setIsFetchingSignal] = useState(false); // signal refetching image
+
   const [viewMode, setViewmode] = useState<string>('individual');
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
@@ -23,16 +25,17 @@ const CameraStatistic: FC<ICameraStatistic> = ({
   // This function return the next camera id
   const swapCameraId = (cameras: ICameraData[], id: string) => {
     const currentIdx = cameras.findIndex((c) => c.cameraId == id);
+    if (!id) return "";
     return currentIdx == cameras.length - 1
-      ? cameras[0].cameraId
-      : cameras[currentIdx + 1].cameraId;
+      ? cameras[0]?.cameraId
+      : cameras[currentIdx + 1]?.cameraId || "";
   };
 
   const findPrevCameraId = (cameras: ICameraData[], currentId: string) => {
     const currentIdx = cameras.findIndex((c) => c.cameraId == currentId);
     return currentIdx == 0
-      ? cameras[cameras.length - 1].cameraId
-      : cameras[currentIdx - 1].cameraId;
+      ? cameras[cameras.length - 1]?.cameraId
+      : cameras[currentIdx - 1]?.cameraId || "";
   }
 
   const handleSwapPrevCamera = () => {
@@ -134,9 +137,10 @@ const CameraStatistic: FC<ICameraStatistic> = ({
       </Row>
       {selectedCameraId && (
         <div className="w-full border flex flex-col gap-4 rounded p-2 mt-0">
-          <CameraImage cameraId={selectedCameraId} />
+          <CameraImage isFetchingSignal={isFetchingSignal} cameraId={selectedCameraId} />
           <CameraPrediction
             cameraId={selectedCameraId}
+            setIsFetchingSignal={setIsFetchingSignal}
             setParentDisable={setIsFetchingPrediction}
           />
         </div>

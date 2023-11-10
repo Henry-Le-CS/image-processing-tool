@@ -31,7 +31,9 @@ export const fetchLocationOptions = async (
 
             if (!title || !position) return acc;
 
-            return [...acc, { title, position }]
+            const label = item?.address?.label // Specific location
+
+            return [...acc, { title: label || title, position }]
 
         }, [] as IBKLocationItemBrief[])
 

@@ -1,3 +1,4 @@
+import { IBKLocationOptions } from '@/apis/interfaces';
 import { Dispatch, SetStateAction } from 'react';
 
 export interface IRawCameraData {
@@ -40,4 +41,30 @@ export interface ICameraControl {
   handleSwapCamera?: () => void;
   handleSwapPrevCamera?: () => void;
   isFetchingPrediction?: boolean;
+}
+
+export interface IMapSearchBar {
+  cameras: ICameraData[];
+
+  currentView: 'route' | 'circle';
+  setCurrentView: Dispatch<SetStateAction<'route' | 'circle'>>;
+
+  setSearchLatLng: Dispatch<SetStateAction<google.maps.LatLngLiteral | undefined>>;
+  setSelectedPlace: Dispatch<SetStateAction<string>>;
+  setCamerasInRange: Dispatch<SetStateAction<ICameraData[]>>;
+  setSelectedPlaceLatLng: Dispatch<SetStateAction<google.maps.LatLngLiteral | undefined>>;
+
+  setSearchDestinationLatLng: Dispatch<SetStateAction<google.maps.LatLngLiteral | undefined>>;
+}
+
+export type IMapVertical = "start" | "destination"
+
+export interface ILocationOptions {
+  start: IBKLocationOptions | undefined,
+  destination: IBKLocationOptions | undefined
+}
+
+export interface IMapAutocompleteOptions {
+  start: string[],
+  destination: string[]
 }

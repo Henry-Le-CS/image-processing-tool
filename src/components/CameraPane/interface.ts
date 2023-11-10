@@ -13,6 +13,7 @@ export interface ICameraPaneAutocompleteProps {
 
 export interface ICameraPaneImageProps {
     cameraId: string;
+    isFetchingSignal: boolean;
 }
 
 export interface ICameraPaneDetailProps {
@@ -25,5 +26,6 @@ export interface ICameraPaneDetailProps {
 export interface ICameraPanePredictionProps {
     cameraId: string;
     setParentDisable: Dispatch<SetStateAction<boolean>>;
+    setIsFetchingSignal: Dispatch<SetStateAction<boolean>>;
     // TODO: add more predict options
 }
