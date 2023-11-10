@@ -32,7 +32,7 @@ const CardTitle: FC<IImageCardProps> = ({ fileName, fileId }) => {
 
   return (
     <div
-      className="flex items-center justify-between py-2 "
+      className="flex items-center justify-between py-2 gap-1"
       title="Click on the title to select multiple images"
       onClick={handleRadioCheck}
     >
