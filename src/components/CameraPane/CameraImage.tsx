@@ -3,7 +3,7 @@ import { ICameraPaneImageProps } from "./interface";
 import { FC, useEffect, useState } from "react";
 import { fetchImageUrl } from "@/apis/camera";
 
-const CameraImage: FC<ICameraPaneImageProps> = ({ cameraId }) => {
+const CameraImage: FC<ICameraPaneImageProps> = ({ cameraId, isFetchingSignal }) => {
     const [imageSrc, setImageSrc] = useState("");
     const [isFetchingImage, setIsFetchingImage] = useState(false);
 
@@ -22,7 +22,7 @@ const CameraImage: FC<ICameraPaneImageProps> = ({ cameraId }) => {
         }
 
         fetchImageSrc();
-    }, [cameraId]);
+    }, [cameraId, isFetchingSignal]);
 
     return <div className="flex items-center justify-center">
         {isFetchingImage && <div>Loading image...   </div>}

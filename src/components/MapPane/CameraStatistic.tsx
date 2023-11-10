@@ -15,6 +15,8 @@ const CameraStatistic: FC<ICameraStatistic> = ({
   const [isFetchingPrediction, setIsFetchingPrediction] =
     useState<boolean>(false);
 
+  const [isFetchingSignal, setIsFetchingSignal] = useState(false); // signal refetching image
+
   const [viewMode, setViewmode] = useState<string>('individual');
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
@@ -135,9 +137,10 @@ const CameraStatistic: FC<ICameraStatistic> = ({
       </Row>
       {selectedCameraId && (
         <div className="w-full border flex flex-col gap-4 rounded p-2 mt-0">
-          <CameraImage cameraId={selectedCameraId} />
+          <CameraImage isFetchingSignal={isFetchingSignal} cameraId={selectedCameraId} />
           <CameraPrediction
             cameraId={selectedCameraId}
+            setIsFetchingSignal={setIsFetchingSignal}
             setParentDisable={setIsFetchingPrediction}
           />
         </div>
