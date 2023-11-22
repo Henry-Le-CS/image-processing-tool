@@ -33,7 +33,7 @@ const MapView: FC<IMapView> = ({
 }) => {
   const { isLoaded } = useLoadScript({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyB2ukoL3IFwRX2r7yUDZkp5VjH_H-f9B2A',
+    googleMapsApiKey: process.env.NEXT_PUBLIC_MAP_API_KEY ?? 'AIzaSyB2ukoL3IFwRX2r7yUDZkp5VjH_H-f9B2A',
     libraries,
   });
 
