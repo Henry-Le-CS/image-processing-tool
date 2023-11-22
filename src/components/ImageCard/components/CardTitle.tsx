@@ -31,7 +31,11 @@ const CardTitle: FC<IImageCardProps> = ({ fileName, fileId }) => {
   };
 
   return (
-    <div className="flex items-center justify-between">
+    <div
+      className="flex items-center justify-between py-2 gap-1"
+      title="Click on the title to select multiple images"
+      onClick={handleRadioCheck}
+    >
       <Typography.Text className="text-sm font-semibold" ellipsis>
         {fileName}
       </Typography.Text>
@@ -39,7 +43,7 @@ const CardTitle: FC<IImageCardProps> = ({ fileName, fileId }) => {
         type="checkbox"
         value={fileId}
         checked={isImageSelected}
-        onChange={handleRadioCheck}
+        className="cursor-pointer"
       />
     </div>
   );

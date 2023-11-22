@@ -10,6 +10,7 @@ import {
 import { useAppDispatch, useAppSelector } from '@/store/store';
 import axiosClient from '@/utils/axiosClient';
 import { Form } from 'antd';
+import axios from 'axios';
 import { useState } from 'react';
 
 /**
@@ -148,7 +149,8 @@ const useHandleImage = () => {
         })
       );
     } catch (err) {
-      window.alert(err);
+      if (axios.isAxiosError(err)) window.alert(err.response?.data);
+      else window.alert(err);
     } finally {
       setIsLoadingData(false);
     }
