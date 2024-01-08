@@ -12,9 +12,9 @@ const ImageContainer: FC<IImageContainer> = ({
   className,
   ...restProps
 }) => {
-  let newClassName = 'w-full aspect-video object-cover';
+  let newClassName = 'w-full aspect-square object-contain';
   if (className)
-    newClassName = ['w-full aspect-video object-cover', className].join(' ');
+    newClassName = ['w-full aspect-square object-contain', className].join(' ');
 
   return (
     <Image
