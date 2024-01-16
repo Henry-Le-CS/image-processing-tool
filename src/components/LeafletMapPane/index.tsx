@@ -1,6 +1,6 @@
-import { LatLng, LatLngTuple } from 'leaflet';
+import { LatLng } from 'leaflet';
 import dynamic from 'next/dynamic';
-import { Polyline, Popup } from 'react-leaflet';
+import { Popup } from 'react-leaflet';
 import Marker from '@/components/LeafletMarker';
 import { ICameraData, IRawCameraData } from '@/components/MapPane/type';
 import axios from 'axios';
@@ -11,7 +11,12 @@ import {
   TOLERANT_DISTANCE,
 } from '@/components/MapPane/constants';
 import { useEffect, useState } from 'react';
-import { IMapPoint, IMapSegmentData, IRouteData } from './types';
+import { IMapPoint, IRouteData } from './types';
+import MapSearchBar from './MapSearchBar';
+import MapRoutingDisplay from './MapRoutingDisplay';
+
+const DEFAULT_START_LATLNG: LatLng = new LatLng(10.79376, 106.63754);
+const DEFAULT_DESTINATION_LATLNG: LatLng = new LatLng(10.77853, 106.69594);
 
 export default function LeafletMapPane() {
   const MapComponent = dynamic(() => import('@/components/LeafletMap'), {
@@ -21,6 +26,11 @@ export default function LeafletMapPane() {
   const [cameras, setCameras] = useState<ICameraData[]>([DEFAULT_CAMERA]);
   const [currentRoute, setCurrentRoute] = useState<IRouteData>();
   const [camerasOnRoute, setCamerasOnRoute] = useState<ICameraData[]>([]);
+
+  const [searchLatLng, setSearchLatLng] =
+    useState<LatLng>(DEFAULT_START_LATLNG);
+  const [searchDestinationLatLng, setSearchDestinationLatLng] =
+    useState<LatLng>(DEFAULT_DESTINATION_LATLNG);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -98,41 +108,25 @@ export default function LeafletMapPane() {
     }
   }, [currentRoute, cameras]);
 
-  const renderCameras = () => {
-    return (
-      <>
-        {camerasOnRoute.map((camera) => {
-          const position = [camera.lat, camera.lng] as LatLngTuple;
-          return (
-            <Marker type="camera" position={position} key={camera.cameraId}>
-              <Popup>This is a camera</Popup>
-            </Marker>
-          );
-        })}
-      </>
-    );
-  };
-
-  const renderRoute = () => {
-    if (currentRoute != null) {
-      return <Polyline positions={extractWaypoints(currentRoute?.coords)} />;
-    }
-  };
-
-  const extractWaypoints = (segments: IMapSegmentData[]) =>
-    segments.flatMap(({ lat, lng, elat, elng }) => [
-      [lat, lng] as LatLngTuple,
-      [elat, elng] as LatLngTuple,
-    ]);
-
   return (
     <>
       <div>This is the new map pane.</div>
-      <RountingSearchBar />
+      <MapSearchBar
+        setSearchLatLng={setSearchLatLng}
+        setSearchDestinationLatLng={setSearchDestinationLatLng}
+      />
       <MapComponent>
         <>
-          {renderCameras()}
+          {/* {renderCameras()}
           {renderRoute()}
+          {renderRouteEndpoints()} */}
+          <MapRoutingDisplay
+            camerasOnRoute={camerasOnRoute}
+            currentRoute={currentRoute}
+            searchLatLng={searchLatLng}
+            searchDestinationLatLng={searchDestinationLatLng}
+          />
+
           <Marker position={DEFAULT_LOCATION_LATLNG}>
             <Popup>This is HCMUT</Popup>
           </Marker>
@@ -141,7 +135,3 @@ export default function LeafletMapPane() {
     </>
   );
 }
-
-const RountingSearchBar = () => {
-  return <div>This is Routing search bar</div>;
-};
