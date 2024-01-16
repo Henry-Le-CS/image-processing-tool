@@ -14,6 +14,18 @@ const CAMERA_ICON = icon({
   iconAnchor: [24, 48],
 });
 
+const START_ICON = icon({
+  iconUrl: '/start-marker-icon.png',
+  iconSize: [42, 48],
+  iconAnchor: [21, 48],
+});
+
+const DESTINATION_ICON = icon({
+  iconUrl: '/destination-marker-icon.png',
+  iconSize: [30, 48],
+  iconAnchor: [15, 48],
+});
+
 export default function Marker({
   type = 'default',
   position,
@@ -27,6 +39,12 @@ export default function Marker({
   switch (type) {
     case 'camera':
       icon = CAMERA_ICON;
+      break;
+    case 'start':
+      icon = START_ICON;
+      break;
+    case 'destination':
+      icon = DESTINATION_ICON;
       break;
     default:
       icon = MARKER_ICON;
