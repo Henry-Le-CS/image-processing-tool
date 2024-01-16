@@ -33,11 +33,13 @@ const MapView: FC<IMapView> = ({
 }) => {
   const { isLoaded } = useLoadScript({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_MAP_API_KEY ?? 'AIzaSyB2ukoL3IFwRX2r7yUDZkp5VjH_H-f9B2A',
+    googleMapsApiKey:
+      process.env.NEXT_PUBLIC_MAP_API_KEY ??
+      'AIzaSyB2ukoL3IFwRX2r7yUDZkp5VjH_H-f9B2A',
     libraries,
   });
 
-  const [currentView, setCurrentView] = useState<'circle' | 'route'>('circle')
+  const [currentView, setCurrentView] = useState<'circle' | 'route'>('circle');
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [zoom, setZoom] = useState<number>(14);
 
@@ -70,9 +72,11 @@ const MapView: FC<IMapView> = ({
   const [selectedPlaceLatLng, setSelectedPlaceLatLng] =
     useState<google.maps.LatLngLiteral>();
 
-  const [searchDestinationLatLng, setSearchDestinationLatLng] = useState<google.maps.LatLngLiteral>();
+  const [searchDestinationLatLng, setSearchDestinationLatLng] =
+    useState<google.maps.LatLngLiteral>();
 
-  const googleMapDirectionsRenderer = useRef<google.maps.DirectionsRenderer | null>(null);
+  const googleMapDirectionsRenderer =
+    useRef<google.maps.DirectionsRenderer | null>(null);
 
   const [hoveringCamId, setHoveringCamId] = useState<string>();
 
@@ -85,24 +89,30 @@ const MapView: FC<IMapView> = ({
     setSelectedPlaceLatLng({ lat, lng });
   };
 
-  const camerasBelongToRoute = (cameras: ICameraData[], routes: google.maps.DirectionsRoute[]) => {
+  const camerasBelongToRoute = (
+    cameras: ICameraData[],
+    routes: google.maps.DirectionsRoute[]
+  ) => {
     const legs = routes[0].legs; // We take the first leg because we only have 2 endpoint
 
     const routePoinsLatLng = [];
 
     for (const leg of legs) {
-      const steps = leg.steps
+      const steps = leg.steps;
 
       for (const step of steps) {
         const path = step.path;
 
         for (const routePoint of path) {
-          routePoinsLatLng.push({ lat: routePoint.lat(), lng: routePoint.lng() })
+          routePoinsLatLng.push({
+            lat: routePoint.lat(),
+            lng: routePoint.lng(),
+          });
         }
       }
     }
 
-    const camerasInRange = []
+    const camerasInRange = [];
 
     for (const camera of cameras) {
       for (const routePoint of routePoinsLatLng) {
@@ -119,13 +129,15 @@ const MapView: FC<IMapView> = ({
     }
 
     return camerasInRange;
-  }
+  };
 
   const calculateAndDisplayRoute = () => {
     const directionsService = new google.maps.DirectionsService();
 
-    const originLat = searchLatLng?.lat, originLng = searchLatLng?.lng;
-    const destinationLat = searchDestinationLatLng?.lat, destinationLng = searchDestinationLatLng?.lng;
+    const originLat = searchLatLng?.lat,
+      originLng = searchLatLng?.lng;
+    const destinationLat = searchDestinationLatLng?.lat,
+      destinationLng = searchDestinationLatLng?.lng;
 
     if (!originLat || !originLng || !destinationLat || !destinationLng) return;
 
@@ -137,7 +149,6 @@ const MapView: FC<IMapView> = ({
       },
       (response, status) => {
         if (status === 'OK') {
-
           if (!googleMapDirectionsRenderer.current) return;
 
           googleMapDirectionsRenderer.current.setMap(map);
@@ -155,19 +166,21 @@ const MapView: FC<IMapView> = ({
   };
 
   useEffect(() => {
-    const originLat = searchLatLng?.lat, originLng = searchLatLng?.lng;
-    const destinationLat = searchDestinationLatLng?.lat, destinationLng = searchDestinationLatLng?.lng;
+    const originLat = searchLatLng?.lat,
+      originLng = searchLatLng?.lng;
+    const destinationLat = searchDestinationLatLng?.lat,
+      destinationLng = searchDestinationLatLng?.lng;
 
     if (!originLat || !originLng || !destinationLat || !destinationLng) return;
 
     calculateAndDisplayRoute();
-  }, [searchLatLng, searchDestinationLatLng])
+  }, [searchLatLng, searchDestinationLatLng]);
 
   useEffect(() => {
-    if (currentView == "circle") {
+    if (currentView == 'circle') {
       googleMapDirectionsRenderer.current?.setMap(null);
     }
-  }, [currentView])
+  }, [currentView]);
 
   const showInfo = (id: string) =>
     hoveringCamId == id || selectedCameraId == id;
@@ -192,8 +205,9 @@ const MapView: FC<IMapView> = ({
           />
           <GoogleMap
             onLoad={(map) => {
-              setMap(map)
-              googleMapDirectionsRenderer.current = new google.maps.DirectionsRenderer();
+              setMap(map);
+              googleMapDirectionsRenderer.current =
+                new google.maps.DirectionsRenderer();
             }}
             mapContainerStyle={containerStyle}
             center={
@@ -204,7 +218,7 @@ const MapView: FC<IMapView> = ({
           >
             {selectedPlace && (
               <>
-                {currentView == 'circle' &&
+                {currentView == 'circle' && (
                   <>
                     <CircleF
                       center={searchLatLng as google.maps.LatLngLiteral}
@@ -216,30 +230,37 @@ const MapView: FC<IMapView> = ({
                         fillOpacity: 0.1,
                       }}
                     />
-                    <Marker position={searchLatLng as google.maps.LatLngLiteral} />
+                    <Marker
+                      position={searchLatLng as google.maps.LatLngLiteral}
+                    />
                   </>
-                }
-                {camerasInRange.map((cam, id) => cam && (
-                  <Marker
-                    key={cam.cameraId}
-                    label={{ color: 'white', text: `${id + 1}` }}
-                    position={
-                      {
-                        lat: cam.lat,
-                        lng: cam.lng,
-                      } as google.maps.LatLngLiteral
-                    }
-                    onClick={() => handleMarkerClick(cam)}
-                    onMouseOver={() => setHoveringCamId(cam.cameraId)}
-                    onMouseOut={() => setHoveringCamId('')}
-                  >
-                    {showInfo(cam.cameraId) && (
-                      <InfoWindow>
-                        <Typography.Text strong>{cam.address}</Typography.Text>
-                      </InfoWindow>
-                    )}
-                  </Marker>
-                ))}
+                )}
+                {camerasInRange.map(
+                  (cam, id) =>
+                    cam && (
+                      <Marker
+                        key={cam.cameraId}
+                        label={{ color: 'white', text: `${id + 1}` }}
+                        position={
+                          {
+                            lat: cam.lat,
+                            lng: cam.lng,
+                          } as google.maps.LatLngLiteral
+                        }
+                        onClick={() => handleMarkerClick(cam)}
+                        onMouseOver={() => setHoveringCamId(cam.cameraId)}
+                        onMouseOut={() => setHoveringCamId('')}
+                      >
+                        {showInfo(cam.cameraId) && (
+                          <InfoWindow>
+                            <Typography.Text strong>
+                              {cam.address}
+                            </Typography.Text>
+                          </InfoWindow>
+                        )}
+                      </Marker>
+                    )
+                )}
               </>
             )}
           </GoogleMap>
