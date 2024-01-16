@@ -23,6 +23,10 @@ const navItems = [
     path: '/live',
     name: 'Live',
   },
+  {
+    path: '/newMapView',
+    name: 'Live (New)',
+  },
 ];
 
 const NavBar = () => {
@@ -47,10 +51,11 @@ const NavBar = () => {
             <Link key={path} href={path}>
               {/* <span>{name}</span> */}
               <Button
-                className={`font-bold px-2 py-1 ${isActive
-                  ? ' text-white'
-                  : '!bg-blue-100 text-blue-600 border-blue-600'
-                  }`}
+                className={`font-bold px-2 py-1 ${
+                  isActive
+                    ? ' text-white'
+                    : '!bg-blue-100 text-blue-600 border-blue-600'
+                }`}
               >
                 {name}
               </Button>

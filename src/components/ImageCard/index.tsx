@@ -29,7 +29,7 @@ const ImageCard: FC<IImageCardProps> = ({
         hoverable
         className="min-w-200"
       >
-        <ImageContainer onClick={onClick} url={url} />
+        <ImageContainer onClick={onClick} url={url} className="max-h-[150px]" />
       </Card>
     </div>
   );
