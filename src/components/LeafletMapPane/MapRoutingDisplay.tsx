@@ -4,12 +4,12 @@ import { ICameraData, IMapSegmentData, IRouteData } from './types';
 import Marker from '../LeafletMarker';
 
 export default function MapRoutingDisplay({
-  camerasOnRoute,
+  camerasInRange,
   currentRoute,
   searchLatLng,
   searchDestinationLatLng,
 }: {
-  camerasOnRoute: ICameraData[];
+  camerasInRange: ICameraData[];
   currentRoute: IRouteData | undefined;
   searchLatLng: LatLng | undefined;
   searchDestinationLatLng: LatLng | undefined;
@@ -17,7 +17,7 @@ export default function MapRoutingDisplay({
   const renderCameras = () => {
     return (
       <>
-        {camerasOnRoute.map((camera) => {
+        {camerasInRange.map((camera) => {
           const position = [camera.lat, camera.lng] as LatLngTuple;
           return (
             <Marker type="camera" position={position} key={camera.cameraId}>

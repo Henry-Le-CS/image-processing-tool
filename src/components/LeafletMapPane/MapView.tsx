@@ -11,7 +11,7 @@ import {
   TOLERANT_DISTANCE,
 } from '@/components/MapPane/constants';
 import { useEffect, useState } from 'react';
-import { IMapPoint, IRouteData } from './types';
+import { IMapPoint, IMapView, IRouteData } from './types';
 import MapSearchBar from './MapSearchBar';
 import MapRoutingDisplay from './MapRoutingDisplay';
 import { Spin } from 'antd';
@@ -19,7 +19,12 @@ import { Spin } from 'antd';
 // const DEFAULT_START_LATLNG: LatLng = new LatLng(10.79376, 106.63754);
 // const DEFAULT_DESTINATION_LATLNG: LatLng = new LatLng(10.77853, 106.69594);
 
-export default function MapView() {
+export default function MapView({
+  selectedCameraId,
+  setSelectedCameraId,
+  camerasInRange,
+  setCamerasInRange,
+}: IMapView) {
   const MapComponent = dynamic(() => import('@/components/LeafletMap'), {
     ssr: false,
     loading: () => (
@@ -32,7 +37,7 @@ export default function MapView() {
   console.log('rendering...');
   const [cameras, setCameras] = useState<ICameraData[]>([DEFAULT_CAMERA]);
   const [currentRoute, setCurrentRoute] = useState<IRouteData>();
-  const [camerasOnRoute, setCamerasOnRoute] = useState<ICameraData[]>([]);
+  // const [camerasInRange, setCamerasInRange] = useState<ICameraData[]>([]);
 
   const [searchLatLng, setSearchLatLng] = useState<LatLng>();
   // useState<LatLng>(DEFAULT_START_LATLNG);
@@ -111,7 +116,7 @@ export default function MapView() {
           }
         }
         console.log('cameras in range: ', validCameras);
-        setCamerasOnRoute(validCameras);
+        setCamerasInRange(validCameras);
       }
     }
   }, [currentRoute, cameras]);
@@ -129,7 +134,7 @@ export default function MapView() {
           {renderRoute()}
           {renderRouteEndpoints()} */}
           <MapRoutingDisplay
-            camerasOnRoute={camerasOnRoute}
+            camerasInRange={camerasInRange}
             currentRoute={currentRoute}
             searchLatLng={searchLatLng}
             searchDestinationLatLng={searchDestinationLatLng}
