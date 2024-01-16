@@ -11,8 +11,8 @@ export default function MapRoutingDisplay({
 }: {
   camerasOnRoute: ICameraData[];
   currentRoute: IRouteData | undefined;
-  searchLatLng: LatLng;
-  searchDestinationLatLng: LatLng;
+  searchLatLng: LatLng | undefined;
+  searchDestinationLatLng: LatLng | undefined;
 }) {
   const renderCameras = () => {
     return (

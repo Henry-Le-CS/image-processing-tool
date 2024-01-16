@@ -9,9 +9,9 @@ const Map = ({ children }: { children: React.ReactElement }) => {
   return (
     <div>
       <MapContainer
-        style={{ height: '600px', width: '800px' }}
+        style={{ height: '500px', width: '100%' }}
         center={position}
-        zoom={15}
+        zoom={14}
         scrollWheelZoom={true}
       >
         <TileLayer
