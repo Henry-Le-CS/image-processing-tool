@@ -1,22 +1,26 @@
-import { LatLngTuple } from 'leaflet';
+import { LatLng, LatLngTuple } from 'leaflet';
 import dynamic from 'next/dynamic';
-import { Popup } from 'react-leaflet';
+import { Polyline, Popup } from 'react-leaflet';
 import Marker from '@/components/LeafletMarker';
 import { ICameraData, IRawCameraData } from '@/components/MapPane/type';
 import axios from 'axios';
 import {
   CAMERA_LIST_ENDPOINT,
   DEFAULT_CAMERA,
+  DEFAULT_LOCATION_LATLNG,
+  TOLERANT_DISTANCE,
 } from '@/components/MapPane/constants';
 import { useEffect, useState } from 'react';
-import { IMapPoint, IRouteData } from './types';
+import { IMapPoint, IMapSegmentData, IRouteData } from './types';
 
 export default function LeafletMapPane() {
-  const Map = dynamic(() => import('@/components/LeafletMap'), { ssr: false });
+  const MapComponent = dynamic(() => import('@/components/LeafletMap'), {
+    ssr: false,
+  });
 
   const [cameras, setCameras] = useState<ICameraData[]>([DEFAULT_CAMERA]);
   const [currentRoute, setCurrentRoute] = useState<IRouteData>();
-  // const [camerasOnRoute, setCamerasOnRoute] = useState<ICameraData[]>([]);
+  const [camerasOnRoute, setCamerasOnRoute] = useState<ICameraData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,74 +61,50 @@ export default function LeafletMapPane() {
     fetchRoutes();
   }, []);
 
-  const toRadian = (degree: number) => (degree * Math.PI) / 180;
-
-  const calculateSegmentLength = (a: IMapPoint, b: IMapPoint) => {
-    const EARTH_RADIUS = 6371;
-
-    const lat1 = toRadian(a.lat);
-    const lng1 = toRadian(a.lng);
-    const lat2 = toRadian(b.lat);
-    const lng2 = toRadian(b.lng);
-
-    const dLat = lat1 - lat2;
-    const dLng = lng1 - lng2;
-
-    const x =
-      Math.pow(Math.sin(dLat / 2), 2) +
-      Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dLng / 2), 2);
-    const c = 2 * Math.asin(Math.sqrt(x));
-    return c * EARTH_RADIUS * 1000;
-  };
   const calculateDistanceToSegment = (
     point: IMapPoint,
     segment: { lat: number; lng: number; elat: number; elng: number }
   ) => {
-    const a = calculateSegmentLength(
-      { lat: segment.lat, lng: segment.lng },
-      { lat: segment.elat, lng: segment.elng }
+    const point1 = new LatLng(point.lat, point.lng);
+    const point2 = new LatLng(
+      (segment.lat + segment.elat) / 2,
+      (segment.lng + segment.elng) / 2
     );
-    const b = calculateSegmentLength(point, {
-      lat: segment.lat,
-      lng: segment.lng,
-    });
-    const c = calculateSegmentLength(point, {
-      lat: segment.elat,
-      lng: segment.elng,
-    });
-    const p = 0.5 * (a + b + c);
-    console.log('Triangle result: ', a, b, c, p);
-
-    const distance = (2 * Math.sqrt(p * (p - a) * (p - b) * (p - c))) / a;
-    console.log('Distance result:', distance);
+    return point1.distanceTo(point2);
   };
 
   useEffect(() => {
     if (currentRoute && currentRoute?.coords?.length != 0) {
-      // List out cameras in range
-      console.log('check route', currentRoute);
       const segments = currentRoute?.coords;
       if (segments && segments.length != 0) {
-        calculateDistanceToSegment(cameras[0], segments[0]);
-
-        // for (const segment of segments) {
-        //   const
-        // }
-      } else {
-        // alert('segment missing' + cameras.length + segments?.length);
+        const validCameras = [];
+        for (const cam of cameras) {
+          let minDist = 9999999;
+          for (const segment of segments) {
+            const dist = calculateDistanceToSegment(
+              { lat: cam.lat, lng: cam.lng },
+              segment
+            );
+            if (dist <= TOLERANT_DISTANCE) {
+              validCameras.push({ ...cam });
+              break;
+            }
+            minDist = Math.min(minDist, dist);
+          }
+        }
+        console.log('cameras in range: ', validCameras);
+        setCamerasOnRoute(validCameras);
       }
-    } else {
-      // alert('sth missing' + cameras.length);
     }
-  }, [currentRoute]);
+  }, [currentRoute, cameras]);
 
   const renderCameras = () => {
     return (
       <>
-        {cameras.map((camera) => {
+        {camerasOnRoute.map((camera) => {
           const position = [camera.lat, camera.lng] as LatLngTuple;
           return (
-            <Marker position={position} key={camera.cameraId}>
+            <Marker type="camera" position={position} key={camera.cameraId}>
               <Popup>This is a camera</Popup>
             </Marker>
           );
@@ -133,37 +113,35 @@ export default function LeafletMapPane() {
     );
   };
 
+  const renderRoute = () => {
+    if (currentRoute != null) {
+      return <Polyline positions={extractWaypoints(currentRoute?.coords)} />;
+    }
+  };
+
+  const extractWaypoints = (segments: IMapSegmentData[]) =>
+    segments.flatMap(({ lat, lng, elat, elng }) => [
+      [lat, lng] as LatLngTuple,
+      [elat, elng] as LatLngTuple,
+    ]);
+
   return (
     <>
       <div>This is the new map pane.</div>
-      {/* <LeafletMap /> */}
       <RountingSearchBar />
-      <Map>
-        <>{renderCameras()}</>
-        {/* <>
-          <ChildrenComponent />
-          <ChildrenComponent />
-          <ChildrenComponent />
-        </> */}
-      </Map>
+      <MapComponent>
+        <>
+          {renderCameras()}
+          {renderRoute()}
+          <Marker position={DEFAULT_LOCATION_LATLNG}>
+            <Popup>This is HCMUT</Popup>
+          </Marker>
+        </>
+      </MapComponent>
     </>
   );
 }
 
 const RountingSearchBar = () => {
-  return <div>hehe hoho</div>;
+  return <div>This is Routing search bar</div>;
 };
-
-// const ChildrenComponent = () => {
-//   // const position = [10.77231740416534, 106.65797689722078] as LatLngTuple;
-//   const position = [Math.random() * 10, Math.random() * 120] as LatLngTuple;
-//   return (
-//     <>
-//       <Marker position={position}>
-//         <Popup>
-//           You are here: {position[0]} {position[1]}
-//         </Popup>
-//       </Marker>
-//     </>
-//   );
-// };
