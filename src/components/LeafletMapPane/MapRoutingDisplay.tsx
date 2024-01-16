@@ -1,18 +1,23 @@
 import { LatLng, LatLngTuple } from 'leaflet';
 import { Polyline, Popup } from 'react-leaflet';
-import { ICameraData, IMapSegmentData, IRouteData } from './types';
+import { ICameraData, IMapSegmentData, IMapView, IRouteData } from './types';
 import Marker from '../LeafletMarker';
+import { Button } from 'antd';
 
 export default function MapRoutingDisplay({
   camerasInRange,
   currentRoute,
   searchLatLng,
   searchDestinationLatLng,
+  selectedCameraId,
+  setSelectedCameraId,
 }: {
   camerasInRange: ICameraData[];
   currentRoute: IRouteData | undefined;
   searchLatLng: LatLng | undefined;
   searchDestinationLatLng: LatLng | undefined;
+  selectedCameraId: IMapView['selectedCameraId'];
+  setSelectedCameraId: IMapView['setSelectedCameraId'];
 }) {
   const renderCameras = () => {
     return (
@@ -20,8 +25,29 @@ export default function MapRoutingDisplay({
         {camerasInRange.map((camera) => {
           const position = [camera.lat, camera.lng] as LatLngTuple;
           return (
-            <Marker type="camera" position={position} key={camera.cameraId}>
-              <Popup>This is a camera</Popup>
+            <Marker
+              type={
+                camera.cameraId === selectedCameraId
+                  ? 'camera-selected'
+                  : 'camera'
+              }
+              position={position}
+              key={camera.cameraId}
+            >
+              <Popup>
+                <div className="flex flex-col justify-center items-center gap-1">
+                  <div>{camera.address}</div>
+                  <Button
+                    className="text-white"
+                    onClick={() => {
+                      console.log('camera #', camera.cameraId, 'clicked');
+                      setSelectedCameraId(camera.cameraId);
+                    }}
+                  >
+                    View
+                  </Button>
+                </div>
+              </Popup>
             </Marker>
           );
         })}

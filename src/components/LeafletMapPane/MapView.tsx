@@ -138,6 +138,8 @@ export default function MapView({
             currentRoute={currentRoute}
             searchLatLng={searchLatLng}
             searchDestinationLatLng={searchDestinationLatLng}
+            selectedCameraId={selectedCameraId}
+            setSelectedCameraId={setSelectedCameraId}
           />
 
           <Marker position={DEFAULT_LOCATION_LATLNG}>
