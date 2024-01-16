@@ -1,8 +1,9 @@
-import { LatLng, LatLngTuple } from 'leaflet';
-import { Polyline, Popup } from 'react-leaflet';
+import { LatLng, LatLngBounds, LatLngTuple } from 'leaflet';
+import { Polyline, Popup, useMap } from 'react-leaflet';
 import { ICameraData, IMapSegmentData, IMapView, IRouteData } from './types';
 import Marker from '../LeafletMarker';
 import { Button } from 'antd';
+import { useEffect } from 'react';
 
 export default function MapRoutingDisplay({
   camerasInRange,
@@ -19,6 +20,33 @@ export default function MapRoutingDisplay({
   selectedCameraId: IMapView['selectedCameraId'];
   setSelectedCameraId: IMapView['setSelectedCameraId'];
 }) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (selectedCameraId && selectedCameraId !== '') {
+      const camera = camerasInRange.find(
+        (c) => c.cameraId === selectedCameraId
+      );
+      if (camera) {
+        const newPosition = new LatLng(camera.lat, camera.lng);
+        map.setView(newPosition);
+        console.log('Map re-centered');
+      }
+    }
+  }, [selectedCameraId]);
+
+  useEffect(() => {
+    if (searchLatLng && searchDestinationLatLng) {
+      const center = new LatLng(
+        (searchLatLng.lat + searchDestinationLatLng.lat) / 2,
+        (searchLatLng.lng + searchDestinationLatLng.lng) / 2
+      );
+      map.setView(center);
+      const bounds = new LatLngBounds(searchLatLng, searchDestinationLatLng);
+      map.fitBounds(bounds);
+    }
+  }, [currentRoute]);
+
   const renderCameras = () => {
     return (
       <>
@@ -83,6 +111,7 @@ export default function MapRoutingDisplay({
       </>
     );
   };
+
   return (
     <>
       {renderCameras()}

@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css';
 const position = [10.77231740416534, 106.65797689722078] as LatLngExpression;
 
 const Map = ({ children }: { children: React.ReactElement }) => {
+  console.log('map rerendered');
   return (
     <div>
       <MapContainer

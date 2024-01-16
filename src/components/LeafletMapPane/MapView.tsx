@@ -1,23 +1,16 @@
 import { LatLng } from 'leaflet';
-import dynamic from 'next/dynamic';
-import { Popup } from 'react-leaflet';
-import Marker from '@/components/LeafletMarker';
 import { ICameraData, IRawCameraData } from '@/components/MapPane/type';
 import axios from 'axios';
 import {
   CAMERA_LIST_ENDPOINT,
   DEFAULT_CAMERA,
-  DEFAULT_LOCATION_LATLNG,
   TOLERANT_DISTANCE,
 } from '@/components/MapPane/constants';
 import { useEffect, useState } from 'react';
 import { IMapPoint, IMapView, IRouteData } from './types';
 import MapSearchBar from './MapSearchBar';
 import MapRoutingDisplay from './MapRoutingDisplay';
-import { Spin } from 'antd';
-
-// const DEFAULT_START_LATLNG: LatLng = new LatLng(10.79376, 106.63754);
-// const DEFAULT_DESTINATION_LATLNG: LatLng = new LatLng(10.77853, 106.69594);
+import LeafletMap from '../LeafletMap';
 
 export default function MapView({
   selectedCameraId,
@@ -25,14 +18,14 @@ export default function MapView({
   camerasInRange,
   setCamerasInRange,
 }: IMapView) {
-  const MapComponent = dynamic(() => import('@/components/LeafletMap'), {
-    ssr: false,
-    loading: () => (
-      <div className="h-[500px] w-full text-center">
-        <Spin tip="Loading" size="large" />
-      </div>
-    ),
-  });
+  // const MapComponent = dynamic(() => import('@/components/LeafletMap'), {
+  //   ssr: false,
+  //   loading: () => (
+  //     <div className="h-[500px] w-full text-center">
+  //       <Spin tip="Loading" size="large" />
+  //     </div>
+  //   ),
+  // });
 
   console.log('rendering...');
   const [cameras, setCameras] = useState<ICameraData[]>([DEFAULT_CAMERA]);
@@ -117,22 +110,20 @@ export default function MapView({
         }
         console.log('cameras in range: ', validCameras);
         setCamerasInRange(validCameras);
+        setSelectedCameraId('');
       }
     }
   }, [currentRoute, cameras]);
 
   return (
     <div className="flex flex-col gap-2">
-      <div>This is the new map pane.</div>
+      {/* <div>This is the new map pane.</div> */}
       <MapSearchBar
         setSearchLatLng={setSearchLatLng}
         setSearchDestinationLatLng={setSearchDestinationLatLng}
       />
-      <MapComponent>
+      <LeafletMap>
         <>
-          {/* {renderCameras()}
-          {renderRoute()}
-          {renderRouteEndpoints()} */}
           <MapRoutingDisplay
             camerasInRange={camerasInRange}
             currentRoute={currentRoute}
@@ -142,11 +133,11 @@ export default function MapView({
             setSelectedCameraId={setSelectedCameraId}
           />
 
-          <Marker position={DEFAULT_LOCATION_LATLNG}>
+          {/* <Marker position={DEFAULT_LOCATION_LATLNG}>
             <Popup>This is HCMUT</Popup>
-          </Marker>
+          </Marker> */}
         </>
-      </MapComponent>
+      </LeafletMap>
     </div>
   );
 }
