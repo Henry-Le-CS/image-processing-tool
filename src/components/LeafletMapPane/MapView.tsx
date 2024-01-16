@@ -116,7 +116,7 @@ export default function MapView({
   }, [currentRoute, cameras]);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 h-full">
       {/* <div>This is the new map pane.</div> */}
       <MapSearchBar
         setSearchLatLng={setSearchLatLng}

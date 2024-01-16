@@ -8,9 +8,9 @@ const position = [10.77231740416534, 106.65797689722078] as LatLngExpression;
 const Map = ({ children }: { children: React.ReactElement }) => {
   console.log('map rerendered');
   return (
-    <div>
+    <div className="h-full">
       <MapContainer
-        style={{ height: '500px', width: '100%' }}
+        style={{ minHeight: '400px', height: '100%', width: '100%' }}
         center={position}
         zoom={14}
         scrollWheelZoom={true}

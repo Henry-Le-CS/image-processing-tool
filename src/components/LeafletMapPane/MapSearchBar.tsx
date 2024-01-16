@@ -1,4 +1,4 @@
-import { AutoComplete } from 'antd';
+import { AutoComplete, Typography } from 'antd';
 import {
   Dispatch,
   SetStateAction,
@@ -117,24 +117,37 @@ export default function MapSearchBar({
 
   return (
     <div className="w-full flex flex-row gap-2">
-      <div className="w-full flex flex-col gap-2">
-        <AutoComplete
-          className="w-full"
-          placeholder="Enter a starting location"
-          value={text}
-          options={options['start'].map((value) => ({ value }))}
-          onSelect={(value) => onSelect(value, 'start')}
-          onSearch={(value) => setText(value)}
-        />
+      <div className="w-full flex flex-col gap-2 items-center">
+        <Typography.Text className="text-base font-semibold min-w-[40px]">
+          Searching for routes
+        </Typography.Text>
 
-        <AutoComplete
-          className="w-full"
-          placeholder="Enter a destination location"
-          value={destinationText}
-          options={options['destination'].map((value) => ({ value }))}
-          onSelect={(value) => onSelect(value, 'destination')}
-          onSearch={(value) => setDestinationText(value)}
-        />
+        <div className="flex w-full justify-start items-center gap-2 p-1">
+          <Typography.Text className="text-sm font-semibold min-w-[40px]">
+            From:
+          </Typography.Text>
+          <AutoComplete
+            className="w-full"
+            placeholder="Enter a starting location"
+            value={text}
+            options={options['start'].map((value) => ({ value }))}
+            onSelect={(value) => onSelect(value, 'start')}
+            onSearch={(value) => setText(value)}
+          />
+        </div>
+        <div className="flex w-full justify-start items-center gap-2 p-1">
+          <Typography.Text className="text-sm font-semibold min-w-[40px]">
+            To:
+          </Typography.Text>
+          <AutoComplete
+            className="w-full"
+            placeholder="Enter a destination location"
+            value={destinationText}
+            options={options['destination'].map((value) => ({ value }))}
+            onSelect={(value) => onSelect(value, 'destination')}
+            onSearch={(value) => setDestinationText(value)}
+          />
+        </div>
       </div>
       {/* <div className="flex items-center justify-center gap-2">
         <Button
